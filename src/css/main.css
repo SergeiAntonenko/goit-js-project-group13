@@ -1,0 +1,72 @@
+/* =====================  MOBILE VERSION ====================== */
+
+
+.top_lips {}
+
+.top_list-group {}
+
+.top_list-category_name {}
+
+.top_list-book_list {}
+
+.btn-see_more {}
+
+.top_list-book {}
+
+.top_list-book_img {}
+
+.top_list-book_title {}
+
+.top_list-book_author {}
+
+
+/* =====================  TABLET VERSION ====================== */
+
+@media screen and (min-width: 768px) {
+
+    .top_lips {}
+
+    .top_list-group {}
+
+    .top_list-category_name {}
+
+    .top_list-book_list {}
+
+    .btn-see_more {}
+
+    .top_list-book {}
+
+    .top_list-book_img {}
+
+    .top_list-book_title {}
+
+    .top_list-book_author {}
+
+}
+
+
+/* =====================  DESCTOPE VERSION ====================== */
+
+@media screen and (min-width: 1440px) {
+
+
+    .top_lips {}
+
+    .top_list-group {}
+
+    .top_list-category_name {}
+
+    .top_list-book_list {}
+
+    .btn-see_more {}
+
+    .top_list-book {}
+
+    .top_list-book_img {}
+
+    .top_list-book_title {}
+
+    .top_list-book_author {}
+
+
+}
