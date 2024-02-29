@@ -1,8 +1,10 @@
-import axios from 'axios';
+// import axios from 'axios';
+import axios from 'https://cdn.jsdelivr.net/npm/axios@1.3.5/+esm';
 
 const BASE_URL = "https://books-backend.p.goit.global";
 const END_POINTS = [
     '/books/category-list',
+    '/books/top-books',
     '/books/category',
     '/books',
 ];
@@ -19,9 +21,19 @@ export async function getCategoryList() {
     }
 }
 
+export async function getTopList() {
+    const url = `${BASE_URL}${END_POINTS[1]}`;
+    try {
+        const res = await axios.get(url);
+        return res.data;
+    } catch (error) {
+        console.error('Error fetching Top Books list: ', error);
+        throw error;
+    }
+}
 
 export async function getBooksByCategory(category) {
-    const url = `${BASE_URL}${END_POINTS[1]}`;
+    const url = `${BASE_URL}${END_POINTS[2]}`;
     const params = {
         category: category,
     };
@@ -34,9 +46,8 @@ export async function getBooksByCategory(category) {
     }
 }
 
- 
 export async function getBookById(id) {
-      const url = `${BASE_URL}${END_POINTS[2]}/${id}`;
+      const url = `${BASE_URL}${END_POINTS[3]}/${id}`;
       try {
           const res = await axios.get(url);
           return res.data;

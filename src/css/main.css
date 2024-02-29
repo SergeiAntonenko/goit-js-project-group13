@@ -1,0 +1,46 @@
+.top_lips {
+    background: white;
+    display: flex;
+    list-style-type: none;
+}
+
+.top_list-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.top_list-category_name {
+    
+}
+
+.top_list-book_list {
+    display: flex;
+    flex-direction: row;
+}
+
+.btn-see_more {
+    
+}
+
+.top_list-book {
+    
+}
+
+.top_list-book_img {
+    width: 150px;
+    
+}
+
+.top_list-book_title {
+    
+}
+
+.top_list-book_author {
+    
+}
+
+
+@media screen and (min-width: 768px) {
+    .top_lips {
+        max-width: 768px;
+    }
