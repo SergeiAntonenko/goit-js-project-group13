@@ -1,46 +1,72 @@
-.top_lips {
-    background: white;
-    display: flex;
-    list-style-type: none;
-}
+/* =====================  MOBILE VERSION ====================== */
 
-.top_list-group {
-    display: flex;
-    flex-direction: column;
-}
 
-.top_list-category_name {
-    
-}
+.top_lips {}
 
-.top_list-book_list {
-    display: flex;
-    flex-direction: row;
-}
+.top_list-group {}
 
-.btn-see_more {
-    
-}
+.top_list-category_name {}
 
-.top_list-book {
-    
-}
+.top_list-book_list {}
 
-.top_list-book_img {
-    width: 150px;
-    
-}
+.btn-see_more {}
 
-.top_list-book_title {
-    
-}
+.top_list-book {}
 
-.top_list-book_author {
-    
-}
+.top_list-book_img {}
 
+.top_list-book_title {}
+
+.top_list-book_author {}
+
+
+/* =====================  TABLET VERSION ====================== */
 
 @media screen and (min-width: 768px) {
-    .top_lips {
-        max-width: 768px;
-    }
+
+    .top_lips {}
+
+    .top_list-group {}
+
+    .top_list-category_name {}
+
+    .top_list-book_list {}
+
+    .btn-see_more {}
+
+    .top_list-book {}
+
+    .top_list-book_img {}
+
+    .top_list-book_title {}
+
+    .top_list-book_author {}
+
+}
+
+
+/* =====================  DESCTOPE VERSION ====================== */
+
+@media screen and (min-width: 1440px) {
+
+
+    .top_lips {}
+
+    .top_list-group {}
+
+    .top_list-category_name {}
+
+    .top_list-book_list {}
+
+    .btn-see_more {}
+
+    .top_list-book {}
+
+    .top_list-book_img {}
+
+    .top_list-book_title {}
+
+    .top_list-book_author {}
+
+
+}

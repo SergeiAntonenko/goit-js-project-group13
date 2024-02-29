@@ -1,11 +1,8 @@
 import { getTopList } from './booksAPI.js';
 
-
 const refs = {
-    // categoryListElem: document.querySelector('#categoryList'),
     topListElem: document.querySelector('#topList'),
   };
-
 
 document.addEventListener("DOMContentLoaded", async function() {
     refs.topListElem.innerHTML = '';
@@ -16,7 +13,6 @@ document.addEventListener("DOMContentLoaded", async function() {
         renderTopList(elem)
     });
 });
-
 
 function renderTopList(elem) {
     const html = `
