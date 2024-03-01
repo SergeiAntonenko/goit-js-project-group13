@@ -6,12 +6,43 @@
     <title>Shopping list</title>
     
     <script type="module" crossorigin src="/goit-js-project-group13/assets/vendor-ad859c2f.js"></script>
-    <script type="module" crossorigin src="/goit-js-project-group13/assets/main-bc45f3f4.js"></script>
-    <link rel="stylesheet" href="/goit-js-project-group13/assets/main-db54f975.css">
+    <script type="module" crossorigin src="/goit-js-project-group13/assets/main-ee6f2f54.js"></script>
+    <link rel="stylesheet" href="/goit-js-project-group13/assets/main-49ad52a7.css">
     <link rel="stylesheet" href="/goit-js-project-group13/assets/vendor-e5212ee8.css">
   </head>
   <body>
-    
+    <div class="container-header">
+    <nav class="header-nav">
+        <!-- Логотип -->
+        <a class="header-logo" href="#">
+            <svg class="header-logo-svg" width="109" height="28">
+                <use href="/goit-js-project-group13/assets/logo-b210d69a.svg#logo"></use>
+            </svg>
+        </a>
+
+        <!-- Перемикач теми -->
+        <div class="theme-switch">
+            <label class="switch">
+                <input type="checkbox" id="toggle" class="theme-switch" />
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <!-- Навігація для планшетного вигляду -->
+        <!-- <nav class="desktop-nav">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Shopping List</a></li>
+        </ul> -->
+
+        <button class="header-menu" id="menu">
+            <svg class="header-menu-svg" width="28" height="28">
+                <use href="/goit-js-project-group13/assets/menu-e808646a.svg#menu"></use>
+            </svg>
+        </button>
+    </nav>
+</div>
+
     <div class="main-container">
       <div class="aside">
   <ul class="container all-categories">
