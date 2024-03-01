@@ -1,23 +1,109 @@
 /* =====================  MOBILE VERSION ====================== */
 
+.books-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
 
-.top_lips {}
 
-.top_list-group {}
+.top_list {
+    max-width: 335px;
+    width: 335px;
+}
 
-.top_list-category_name {}
+.top_list-book[data-book-sequence-number="2"],
+.top_list-book[data-book-sequence-number="3"],
+.top_list-book[data-book-sequence-number="4"],
+.top_list-book[data-book-sequence-number="5"] {
+  display: none;
+}
+
+
+.top_list-best_sellers {
+    
+    font-family: "DM Sans", sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1.1875;
+    letter-spacing: -0.04em;
+    color: #111;
+}
+
+.top_list-best_sellers span {
+    color: #4f2ee8;
+}
+
+
+
+.top_list-group {
+    margin-top: 40px;
+}
+
+.top_list-category_name {
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.28571;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: #b4afaf;
+    margin-bottom: 18px;
+    margin-top: 10px;
+}
 
 .top_list-book_list {}
 
-.btn-see_more {}
+.btn-see_more {
+    float: right;
+    margin-top: 8px;
+    border: 2px solid #4f2ee8;
+    border-radius: 40px;
+    width: 124px;
+    height: 46px;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.28571;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    color: #111;
+    background: transparent;
+}
 
-.top_list-book {}
+.top_list-book {
+    width: 335px;
+    height: 571px;
 
-.top_list-book_img {}
+}
 
-.top_list-book_title {}
+.top_list-book_img {
+    border-radius: 8px;
+    margin-bottom: 14px;
+    width: 335px;
+    height: 485px;
+}
 
-.top_list-book_author {}
+.top_list-book_title {
+    font-family: "DM Sans", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.125;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    color: #111;
+    margin-bottom: 4px;
+}
+
+.top_list-book_author {
+    font-family: "DM Sans", sans-serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.16667;
+    letter-spacing: -0.04em;
+    color: #b4afaf;
+}
 
 
 /* =====================  TABLET VERSION ====================== */
