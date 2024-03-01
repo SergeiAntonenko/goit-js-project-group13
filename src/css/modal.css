@@ -1,13 +1,3 @@
-body {
-    margin: 0;
-}
-
-* {
-    box-sizing: border-box;
-    font-family: "DM Sans", sans-serif;
-    color: #111111;
-}
-
 .dark * {
     color: #FFFFFF;
 }
@@ -46,26 +36,25 @@ body {
     background: none;
 }
 
-.modal-close-icon path {
+.modal-close-icon {
     width: 12px;
     height: 12px;
 }
 
-.modal-close-icon path {
+.modal-close-icon {
     stroke: #111111;
-    stroke: red;
-    color: blue;
-    fill: lightcoral;
     stroke-width: 3;
     stroke-linecap: round;
     stroke-linejoin: round;
+    transition: stroke 0.3s ease-out;
 }
 
 .dark .modal-close-icon {
-    stroke: lightsalmon;
-    stroke: red;
-    color: blue;
-    fill: lightcoral;
+    stroke: #FFFFFF;
+}
+
+.modal-close-icon:hover {
+    stroke: #4f2ee8;
 }
 
 .book-cover {
@@ -74,7 +63,6 @@ body {
 }
 
 .book-title {
-    /* font-family: "DM Sans", sans-serif; */
     font-weight: 700;
     font-size: 16px;
     line-height: 1.13;
@@ -84,7 +72,6 @@ body {
 
 .book-author {
     margin-bottom: 20px;
-    /* font-family: "DM Sans", sans-serif; */
     font-weight: 400;
     font-style: italic;
     font-size: 12px;
@@ -95,7 +82,6 @@ body {
 
 .book-description {
     margin: 0 0 20px;
-    /* font-family: "DM Sans", sans-serif; */
     font-weight: 400;
     font-size: 14px;
     line-height: 1.29;
@@ -130,19 +116,24 @@ body {
     width: 100%;
     background-color: #FFFFFF;
     text-transform: uppercase;
-    /* font-family: "DM Sans", sans-serif; */
     font-weight: 700;
     font-size: 14px;
     line-height: 1.29;
     letter-spacing: -0.01em;
+    transition: color 0.3s ease-out, background-color 0.3s ease-out;
 }
 
 .dark .book-action-btn {
     background-color: #111111;
 }
 
+.book-action-btn:hover, 
+.book-action-btn:focus {
+    color: #FFFFFF;
+    background-color: #4f2ee8;
+}
+
 .book-congratulations {
-    /* font-family: "DM Sans", sans-serif; */
     font-weight: 400;
     font-size: 10px;
     line-height: 1.2;
