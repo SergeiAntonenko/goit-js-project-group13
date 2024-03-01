@@ -5,6 +5,7 @@
   |============================
 */
 @import url('./reset.css');
+@import url('./modern-normalize.min.css');
 @import url('./base.css');
 @import url('./header.css');
 @import url('./main.css');
