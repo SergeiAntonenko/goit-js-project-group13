@@ -1,7 +1,9 @@
 .is-hidden {
   display: none;
 }
+
 /* =====================Mobile===================== */
+
 .shopping-list-wrapper {
   display: flex;
   flex-direction: column;
