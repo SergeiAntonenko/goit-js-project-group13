@@ -12,6 +12,7 @@
 @import url('./sidebar-categories.css');
 @import url('./sidebar-support.css');
 @import url('./shopping-list.css');
+@import url('./modal.css');
 
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
