@@ -1,9 +1,35 @@
-
-
 .hidden {
     display: none;
     opacity: 0;
 }
+
+.top_list-book_cover_wrapper {
+    cursor: pointer;
+    position: relative;
+}
+
+.quick-view-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: #eac645;
+    border-radius: 0 0 8px 8px;
+    overflow: hidden;
+    transition: height 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-weight: bold;
+    font-size: 16px;
+    pointer-events: none;
+    user-select: none;
+    opacity: 0;
+}
+
+
 
 /* =====================  MOBILE VERSION ====================== */
 
@@ -117,7 +143,11 @@
 
 
 
-
+.top_list-book_cover_wrapper:hover .quick-view-text {
+    height: 120px;
+    pointer-events: auto;
+    opacity: 1;
+}
 
 
 
@@ -229,6 +259,10 @@
     } 
 
 
+    
+    .top_list-book_cover_wrapper:hover .quick-view-text {
+        height: 80px;
+    }
 
 
 }
@@ -337,6 +371,9 @@
         color: #b4afaf;
     } 
 
-
+    .top_list-book_cover_wrapper:hover .quick-view-text {
+        height: 70px;
+    }
+    
 
 }
