@@ -1,43 +1,35 @@
 /* =====================  MOBILE VERSION ====================== */
 
 .books-container {
-    display: flex;
-    flex-direction: column;
     padding: 20px;
+    display: flex;
+    justify-content: center;
 }
 
-
-.top_list {
-    max-width: 335px;
-    width: 335px;
-}
-
-.top_list-book[data-book-sequence-number="2"],
-.top_list-book[data-book-sequence-number="3"],
-.top_list-book[data-book-sequence-number="4"],
-.top_list-book[data-book-sequence-number="5"] {
-  display: none;
-}
-
-
-.top_list-best_sellers {
-    
+.top_list-title {
     font-family: "DM Sans", sans-serif;
     font-weight: 700;
     font-size: 32px;
     line-height: 1.1875;
     letter-spacing: -0.04em;
     color: #111;
+    margin-bottom: 40px;
 }
 
-.top_list-best_sellers span {
+.top_list-title span {
     color: #4f2ee8;
 }
 
 
+/* ul */
+.top_list {
+    display: grid;
+    width: 335px;
+}
 
-.top_list-group {
-    margin-top: 40px;
+/* li */
+.top_list-container { 
+    display: grid;
 }
 
 .top_list-category_name {
@@ -52,10 +44,8 @@
     margin-top: 10px;
 }
 
-.top_list-book_list {}
-
-.btn-see_more {
-    float: right;
+.top_list-see_more {
+    justify-self: end;
     margin-top: 8px;
     border: 2px solid #4f2ee8;
     border-radius: 40px;
@@ -71,13 +61,26 @@
     background: transparent;
 }
 
-.top_list-book {
-    width: 335px;
-    height: 571px;
+/* ul */
+.top_list-cards {
+    
+}
+
+/* li */
+.top_list-card {
 
 }
 
-.top_list-book_img {
+.top_list-card[data-book-sequence-number="2"],
+.top_list-card[data-book-sequence-number="3"],
+.top_list-card[data-book-sequence-number="4"],
+.top_list-card[data-book-sequence-number="5"] {
+    display: none;
+}
+
+
+.top_list-book_cover {
+    text-align: center;
     border-radius: 8px;
     margin-bottom: 14px;
     width: 335px;
@@ -106,27 +109,120 @@
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
 /* =====================  TABLET VERSION ====================== */
 
 @media screen and (min-width: 768px) {
 
-    .top_lips {}
+    .top_list-title {
+        font-family: "DM Sans", sans-serif;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 1.1875;
+        letter-spacing: -0.04em;
+        color: #111;
+    }
+    
+    .top_list-title span {
+        color: #4f2ee8;
+    }
+    
+    
+    /* ul */
+    .top_list {
+        display: grid;
+        width: 704px;
+    }
+    
+    /* li */
+    .top_list-container { 
+    }
+    
+    .top_list-category_name {
+        font-family: "DM Sans", sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1.71429;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        color: #b4afaf;
+    }
+    
+    .top_list-see_more {
+        justify-self: end;
+        margin-top: 20px;
+        border: 2px solid #4f2ee8;
+        border-radius: 40px;
+        width: 124px;
+        height: 46px;
+        font-family: "DM Sans", sans-serif;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 1.28571;
+        letter-spacing: -0.01em;
+        text-transform: uppercase;
+        color: #111;
+        background: transparent;
+    }
+    
+    /* ul */
+    .top_list-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(218px, 1fr));
+        gap: 25px;
+    }
+    
+    /* li */
+    .top_list-card {
+    
+    }
+    
+    .top_list-card[data-book-sequence-number="2"],
+    .top_list-card[data-book-sequence-number="3"]  {
+        display: inline-block;
+    }
+    
+    
+    .top_list-book_cover {
+        text-align: center;
+        border-radius: 8px;
+        margin-bottom: 14px;
+        width: 218px;
+        height: 316px;
+    }
+    
+    .top_list-book_title {
+        font-family: "DM Sans", sans-serif;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 1.125;
+        letter-spacing: -0.04em;
+        text-transform: uppercase;
+        color: #111;
+    }
+    
+    .top_list-book_author {
+        font-family: "DM Sans", sans-serif;
+        font-style: italic;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 1.16667;
+        letter-spacing: -0.04em;
+        color: #b4afaf;
+    } 
 
-    .top_list-group {}
 
-    .top_list-category_name {}
 
-    .top_list-book_list {}
-
-    .btn-see_more {}
-
-    .top_list-book {}
-
-    .top_list-book_img {}
-
-    .top_list-book_title {}
-
-    .top_list-book_author {}
 
 }
 
@@ -136,23 +232,104 @@
 @media screen and (min-width: 1440px) {
 
 
-    .top_lips {}
+    .top_list-title {
+        font-family: "DM Sans", sans-serif;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 1.1875;
+        letter-spacing: -0.04em;
+        color: #111;
+    }
+    
+    .top_list-title span {
+        color: #4f2ee8;
+    }
+    
+    
+    /* ul */
+    .top_list {
+        display: grid;
+        width: 996px;
+    }
+    
+    /* li */
+    .top_list-container { 
+    }
+    
+    .top_list-category_name {
+        font-family: "DM Sans", sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1.71429;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        color: #b4afaf;
+    }
+    
+    .top_list-see_more {
+        justify-self: end;
+        margin-top: 32px;
+        border: 2px solid #4f2ee8;
+        border-radius: 40px;
+        width: 124px;
+        height: 46px;
+        font-family: "DM Sans", sans-serif;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 1.28571;
+        letter-spacing: -0.01em;
+        text-transform: uppercase;
+        color: #111;
+        background: transparent;
+    }
+    
+    /* ul */
+    .top_list-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 24px;
+    }
+    
+    /* li */
+    .top_list-card {
+    
+    }
+    
+    .top_list-card[data-book-sequence-number="2"],
+    .top_list-card[data-book-sequence-number="3"],
+    .top_list-card[data-book-sequence-number="4"],
+    .top_list-card[data-book-sequence-number="5"]  {
+        display: inline-block;
+    }
+    
+    
+    .top_list-book_cover {
+        text-align: center;
+        border-radius: 8px;
+        margin-bottom: 14px;
+        width: 180px;
+        height: 256px;
+    }
+    
+    .top_list-book_title {
+        ont-family: "DM Sans", sans-serif;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 1.125;
+        letter-spacing: -0.04em;
+        color: #111;
+    }
+    
+    .top_list-book_author {
+        font-family: "DM Sans", sans-serif;
+        font-style: italic;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 1.16667;
+        letter-spacing: -0.04em;
+        color: #b4afaf;
+    } 
 
-    .top_list-group {}
-
-    .top_list-category_name {}
-
-    .top_list-book_list {}
-
-    .btn-see_more {}
-
-    .top_list-book {}
-
-    .top_list-book_img {}
-
-    .top_list-book_title {}
-
-    .top_list-book_author {}
 
 
 }
