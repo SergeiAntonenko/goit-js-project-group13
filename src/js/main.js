@@ -16,26 +16,23 @@ document.addEventListener("DOMContentLoaded", async function() {
 
 function renderTopList(elem) {
     const html = `
-        <div class="top_list-group">
-            <div class="top_list-category_name">${elem.list_name}</div>
-            <div class="top_list-book_list">
-                ${renderBooks(elem.books)}
-            </div>
-            <button class="btn-see_more" data-category="${elem.list_name}">See More</button>
-            <div style="clear:both;"></div>
-        </div>
+        <li class="top_list-container">
+            <h2 class="top_list-category_name">${elem.list_name}</h2>
+            <ul class="top_list-cards">${renderBooks(elem.books)}</ul>
+            <button class="top_list-see_more" data-category="${elem.list_name}">See More</button>
+        </li>
     `;
     refs.topListElem.innerHTML += html;
 }
 
 function renderBooks(books) {
-    let i = 1; // порядковый номер от 1 до 5
+    let i = 1; // порядковый номер от 1 до 5 для скрытия ненужных книг в мобильных стилях
     const bookHtml = books.map(book => `
-        <div class="top_list-book" data-book-id="${book._id}" data-book-sequence-number="${i++}">
-            <img class="top_list-book_img" src="${book.book_image}" alt="${book.title}">
-            <div class="top_list-book_title">${book.title}</div>
-            <div class="top_list-book_author">${book.author}</div>
-        </div>
+        <li class="top_list-card" data-book-id="${book._id}" data-book-sequence-number="${i++}">
+            <img class="top_list-book_cover" src="${book.book_image}" alt="${book.title}">
+            <h3 class="top_list-book_title">${book.title}</h3>
+            <p class="top_list-book_author">${book.author}</p>
+        </li>
     `).join('');
     i++;
     return bookHtml;
