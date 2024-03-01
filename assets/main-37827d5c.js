@@ -14,4 +14,4 @@ import a from"https://cdn.jsdelivr.net/npm/axios@1.3.5/+esm";(function(){const o
             <div class="top_list-book_author">${r.author}</div>
         </div>
     `).join("");return o++,i}
-//# sourceMappingURL=main-d6f71f02.js.map
+//# sourceMappingURL=main-37827d5c.js.map
