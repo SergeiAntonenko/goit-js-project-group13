@@ -12,7 +12,7 @@
   padding: 24px 40px 20px;
   display: flex;
 }
-.support_title {
+.support-title {
   gap: 12px;
   margin-bottom: 40px;
   margin-left: auto;
@@ -20,7 +20,7 @@
   display: flex;
 }
 
-.support_heading {
+.support-heading {
   letter-spacing: -0.04em;
   color: #fff;
   font-family: DM Sans;
@@ -31,34 +31,38 @@
   margin: 0;
 }
 
-.support_icon {
+.support-icon {
+  fill: #fff;
   width: 20px;
   height: 32px;
 }
 
-.swiper,
-swiper-container {
-  z-index: 1;
+.support-item {
+  margin-bottom: 20px;
+}
 
+.swiper,
+.swiper-container {
+  z-index: 1;
   padding: 0;
   list-style: none;
   display: block;
   position: relative;
-  overflow: hidden;
+  overflow: auto;
 }
 
-.supporters_img {
+.fund-logo {
   filter: brightness(0) invert();
   vertical-align: middle;
   height: 32px;
   display: inline-block;
 }
 
-.supporters_img:hover {
+.fund-logo:hover {
   filter: none;
 }
 
-.supporters__number {
+.fund-number {
   letter-spacing: -0.04em;
   color: #fff;
   margin-right: 16px;
@@ -68,7 +72,7 @@ swiper-container {
   line-height: 18px;
   display: inline-block;
 }
-.supporters_btn {
+.scroll-btn {
   cursor: pointer;
   width: 32px;
   min-height: 32px;
@@ -83,8 +87,6 @@ swiper-container {
   display: flex;
   transform: rotateX(0);
 }
-.supporters_btn span {
-  visibility: hidden;
-  width: 0;
-  height: 0;
+.scroll-btn-icon {
+  fill: #4f2ee8;
 }
