@@ -15,4 +15,4 @@ import{i as p}from"./vendor-ad859c2f.js";import c from"https://cdn.jsdelivr.net/
             <p class="top_list-book_author">${i.author}</p>
         </li>
     `).join("");return e++,s}
-//# sourceMappingURL=main-8ea653a3.js.map
+//# sourceMappingURL=main-e2af1f8d.js.map
