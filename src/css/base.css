@@ -1,12 +1,10 @@
 body {
   font-family: 'DM Sans', sans-serif;
-  font-size: 16px;
-  line-height: 1.25;
-  color: #fff;
-  background-color: #121212;
-  scroll-behavior: smooth;
-  position: relative;
-  overflow-x: hidden;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.04em;
+  color: #111;
+  background-color: #f6f6f6;
 }
 
 .visually-hidden {

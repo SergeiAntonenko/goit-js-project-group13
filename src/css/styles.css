@@ -5,8 +5,12 @@
   |============================
 */
 @import url('./reset.css');
+@import url('./modern-normalize.min.css');
 @import url('./base.css');
 @import url('./main.css'); /** временно т.к.  не знаю как main.html включить */
+@import url('./header.css');
+@import url('./sidebar-categories.css');
+@import url('./sidebar-support.css');
 @import url('./shopping-list.css');
 
 :root {
