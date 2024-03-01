@@ -1,12 +1,50 @@
+body {
+  margin: 0;
+}
+.gallery-item {
+  font-family: DM Sans;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: -0.02%;
+  text-align: left;
+  margin-bottom: 24px;
+  line-height: 1.12;
+}
+
 .all-categories {
   width: 307px;
   height: 228px;
   padding-top: 0;
   padding-bottom: 40px;
   padding-right: 48px;
-  border: 2px solid red;
   overflow-y: scroll;
   margin: 0;
+  background: rgb(255, 255, 255);
+}
+.all-categories-head {
+  color: rgb(79, 46, 232);
+  font-family: DM Sans;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: -0.02em;
+  text-align: left;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.gallery-link:hover {
+  color: rgb(79, 46, 232);
+}
+.gallery-link {
+  color: rgba(17, 17, 17, 0.6);
+}
+.gallery-link:focus {
+  color: rgb(79, 46, 232);
+  text-transform: uppercase;
+  font-weight: 700;
+  font-style: normal;
 }
 
 @media screen and (min-width: 768px) {
@@ -18,6 +56,27 @@
     padding-right: 32px;
     margin-left: 0;
   }
+  .all-categories-head {
+    color: rgba(17, 17, 17, 0.6);
+    font-family: DM Sans;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+    text-align: left;
+    text-transform: none;
+    margin-bottom: 32px;
+  }
+  .gallery-item {
+    font-family: DM Sans;
+    letter-spacing: -0.02%;
+    margin-bottom: 32px;
+    color: rgba(17, 17, 17, 0.6);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+  }
 }
 
 @media screen and (min-width: 1440px) {
@@ -26,29 +85,4 @@
     padding-right: 40px;
     padding-bottom: 86px;
   }
-}
-
-.gallery-item {
-  font-family: DM Sans;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 18px;
-  letter-spacing: -0.02%;
-  text-align: left;
-  margin-bottom: 24px;
-}
-
-.all-categories-head {
-  color: rgb(234, 198, 69);
-  font-family: DM Sans;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 18px;
-  letter-spacing: -0.02;
-  text-align: left;
-  text-transform: uppercase;
-  margin-bottom: 24px;
-}
-.gallery-link:hover {
-  color: rgb(79, 46, 232);
 }
