@@ -1,0 +1,200 @@
+const topList = document.getElementById('topList');
+const booksData = {
+  'Advice How-To and Miscellaneous': [
+    'Book1',
+    'Book2',
+    'Book3',
+    'Book4',
+    'Book5',
+    'Book6',
+    'Book7',
+    'Book8',
+    'Book9',
+    'Book10',
+    'Book11',
+  ],
+  'AUDIO FICTION': [
+    'Book1',
+    'Book2',
+    'Book3',
+    'Book4',
+    'Book5',
+    'Book6',
+    'Book7',
+    'Book8',
+    'Book9',
+    'Book10',
+  ],
+  'AUDIO NONFICTION': [
+    'Book1',
+    'Book2',
+    'Book3',
+    'Book4',
+    'Book5',
+    'Book6',
+    'Book7',
+    'Book8',
+    'Book9',
+    'Book10',
+  ],
+  'BUSINESS BOOKS': [
+    'Book1',
+    'Book2',
+    'Book3',
+    'Book4',
+    'Book5',
+    'Book6',
+    'Book7',
+    'Book8',
+    'Book9',
+    'Book10',
+  ],
+  'CHILDRENS MIDDLE GRADE HARDCOVER': [
+    'Book1',
+    'Book2',
+    'Book3',
+    'Book4',
+    'Book5',
+    'Book6',
+    'Book7',
+    'Book8',
+    'Book9',
+    'Book10',
+  ],
+  'COMBINED PRINT AND E-BOOK FICTION': [
+    'Book1',
+    'Book2',
+    'Book3',
+    'Book4',
+    'Book5',
+    'Book6',
+    'Book7',
+    'Book8',
+    'Book9',
+    'Book10',
+  ],
+  'GRAPHIC BOOKS AND MANGA': [
+    'Book1',
+    'Book2',
+    'Book3',
+    'Book4',
+    'Book5',
+    'Book6',
+    'Book7',
+    'Book8',
+    'Book9',
+    'Book10',
+  ],
+  'HARDCOVER FICTION': [
+    'Book1',
+    'Book2',
+    'Book3',
+    'Book4',
+    'Book5',
+    'Book6',
+    'Book7',
+    'Book8',
+    'Book9',
+    'Book10',
+  ],
+  'HARDCOVER NONFICTION': [
+    'Book1',
+    'Book2',
+    'Book3',
+    'Book4',
+    'Book5',
+    'Book6',
+    'Book7',
+    'Book8',
+    'Book9',
+    'Book10',
+  ],
+  'MASS MARKET MONTHLY': [
+    'Book1',
+    'Book2',
+    'Book3',
+    'Book4',
+    'Book5',
+    'Book6',
+    'Book7',
+    'Book8',
+    'Book9',
+    'Book10',
+  ],
+  'MIDDLE GRADE PAPERBACK MONTHLY': [
+    'Book1',
+    'Book2',
+    'Book3',
+    'Book4',
+    'Book5',
+    'Book6',
+    'Book7',
+    'Book8',
+    'Book9',
+    'Book10',
+  ],
+  'PAPERBACK NONFICTION': [
+    'Book1',
+    'Book2',
+    'Book3',
+    'Book4',
+    'Book5',
+    'Book6',
+    'Book7',
+    'Book8',
+    'Book9',
+    'Book10',
+  ],
+  'PICTURE BOOKS': [
+    'Book1',
+    'Book2',
+    'Book3',
+    'Book4',
+    'Book5',
+    'Book6',
+    'Book7',
+    'Book8',
+    'Book9',
+  ],
+  'SERIES BOOKS': [
+    'Book1',
+    'Book2',
+    'Book3',
+    'Book4',
+    'Book5',
+    'Book6',
+    'Book7',
+  ],
+  'TRADE FICTION PAPERBACK': ['Book1', 'Book2', 'Book3', 'Book4', 'Book5'],
+  'YOUNG ADULT HARDCOVER': [
+    'Book1',
+    'Book2',
+    'Book3',
+    'Book4',
+    'Book5',
+    'Book6',
+    'Book7',
+  ],
+  'YOUNG ADULT PAPERBACK MONTHLY': ['Book1', 'Book2', 'Book3'],
+};
+function displayBooks(category_name) {
+  topList.innerHTML = '';
+  const books = booksData[category_name];
+  if (books && books.length > 0) {
+    books.forEach(book => {
+      const li = document.createElement('li');
+      li.textContent = book;
+      topList.appendChild(li);
+    });
+  } else {
+    topList.innerHTML = 'No books found for this category.';
+  }
+}
+
+const categories = document.querySelectorAll('.top_list-category_name');
+categories.forEach(category => {
+  category.addEventListener('click', () => {
+    const selectedCategory = category.textContent;
+    displayBooks(selectedCategory);
+  });
+});
