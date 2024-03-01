@@ -6,7 +6,6 @@
 */
 @import url('./reset.css');
 @import url('./base.css');
-@import url('./sidebar-categories.css');
 
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
