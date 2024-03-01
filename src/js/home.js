@@ -32,7 +32,10 @@ function renderBooks(books) {
     let i = 1; // порядковый номер от 1 до 5 для скрытия ненужных книг в мобильных стилях
     const bookHtml = books.map(book => `
         <li class="top_list-card" data-book-sequence-number="${i++}">
-            <img class="top_list-book_cover" src="${book.book_image}" data-bookid="${book._id}" alt="${book.title}">
+            <div class="top_list-book_cover_wrapper" data-bookid="${book._id}" >
+                <img class="top_list-book_cover" src="${book.book_image}" alt="${book.title}">
+                <div class="quick-view-text">Quick view</div>
+            </div>
             <h3 class="top_list-book_title">${book.title}</h3>
             <p class="top_list-book_author">${book.author}</p>
         </li>
@@ -44,9 +47,9 @@ function renderBooks(books) {
 // Слушатель нажатие по книже
 document.addEventListener('DOMContentLoaded', function() {
     document.addEventListener('click', function(event) {
-        if (event.target.classList.contains('top_list-book_cover')) {
-            const bookId = event.target.dataset.bookid;
-            console.log("book id: ", bookId);
+        if (event.target.parentElement.classList.contains('top_list-book_cover_wrapper')) {
+            const bookId = event.target.parentElement.dataset.bookid;
+            console.log(bookId);
         }
     });
 });
