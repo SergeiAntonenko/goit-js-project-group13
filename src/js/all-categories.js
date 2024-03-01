@@ -1,13 +1,8 @@
-import axios from 'axios';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
+import { getCategoryList } from '../js/booksAPI';
 
-async function GetCategoryList() {
-  const URL = `https://books-backend.p.goit.global/books/category-list `;
-
-  const response = await axios.get(URL);
-  return response;
-}
+const allCategories = document.querySelector('.all-categories');
 
 function renderCategoryList(arr) {
   const markup = arr
@@ -19,22 +14,16 @@ function renderCategoryList(arr) {
           </li>`;
     })
     .join('');
-  console.log(markup);
   return markup;
 }
-
-const allCategories = document.querySelector('.all-categories');
-console.log(allCategories);
 
 function viewLightBox(markup) {
   allCategories.insertAdjacentHTML('beforeend', markup);
 }
 
-GetCategoryList()
-  .then(response => renderCategoryList(response.data))
-  .then(markup => {
-    viewLightBox(markup);
-  })
+getCategoryList()
+  .then(response => renderCategoryList(response))
+  .then(markup => viewLightBox(markup))
   .catch(error =>
     iziToast.error({
       maxWidth: '432px',
