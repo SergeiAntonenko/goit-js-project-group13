@@ -18,4 +18,4 @@ import a from"https://cdn.jsdelivr.net/npm/axios@1.3.5/+esm";import{i as u}from"
             <a class="gallery-link" href=#>${s.list_name}
             </a>
           </li>`).join("")}function k(t){b.insertAdjacentHTML("beforeend",t)}g().then(t=>_(t)).then(t=>k(t)).catch(t=>u.error({maxWidth:"432px",messageColor:"rgb(250, 250, 251)",messageSize:"16px",backgroundColor:"rgb(239, 64, 64)",position:"topRight",message:`${t}`}));
-//# sourceMappingURL=main-2f0dd2b9.js.map
+//# sourceMappingURL=main-e56fd354.js.map
