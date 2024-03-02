@@ -10,6 +10,27 @@ body {
 
 body.dark {
   background-color: #202024;
+  .all-categories-link {
+    color: rgb(234, 198, 69);
+    text-transform: uppercase;
+    font-weight: 700;
+    font-style: normal;
+  }
+  .gallery-link:focus {
+    color: rgb(234, 198, 69);
+    text-transform: uppercase;
+    font-weight: 700;
+    font-style: normal;
+  }
+  .link:focus {
+    color: rgb(234, 198, 69);
+    text-transform: uppercase;
+    font-weight: 700;
+    font-style: normal;
+  }
+  .gallery-item :hover {
+    color: rgb(234, 198, 69);
+  }
 }
 
 .visually-hidden {
