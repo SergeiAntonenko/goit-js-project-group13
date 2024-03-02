@@ -1,54 +1,27 @@
-function initializeThemeSwitcher(configuration) {
-    const defaultConfig = {
-    triggerButtonID: "toggle",
-    darkThemeClass: "dark-theme",
-    themeLocalStorageID: "theme",
-    onChangeTheme: () => {}
-    };
+const body = document.querySelector("body"),
+    toggle = document.querySelector(".toggle");
 
-const options = Object.assign(defaultConfig, configuration);
-let activeTheme = "light";
-const triggerButton = document.getElementById(options.triggerButtonID);
-
-function onChangeThemeHandler() {
-    const { onChangeTheme } = options;
-
-    if (onChangeTheme) {
-        return onChangeTheme(activeTheme);
-    }
+let getMode = localStorage.getItem("mode");
+if (getMode && getMode === "dark") {
+    body.classList.add("dark");
+    toggle.classList.add("active");
+} else {
+    toggle.style.background = "linear-gradient(180deg, #4f2ee8 0%, #dcdcdc 100%)";
+    toggle.style.boxShadow = "inset 1px 1px 2px 0 rgba(0, 0, 0, 0.1)";
 }
 
-function setDarkTheme() {
-    localStorage.setItem(options.themeLocalStorageID, "dark");
-    activeTheme = "dark";
-    document.documentElement.classList.add(options.darkThemeClass);
-    onChangeThemeHandler();
-    }
+toggle.addEventListener("click", () => {
+    body.classList.toggle("dark");
 
-function setLightTheme() {
-    localStorage.setItem(options.themeLocalStorageID, "light");
-    activeTheme = "light";
-    document.documentElement.classList.remove(options.darkThemeClass);
-    onChangeThemeHandler();
+    if (!body.classList.contains("dark")) {
+        toggle.style.background = "linear-gradient(180deg, #4f2ee8 0%, #dcdcdc 100%)";
+        toggle.style.boxShadow = "inset 1px 1px 2px 0 rgba(0, 0, 0, 0.1)";
+        return localStorage.setItem("mode", "light");
+    } else {
+        toggle.style.background = "linear-gradient(180deg, #4f2ee8 0%, #686868 100%)";
+        toggle.style.boxShadow = "inset 1px 1px 2px 0 rgba(0, 0, 0, 0.1)";
+        localStorage.setItem("mode", "dark");
     }
+});
 
-function applyCurrentTheme() {
-    setLightTheme();
-    
-    if (localStorage.getItem(options.themeLocalStorageID) !== null) {
-        activeTheme = localStorage.getItem(options.themeLocalStorageID);
-        activeTheme === "light" ? setLightTheme() : setDarkTheme();
-    }
-    }
-
-function switchThemeHandler() {
-    triggerButton.addEventListener("change", () => {
-        activeTheme === "light" ? setDarkTheme() : setLightTheme();
-    });
-    }
-
-    applyCurrentTheme();
-    switchThemeHandler();
-}
-
-initializeThemeSwitcher();
+toggle.addEventListener("click", () => toggle.classList.toggle("active"));
