@@ -49,7 +49,7 @@ function renderBooks(books) {
 // Слушатель нажатие по книже
 document.addEventListener('DOMContentLoaded', function() {
     document.addEventListener('click', function(event) {
-        if (event.target.parentElement.classList.contains('top_list-book_cover_wrapper')) {
+        if (event.target.parentElement?.classList.contains('top_list-book_cover_wrapper')) {
             const bookId = event.target.parentElement.dataset.bookid;
             console.log(bookId);
             onOpenModal(bookId);
