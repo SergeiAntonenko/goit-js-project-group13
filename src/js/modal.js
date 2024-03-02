@@ -33,7 +33,7 @@ function getModalMarkup(data) {
       <div class="modal-container">
         <button class="modal-close" id="modalClose">
           <svg class="modal-close-icon" width="12" height="12">
-            <use href=".${iconsPath}#icon-close"></use>
+            <use href="${iconsPath}#icon-close"></use>
           </svg>
         </button>
         <div class="book-box">
@@ -46,14 +46,14 @@ function getModalMarkup(data) {
               <li class="book-shop-item">
                 <a href="${amazonUrl}" class="book-shop-link" target="_blank">
                   <svg class="book-shop-logo amazon-logo" width="62" height="19">
-                    <use href=".${iconsPath}#icon-amazon-logo"></use>
+                    <use href="${iconsPath}#icon-amazon-logo"></use>
                   </svg>
                 </a>
               </li>
               <li class="book-shop-item">
                 <a href="${iBooksUrl}" class="book-shop-link" target="_blank">
                   <svg class="book-shop-logo ibooks-logo" width="32" height="32">
-                    <use href=".${iconsPath}#icon-ibooks-logo"></use>
+                    <use href="${iconsPath}#icon-ibooks-logo"></use>
                   </svg>    
                 </a>
               </li>
