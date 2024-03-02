@@ -1,7 +1,7 @@
 import { getBookById } from './booksAPI';
-import { default as iconsPath } from '../assets/modal-icons.svg';
+import iconsPath from '../assets/modal-icons.svg';
 
-const SHOPPING_LIST_IDS_KEY = 'shopListIds';
+const SHOPPING_LIST_IDS_KEY = 'shoppingIdList';
 
 const modalContainer = document.querySelector('#modalBookContainer');
 let bookActionContainer;
@@ -14,22 +14,15 @@ let currentId;
 
 export async function onOpenModal(id) {
   currentId = id;
-
-  console.log('11', localStorage.getItem(SHOPPING_LIST_IDS_KEY));
   shopListIds = JSON.parse(localStorage.getItem(SHOPPING_LIST_IDS_KEY)) || [];
-  console.log('shopListIds', shopListIds);
-
   bookData = await getBookById(currentId);
-
   isBookInShopList = shopListIds.includes(currentId);
-  const modalMarkup = getModalMarkup(bookData, isBookInShopList);
+  const modalMarkup = getModalMarkup(bookData);
   modalContainer.insertAdjacentHTML('afterbegin', modalMarkup);
 
   bookActionContainer = document.querySelector('#bookActionContainer');
-
-  modalCloseBtn = document.querySelector('#modalClose');
-  modalCloseBtn.addEventListener('click', onModalCloseBtn);
-
+  document.body.style.overflow = 'hidden';
+  initModalCloseBtn();
   initShippingListBtn();
 }
 
@@ -37,6 +30,7 @@ function onModalCloseBtn() {
   modalCloseBtn.removeEventListener('click', onModalCloseBtn);
   shippingListBtn.removeEventListener('click', onShippingListBtn);
   modalContainer.innerHTML = '';
+  document.body.style.overflow = '';
 }
 
 function onShippingListBtn() {
@@ -55,7 +49,7 @@ function onShippingListBtn() {
   initShippingListBtn();
 }
 
-function getModalMarkup(data, isBookInShopList) {
+function getModalMarkup(data) {
   const { book_image, author, title, description, buy_links } = data;
   const amazonUrl =
     buy_links.find(buy_link => buy_link.name === 'Amazon')?.url ||
@@ -96,7 +90,6 @@ function getModalMarkup(data, isBookInShopList) {
             </ul>
           </div>
         </div>
-
         <div class="book-action" id="bookActionContainer">${getBookActionMarkup()}</div>
       </div>
     </div>
@@ -116,6 +109,11 @@ function getBookActionMarkup() {
     <button class="book-action-btn" id="shippingListBtn">${shoppingListBtnLabel}</button>
     ${congratulationsMarkup}
   `;
+}
+
+function initModalCloseBtn() {
+  modalCloseBtn = document.querySelector('#modalClose');
+  modalCloseBtn.addEventListener('click', onModalCloseBtn);
 }
 
 function initShippingListBtn() {
