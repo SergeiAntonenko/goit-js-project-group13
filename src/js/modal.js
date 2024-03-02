@@ -1,25 +1,61 @@
 import { getBookById } from './booksAPI';
 import { default as iconsPath } from '../assets/modal-icons.svg';
 
-console.log('icons', iconsPath);
+const SHOPPING_LIST_IDS_KEY = 'shopListIds';
 
 const modalContainer = document.querySelector('#modalBookContainer');
-let modalClose;
+let bookActionContainer;
+let modalCloseBtn;
+let shippingListBtn;
+let isBookInShopList;
+let shopListIds;
+let bookData;
+let currentId;
 
 export async function onOpenModal(id) {
-  const bookData = await getBookById(id);
-  const modalMarkup = getModalMarkup(bookData);
+  currentId = id;
+
+  console.log('11', localStorage.getItem(SHOPPING_LIST_IDS_KEY));
+  shopListIds = JSON.parse(localStorage.getItem(SHOPPING_LIST_IDS_KEY)) || [];
+  console.log('shopListIds', shopListIds);
+
+  bookData = await getBookById(currentId);
+
+  isBookInShopList = shopListIds.includes(currentId);
+  const modalMarkup = getModalMarkup(bookData, isBookInShopList);
   modalContainer.insertAdjacentHTML('afterbegin', modalMarkup);
-  modalClose = document.querySelector('#modalClose');
-  modalClose.addEventListener('click', onCloseModal);
+
+  bookActionContainer = document.querySelector('#bookActionContainer');
+
+  modalCloseBtn = document.querySelector('#modalClose');
+  modalCloseBtn.addEventListener('click', onModalCloseBtn);
+
+  initShippingListBtn();
 }
 
-function onCloseModal() {
-  modalClose.removeEventListener('click', onCloseModal);
+function onModalCloseBtn() {
+  modalCloseBtn.removeEventListener('click', onModalCloseBtn);
+  shippingListBtn.removeEventListener('click', onShippingListBtn);
   modalContainer.innerHTML = '';
 }
 
-function getModalMarkup(data) {
+function onShippingListBtn() {
+  shippingListBtn.removeEventListener('click', onShippingListBtn);
+  if (isBookInShopList) {
+    shopListIds = shopListIds.filter(id => id !== currentId);
+  } else {
+    shopListIds.push(currentId);
+  }
+
+  localStorage.setItem(SHOPPING_LIST_IDS_KEY, JSON.stringify(shopListIds));
+
+  isBookInShopList = !isBookInShopList;
+  const bookActionMarkup = getBookActionMarkup();
+  bookActionContainer.innerHTML = bookActionMarkup;
+  initShippingListBtn();
+}
+
+function getModalMarkup(data, isBookInShopList) {
   const { book_image, author, title, description, buy_links } = data;
   const amazonUrl =
     buy_links.find(buy_link => buy_link.name === 'Amazon')?.url ||
@@ -60,12 +96,29 @@ function getModalMarkup(data) {
             </ul>
           </div>
         </div>
-            
-        <div class="book-action">
-          <button class="book-action-btn">add to shopping list</button>
-          <p class="book-congratulations">Сongratulations! You have added the book to the shopping list. To delete, press the button "Remove from the shopping list".</p>
-        </div>
+
+        <div class="book-action" id="bookActionContainer">${getBookActionMarkup()}</div>
       </div>
     </div>
   `;
+}
+
+function getBookActionMarkup() {
+  const congratulationsMarkup = isBookInShopList
+    ? '<p class="book-congratulations">Сongratulations! You have added the book to the shopping list. To delete, press the button "Remove from the shopping list".</p>'
+    : '';
+
+  const shoppingListBtnLabel = isBookInShopList
+    ? 'remove from the shopping list'
+    : 'add to shopping list';
+
+  return `
+    <button class="book-action-btn" id="shippingListBtn">${shoppingListBtnLabel}</button>
+    ${congratulationsMarkup}
+  `;
+}
+
+function initShippingListBtn() {
+  shippingListBtn = document.querySelector('#shippingListBtn');
+  shippingListBtn.addEventListener('click', onShippingListBtn);
 }
