@@ -1,7 +1,8 @@
 .supporters {
   box-sizing: border-box;
   width: 335px;
-  max-height: 460px;
+  height: 359px;
+  margin-bottom: 40px;
   background: radial-gradient(
     183.6% 183.01% at 59.76% -23.42%,
     #4f2ee8 18.03%,
@@ -14,8 +15,7 @@
 }
 .support_title {
   gap: 12px;
-  margin-bottom: 40px;
-  margin-left: auto;
+  margin-bottom: 20px;
   margin-right: auto;
   display: flex;
 }
@@ -31,10 +31,12 @@
   margin: 0;
 }
 
-.swiper,
-swiper-container {
-  z-index: 1;
+.support_icon {
+  fill: #fff;
+}
 
+.swiper {
+  z-index: 1;
   padding: 0;
   list-style: none;
   display: block;
@@ -53,7 +55,7 @@ swiper-container {
   filter: none;
 }
 
-.supporters__number {
+.supporters-number {
   letter-spacing: -0.04em;
   color: #fff;
   margin-right: 16px;
@@ -63,7 +65,7 @@ swiper-container {
   line-height: 18px;
   display: inline-block;
 }
-.supporters_btn {
+.supporters-btn {
   cursor: pointer;
   width: 32px;
   min-height: 32px;
@@ -77,4 +79,28 @@ swiper-container {
   transition: transform 0.5s ease-in-out;
   display: flex;
   transform: rotateX(0);
+  margin-bottom: 18px;
+}
+
+.supporters-btn-icon {
+  fill: #4f2ee8;
+  transform: rotate(180deg);
+}
+
+@media screen and (min-width: 768px) {
+  .supporters {
+    height: 472px;
+    padding-bottom: 14px;
+  }
+
+  .swiper {
+    padding: 12px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .supporters {
+    width: 356px;
+    padding-bottom: 14px;
+  }
 }
