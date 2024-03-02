@@ -23,7 +23,10 @@ function viewLightBox(markup) {
 
 getCategoryList()
   .then(response => renderCategoryList(response))
-  .then(markup => viewLightBox(markup))
+  .then(markup => {
+    viewLightBox(markup);
+    click();
+  })
   .catch(error =>
     iziToast.error({
       maxWidth: '432px',
@@ -34,3 +37,12 @@ getCategoryList()
       message: `${error}`,
     })
   );
+
+function click() {
+  const gallery = document.querySelector('.gallery-link');
+  const link = document.querySelector('.link');
+
+  gallery.addEventListener('click', () => {
+    link.classList.remove('all-categories-link');
+  });
+}
