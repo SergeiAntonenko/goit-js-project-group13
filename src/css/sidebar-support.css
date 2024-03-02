@@ -35,6 +35,10 @@
   fill: #fff;
 }
 
+.support-list-item {
+  margin-bottom: 20px;
+}
+
 .swiper {
   z-index: 1;
   padding: 0;
@@ -45,9 +49,9 @@
 }
 
 .supporters_img {
+  height: 32px;
   filter: brightness(0) invert();
   vertical-align: middle;
-  height: 32px;
   display: inline-block;
 }
 
