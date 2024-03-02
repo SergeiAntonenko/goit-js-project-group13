@@ -3,7 +3,7 @@ import d from"https://cdn.jsdelivr.net/npm/axios@1.3.5/+esm";import{i as _}from"
       <div class="modal-container">
         <button class="modal-close" id="modalClose">
           <svg class="modal-close-icon" width="12" height="12">
-            <use href=".${l}#icon-close"></use>
+            <use href="${l}#icon-close"></use>
           </svg>
         </button>
         <div class="book-box">
@@ -16,14 +16,14 @@ import d from"https://cdn.jsdelivr.net/npm/axios@1.3.5/+esm";import{i as _}from"
               <li class="book-shop-item">
                 <a href="${i}" class="book-shop-link" target="_blank">
                   <svg class="book-shop-logo amazon-logo" width="62" height="19">
-                    <use href=".${l}#icon-amazon-logo"></use>
+                    <use href="${l}#icon-amazon-logo"></use>
                   </svg>
                 </a>
               </li>
               <li class="book-shop-item">
                 <a href="${L}" class="book-shop-link" target="_blank">
                   <svg class="book-shop-logo ibooks-logo" width="32" height="32">
-                    <use href=".${l}#icon-ibooks-logo"></use>
+                    <use href="${l}#icon-ibooks-logo"></use>
                   </svg>    
                 </a>
               </li>
@@ -66,4 +66,4 @@ import d from"https://cdn.jsdelivr.net/npm/axios@1.3.5/+esm";import{i as _}from"
             <a class="gallery-link" href=#>${a.list_name}
             </a>
           </li>`).join("")}function P(t){D.insertAdjacentHTML("beforeend",t)}$().then(t=>O(t)).then(t=>{P(t),j()}).catch(t=>_.error({maxWidth:"432px",messageColor:"rgb(250, 250, 251)",messageSize:"16px",backgroundColor:"rgb(239, 64, 64)",position:"topRight",message:`${t}`}));function j(){const t=document.querySelector(".gallery-link"),o=document.querySelector(".link");t.addEventListener("click",()=>{o.classList.remove("all-categories-link")})}const b=document.querySelector("body"),n=document.querySelector(".toggle");let f=localStorage.getItem("mode");f&&f==="dark"?(b.classList.add("dark"),n.classList.add("active")):(n.style.background="linear-gradient(180deg, #4f2ee8 0%, #dcdcdc 100%)",n.style.boxShadow="inset 1px 1px 2px 0 rgba(0, 0, 0, 0.1)");n.addEventListener("click",()=>{if(b.classList.toggle("dark"),b.classList.contains("dark"))n.style.background="linear-gradient(180deg, #4f2ee8 0%, #686868 100%)",n.style.boxShadow="inset 1px 1px 2px 0 rgba(0, 0, 0, 0.1)",localStorage.setItem("mode","dark");else return n.style.background="linear-gradient(180deg, #4f2ee8 0%, #dcdcdc 100%)",n.style.boxShadow="inset 1px 1px 2px 0 rgba(0, 0, 0, 0.1)",localStorage.setItem("mode","light")});n.addEventListener("click",()=>n.classList.toggle("active"));
-//# sourceMappingURL=main-bf48ab20.js.map
+//# sourceMappingURL=main-75d0c246.js.map
