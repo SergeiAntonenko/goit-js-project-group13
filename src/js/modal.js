@@ -19,15 +19,19 @@ function onCloseModal() {
 
 function getModalMarkup(data) {
   const { book_image, author, title, description, buy_links } = data;
-  const amazonUrl = buy_links.find(buy_link => buy_link.name === 'Amazon')?.url || 'https://www.amazon.com/';
-  const iBooksUrl = buy_links.find(buy_link => buy_link.name === 'Apple Books')?.url || 'https://www.apple.com/apple-books/';
+  const amazonUrl =
+    buy_links.find(buy_link => buy_link.name === 'Amazon')?.url ||
+    'https://www.amazon.com/';
+  const iBooksUrl =
+    buy_links.find(buy_link => buy_link.name === 'Apple Books')?.url ||
+    'https://www.apple.com/apple-books/';
 
   return `
     <div class="book-background" id="modalBookContainer">
       <div class="modal-container">
         <button class="modal-close" id="modalClose">
           <svg class="modal-close-icon" width="12" height="12">
-            <use href=".${icons.default}#icon-close"></use>
+            <use href="./img/modal/modal-icons.svg#icon-close"></use>
           </svg>
         </button>
         <div class="book-box">
@@ -40,14 +44,14 @@ function getModalMarkup(data) {
               <li class="book-shop-item">
                 <a href="${amazonUrl}" class="book-shop-link" target="_blank">
                   <svg class="book-shop-logo amazon-logo" width="62" height="19">
-                    <use href=".${icons.default}#icon-amazon-logo"></use>
+                    <use href="./img/modal/modal-icons.svg#icon-amazon-logo"></use>
                   </svg>
                 </a>
               </li>
               <li class="book-shop-item">
                 <a href="${iBooksUrl}" class="book-shop-link" target="_blank">
                   <svg class="book-shop-logo ibooks-logo" width="32" height="32">
-                    <use href=".${icons.default}#icon-ibooks-logo"></use>
+                    <use href="./img/modal/modal-icons.svg#icon-ibooks-logo"></use>
                   </svg>    
                 </a>
               </li>
@@ -61,5 +65,5 @@ function getModalMarkup(data) {
         </div>
       </div>
     </div>
-  `
+  `;
 }
