@@ -1,3 +1,36 @@
+/* .hidden {
+    display: none;
+    opacity: 0;
+} */
+
+.top_list-book_cover_wrapper {
+    cursor: pointer;
+    position: relative;
+}
+
+.quick-view-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: #eac645;
+    border-radius: 0 0 8px 8px;
+    overflow: hidden;
+    transition: height 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-weight: bold;
+    font-size: 16px;
+    pointer-events: none;
+    user-select: none;
+    opacity: 0;
+}
+
+
+
 /* =====================  MOBILE VERSION ====================== */
 
 .books-container {
@@ -23,7 +56,7 @@
 
 /* ul */
 .top_list {
-    display: grid;
+    /* display: grid; */
     width: 335px;
 }
 
@@ -60,6 +93,12 @@
     color: #111;
     background: transparent;
 }
+
+.top_list-see_more:hover {
+    transform: scale(1.06);
+    transition: transform 0.3s ease;
+}
+
 
 /* ul */
 .top_list-cards {
@@ -110,11 +149,27 @@
 
 
 
+.top_list-book_cover_wrapper:hover .quick-view-text,
+.top_list-book_cover_wrapper:focus .quick-view-text {
+    height: 120px;
+    width: 335px;
+    pointer-events: auto;
+    opacity: 1;
+}
 
 
+    /* ul */    
+    .category_list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(335px, 1fr));
+        grid-row-gap: 40px;
+        width: 335px;
+    }
 
+    /* li */    
+    .category_list-card {
 
-
+    }
 
 
 
@@ -181,6 +236,7 @@
         grid-template-columns: repeat(auto-fit, minmax(218px, 1fr));
         gap: 25px;
     }
+
     
     /* li */
     .top_list-card {
@@ -222,6 +278,23 @@
     } 
 
 
+    .top_list-book_cover_wrapper:hover .quick-view-text,
+    .top_list-book_cover_wrapper:focus .quick-view-text {
+        height: 80px;
+        width: 218px;
+    }
+
+    /* ul */    
+    .category_list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(218px, 1fr));
+        width: 704px;
+    }
+
+    /* li */    
+    .category_list-card {
+
+    }
 
 
 }
@@ -251,7 +324,8 @@
         display: grid;
         width: 996px;
     }
-    
+
+
     /* li */
     .top_list-container { 
     }
@@ -329,6 +403,26 @@
         letter-spacing: -0.04em;
         color: #b4afaf;
     } 
+    
+    .top_list-book_cover_wrapper:hover .quick-view-text,
+    .top_list-book_cover_wrapper:focus .quick-view-text {
+        height: 70px;
+        width: 180px;
+    }
+  
+
+    /* ul */    
+    .category_list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        width: 996px;
+        max-width: 996px;
+    }
+
+    /* li */    
+    .category_list-card {
+
+    }
 
 
 

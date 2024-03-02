@@ -1,7 +1,7 @@
 .supporters {
   box-sizing: border-box;
   width: 335px;
-  max-height: 352px;
+  max-height: 460px;
   background: radial-gradient(
     183.6% 183.01% at 59.76% -23.42%,
     #4f2ee8 18.03%,
@@ -31,11 +31,6 @@
   margin: 0;
 }
 
-.support_icon {
-  width: 20px;
-  height: 32px;
-}
-
 .swiper,
 swiper-container {
   z-index: 1;
@@ -44,7 +39,7 @@ swiper-container {
   list-style: none;
   display: block;
   position: relative;
-  overflow: hidden;
+  overflow: auto;
 }
 
 .supporters_img {
@@ -82,9 +77,4 @@ swiper-container {
   transition: transform 0.5s ease-in-out;
   display: flex;
   transform: rotateX(0);
-}
-.supporters_btn span {
-  visibility: hidden;
-  width: 0;
-  height: 0;
 }

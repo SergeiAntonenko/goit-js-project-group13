@@ -24,6 +24,11 @@ body {
   overflow: hidden;
 }
 
+.main-container {
+  display: flex;
+  flex-direction: column;
+}
+
 .container {
   width: 100%;
   margin: 0 auto;
@@ -41,17 +46,23 @@ body {
     width: 768px;
     padding: 0 32px;
   }
-}
 
-@media screen and (min-width: 1280px) {
-  .container {
-    width: 1280px;
-    padding: 0 24px;
+  .aside {
+    display: flex;
   }
 }
 
 @media screen and (min-width: 1440px) {
   .container {
     width: 1440px;
+  }
+
+  .main-container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .aside {
+    display: block;
   }
 }
