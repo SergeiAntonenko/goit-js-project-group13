@@ -1,5 +1,7 @@
-const body = document.querySelector("body"),
-    toggle = document.querySelector(".toggle");
+const body = document.querySelector("body");
+const toggle = document.querySelector(".toggle");
+const logoLight = document.getElementById("logo");
+const logoDark = document.getElementById("logo-dark");
 
 let getMode = localStorage.getItem("mode");
 if (getMode && getMode === "dark") {
