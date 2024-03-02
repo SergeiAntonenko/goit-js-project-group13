@@ -5,6 +5,11 @@ body {
   letter-spacing: -0.04em;
   color: #111;
   background-color: #f6f6f6;
+  transition: all 0.3s ease-in-out;
+}
+
+body.dark {
+  background-color: #202024;
 }
 
 .visually-hidden {
