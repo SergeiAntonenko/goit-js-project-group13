@@ -3,10 +3,11 @@ import iconsPath from '../assets/modal-icons.svg';
 
 const SHOPPING_LIST_IDS_KEY = 'shoppingIdList';
 
+const bodyRef = document.querySelector('body');
 const modalContainer = document.querySelector('#modalBookContainer');
 let bookActionContainer;
 let modalCloseBtn;
-let shippingListBtn;
+let shoppingListBtn;
 let isBookInShopList;
 let shopListIds;
 let bookData;
@@ -21,20 +22,21 @@ export async function onOpenModal(id) {
   modalContainer.insertAdjacentHTML('afterbegin', modalMarkup);
 
   bookActionContainer = document.querySelector('#bookActionContainer');
-  document.body.style.overflow = 'hidden';
   initModalCloseBtn();
-  initShippingListBtn();
+  initShoppingListBtn();
+
+  bodyRef.classList.add('overflow-hidden');
 }
 
 function onModalCloseBtn() {
   modalCloseBtn.removeEventListener('click', onModalCloseBtn);
-  shippingListBtn.removeEventListener('click', onShippingListBtn);
+  shoppingListBtn.removeEventListener('click', onShoppingListBtn);
   modalContainer.innerHTML = '';
-  document.body.style.overflow = '';
+  bodyRef.classList.remove('overflow-hidden');
 }
 
-function onShippingListBtn() {
-  shippingListBtn.removeEventListener('click', onShippingListBtn);
+function onShoppingListBtn() {
+  shoppingListBtn.removeEventListener('click', onShoppingListBtn);
   if (isBookInShopList) {
     shopListIds = shopListIds.filter(id => id !== currentId);
   } else {
@@ -46,7 +48,7 @@ function onShippingListBtn() {
   isBookInShopList = !isBookInShopList;
   const bookActionMarkup = getBookActionMarkup();
   bookActionContainer.innerHTML = bookActionMarkup;
-  initShippingListBtn();
+  initShoppingListBtn();
 }
 
 function getModalMarkup(data) {
@@ -106,7 +108,7 @@ function getBookActionMarkup() {
     : 'add to shopping list';
 
   return `
-    <button class="book-action-btn" id="shippingListBtn">${shoppingListBtnLabel}</button>
+    <button class="book-action-btn" id="shoppingListBtn">${shoppingListBtnLabel}</button>
     ${congratulationsMarkup}
   `;
 }
@@ -116,7 +118,7 @@ function initModalCloseBtn() {
   modalCloseBtn.addEventListener('click', onModalCloseBtn);
 }
 
-function initShippingListBtn() {
-  shippingListBtn = document.querySelector('#shippingListBtn');
-  shippingListBtn.addEventListener('click', onShippingListBtn);
+function initShoppingListBtn() {
+  shoppingListBtn = document.querySelector('#shoppingListBtn');
+  shoppingListBtn.addEventListener('click', onShoppingListBtn);
 }
