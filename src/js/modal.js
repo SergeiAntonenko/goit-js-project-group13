@@ -1,5 +1,7 @@
 import { getBookById } from './booksAPI';
-import * as icons from '../img/modal/modal-icons.svg';
+import { default as iconsPath } from '../assets/modal-icons.svg';
+
+console.log('icons', iconsPath);
 
 const modalContainer = document.querySelector('#modalBookContainer');
 let modalClose;
@@ -31,7 +33,7 @@ function getModalMarkup(data) {
       <div class="modal-container">
         <button class="modal-close" id="modalClose">
           <svg class="modal-close-icon" width="12" height="12">
-            <use href="./img/modal/modal-icons.svg#icon-close"></use>
+            <use href=".${iconsPath}#icon-close"></use>
           </svg>
         </button>
         <div class="book-box">
@@ -44,14 +46,14 @@ function getModalMarkup(data) {
               <li class="book-shop-item">
                 <a href="${amazonUrl}" class="book-shop-link" target="_blank">
                   <svg class="book-shop-logo amazon-logo" width="62" height="19">
-                    <use href="./img/modal/modal-icons.svg#icon-amazon-logo"></use>
+                    <use href=".${iconsPath}#icon-amazon-logo"></use>
                   </svg>
                 </a>
               </li>
               <li class="book-shop-item">
                 <a href="${iBooksUrl}" class="book-shop-link" target="_blank">
                   <svg class="book-shop-logo ibooks-logo" width="32" height="32">
-                    <use href="./img/modal/modal-icons.svg#icon-ibooks-logo"></use>
+                    <use href=".${iconsPath}#icon-ibooks-logo"></use>
                   </svg>    
                 </a>
               </li>
