@@ -1,5 +1,6 @@
 import { getTopList } from './booksAPI.js';
 import { getBooksByCategory } from './booksAPI.js';
+import { onOpenModal } from './modal.js';
 
 const refs = {
     topListElem: document.querySelector('#topList'),
@@ -51,6 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (event.target.parentElement.classList.contains('top_list-book_cover_wrapper')) {
             const bookId = event.target.parentElement.dataset.bookid;
             console.log(bookId);
+            onOpenModal(bookId);
         }
     });
 });
