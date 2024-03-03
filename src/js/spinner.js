@@ -4,9 +4,9 @@ const spinerContainer = document.querySelector('.js-backdrop');
 
 let opts = {
   lines: 14,
-  length: 22,
-  width: 16,
-  radius: 47,
+  length: 12,
+  width: 8,
+  radius: 25,
   scale: 0.6,
   corners: 1,
   speed: 1,
