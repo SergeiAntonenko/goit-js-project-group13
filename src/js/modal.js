@@ -1,5 +1,5 @@
 import { getBookById } from './booksAPI';
-import iconsPath from '../assets/modal-icons.svg';
+import iconsPath from '../img/modal/modal-icons.svg';
 
 const SHOPPING_LIST_IDS_KEY = 'shoppingIdList';
 
