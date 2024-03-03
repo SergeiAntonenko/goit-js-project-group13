@@ -13,6 +13,7 @@
 @import url('./sidebar-support.css');
 @import url('./shopping-list.css');
 @import url('./modal.css');
+@import url('./scroll-up.css');
 
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
