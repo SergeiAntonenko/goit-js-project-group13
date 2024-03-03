@@ -31,6 +31,9 @@ body.dark {
   .gallery-item :hover {
     color: rgb(234, 198, 69);
   }
+  #scrollToTopBtn:hover {
+    background-color: rgb(234, 198, 69);
+  }
 }
 
 .visually-hidden {
