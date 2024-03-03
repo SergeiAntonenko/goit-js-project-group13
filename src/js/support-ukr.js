@@ -63,6 +63,7 @@ const renderSupportList = items => {
   const listItems = items
     .map((item, index) => {
       const { title, url, img, img2 } = item;
+      console.log(img);
       const number = (index + 1).toString().padStart(2, '0');
       return `
           <li class="support-list-item">
