@@ -1,21 +1,21 @@
-import children from '../img/support-ukr/save-the-children.png';
-import children2x from '../img/support-ukr/save-the-children@2x.png';
-import hope from '../img/support-ukr/project-hope.png';
-import hope2x from '../img/support-ukr/project-hope@2x.png';
-import med from '../img/support-ukr/intern-med-corps.png';
-import med2x from '../img/support-ukr/intern-med-corps.png';
-import sans from '../img/support-ukr/medecins-sans.png';
-import sans2x from '../img/support-ukr/medecins-sans@2x.png';
-import razom from '../img/support-ukr/razom.png';
-import razom2x from '../img/support-ukr/razom@2x.png';
-import action from '../img/support-ukr/action - against.png';
-import action2x from '../img/support-ukr/action-against@2x.png';
-import vision from '../img/support-ukr/world-vision.png';
-import vision2x from '../img/support-ukr/world-vision@2x.png';
-import prytula from '../img/support-ukr/sergiy-prytula.png';
-import prytula2x from '../img/support-ukr/sergiy-prytula@2x.png';
-import united from '../img/support-ukr/united24.png';
-import united2x from '../img/support-ukr/united24@2x.png';
+import children from '../img/support-ukr/save-the-children';
+import children2x from '../img/support-ukr/save-the-children@2x';
+import hope from '../img/support-ukr/project-hope';
+import hope2x from '../img/support-ukr/project-hope@2x';
+import med from '../img/support-ukr/intern-med-corps';
+import med2x from '../img/support-ukr/intern-med-corps';
+import sans from '../img/support-ukr/medecins-sans';
+import sans2x from '../img/support-ukr/medecins-sans@2x';
+import razom from '../img/support-ukr/razom';
+import razom2x from '../img/support-ukr/razom@2x';
+import action from '../img/support-ukr/action - against';
+import action2x from '../img/support-ukr/action-against@2x';
+import vision from '../img/support-ukr/world-vision';
+import vision2x from '../img/support-ukr/world-vision@2x';
+import prytula from '../img/support-ukr/sergiy-prytula';
+import prytula2x from '../img/support-ukr/sergiy-prytula@2x';
+import united from '../img/support-ukr/united24';
+import united2x from '../img/support-ukr/united24@2x';
 
 const fundArray = [
   {
