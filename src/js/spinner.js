@@ -15,7 +15,7 @@ let opts = {
   direction: 1,
   color: '#4F2EE8',
   fadeColor: 'transparent',
-  top: '50%',
+  top: '40%',
   left: '50%',
   shadow: '0 0 1px transparent',
   zIndex: 999,
