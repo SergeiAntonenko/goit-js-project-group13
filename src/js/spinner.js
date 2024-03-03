@@ -18,7 +18,7 @@ let opts = {
   top: '50%',
   left: '50%',
   shadow: '0 0 1px transparent',
-  zIndex: 2000000000,
+  zIndex: 999,
   className: 'spinner',
   position: 'absolute',
 };
