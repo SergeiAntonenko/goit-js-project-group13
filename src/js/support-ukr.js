@@ -81,7 +81,7 @@ const btnSwiperEl = document.querySelector('.swiper-button-next');
 const renderSupportList = items => {
   const listItems = items
     .map((item, index) => {
-      const { title, url } = item;
+      const { title, url, img, img2 } = item;
       const number = (index + 1).toString().padStart(2, '0');
       return `
           <li class="support-list-item">
@@ -93,10 +93,10 @@ const renderSupportList = items => {
               href="${url}"
             >
               <img
-                src="${item.img}"
+                src="${img}"
                 alt="${title}"
                 class="supporters_img"
-                srcset="${item.img} 1x, ${item.img2} 2x"
+                srcset="${img} 1x, ${img2} 2x"
                 loading="lazy"
               />
             </a>
