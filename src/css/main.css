@@ -112,9 +112,14 @@
     background: transparent;
 }
 
-.top_list-see_more:hover {
-    transform: scale(1.06);
-    transition: transform 0.3s ease;
+.top_list-see_more:hover,
+.top_list-see_more:focus {
+    transform: scale(1.05);
+    color: #FFFFFF;
+    background-color: #4f2ee8;
+    transition: all  0.3s ease-out;
+    /* transform: scale(1.06); */
+    /* transition: transform 0.3s ease; */
 }
 
 
