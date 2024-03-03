@@ -1,6 +1,8 @@
 import { getTopList } from './booksAPI.js';
 import { getBooksByCategory } from './booksAPI.js';
 import { onOpenModal } from './modal.js';
+import { spinnerPlay } from './spinner.js';
+import { spinnerStop } from './spinner.js';
 
 const refs = {
     topListElem: document.querySelector('#topList'),
@@ -30,12 +32,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Ждем загрузки страницы и создаём список лучших книг
 document.addEventListener("DOMContentLoaded", async function() {
+    spinnerPlay();
     refs.topListElem.innerHTML = '';
     const topListData = getTopList();
     const topList = await topListData;
     topList.forEach(elem => {
         renderTopList(elem)
     });
+    spinnerStop();
 });
 
 function renderTopList(elem) {
@@ -80,7 +84,7 @@ const clickSeeMore = function(event) {
         refs.topListElem.classList.add('hidden');
         refs.categoryListElem.classList.remove('hidden');
         const category = event.target.dataset.category;
-        console.log(category);
+        // console.log(category);
         titleCategory(category);
         categoryList(category);
         document.removeEventListener('click', clickByBook); // удаляем созданные слуштаели событий по книгам
@@ -100,7 +104,7 @@ const clickSeeMore = function(event) {
 // Клик по кнопке "All Categories"
     const clickByAllCategory = async function(event) {
         if (event.target.classList.contains('all_categories') || event.target.classList.contains('link')) {
-            console.log("Click");
+            // console.log("Click");
             refs.titleElement.innerHTML = 'Best Sellers <span>Books</span>'; 
             refs.categoryListElem.classList.add('hidden');                
             refs.topListElem.classList.remove('hidden');
