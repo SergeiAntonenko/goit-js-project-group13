@@ -1,0 +1,38 @@
+#scrollToTopBtn {
+  padding: 0;
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: rgb(79, 46, 232);
+
+  cursor: pointer;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  transition: all 0.5s ease;
+}
+
+#scrollToTopBtn:hover {
+  background-color: rgba(79, 46, 232, 0.3);
+}
+.scroll-up {
+  width: 24px;
+  height: 24px;
+  fill: rgb(255, 255, 255);
+}
+.circle {
+  border-radius: 50%;
+  width: 54px;
+  height: 54px;
+  background-color: rgb(79, 46, 232);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  position: relative;
+  right: -5px;
+}

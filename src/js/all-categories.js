@@ -39,10 +39,12 @@ getCategoryList()
   );
 
 function click() {
-  const gallery = document.querySelector('.gallery-link');
+  const gallery = document.querySelectorAll('.gallery-link');
   const link = document.querySelector('.link');
 
-  gallery.addEventListener('click', () => {
-    link.classList.remove('all-categories-link');
+  gallery.forEach(item => {
+    item.addEventListener('click', () => {
+      link.classList.remove('all-categories-link');
+    });
   });
 }
