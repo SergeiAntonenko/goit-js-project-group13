@@ -2,8 +2,8 @@ const fundArray = [
   {
     title: 'Save the Children',
     url: 'https://www.savethechildren.net/what-we-do/emergencies/ukraine-crisis',
-    img: './src/img/support-ukr/save-the-children.png',
-    img2: './src/img/support-ukr/save-the-children@2x.png',
+    img: './img/support-ukr/save-the-children.png',
+    img2: './img/support-ukr/save-the-children@2x.png',
   },
   {
     title: 'Project HOPE',
@@ -74,10 +74,10 @@ const renderSupportList = items => {
               href="${url}"
             >
               <img
-                src="${img}"
+                src="./img/support-ukr/save-the-children.png"
                 alt="${title}"
                 class="supporters_img"
-                srcset="${img} 1x, ${img2} 2x"
+                srcset="./img/support-ukr/save-the-children.png 1x, ./img/support-ukr/save-the-children@2x.png 2x"
                 loading="lazy"
               />
             </a>
