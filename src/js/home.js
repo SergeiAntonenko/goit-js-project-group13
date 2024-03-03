@@ -3,6 +3,8 @@ import { getBooksByCategory } from './booksAPI.js';
 import { onOpenModal } from './modal.js';
 import { spinnerPlay } from './spinner.js';
 import { spinnerStop } from './spinner.js';
+import { showNoBooksToast } from './warnings.js';
+
 
 const refs = {
     topListElem: document.querySelector('#topList'),
@@ -10,25 +12,15 @@ const refs = {
     titleElement: document.querySelector('.top_list-title'),
   };
 
+let isNoBooksToastShown = false;
 
 // Добавляем слушатели событий на Книжки и "See Mor" при загрузке страницы
 document.addEventListener('DOMContentLoaded', function() {
     document.addEventListener('click', clickSeeMore);
     document.addEventListener('click', clickByBook);
     document.addEventListener('click', clickByAllCategory);
+    window.addEventListener('scroll', scrollHandler); // скрол
 });
-
-// document.addEventListener('click', function(event) {
-//     if (event.target.classList.contains('link')) {
-//         // Дублировать действия слушателя событий для link
-//         clickByAllCategory();
-//     } else if (event.target.classList.contains('gallery-link')) {
-//         // Дублировать действия слушателя событий для gallery-link
-//         clickSeeMore();
-//     }
-// });
-
-
 
 // Ждем загрузки страницы и создаём список лучших книг
 document.addEventListener("DOMContentLoaded", async function() {
@@ -84,7 +76,6 @@ const clickSeeMore = function(event) {
         refs.topListElem.classList.add('hidden');
         refs.categoryListElem.classList.remove('hidden');
         const category = event.target.dataset.category;
-        // console.log(category);
         titleCategory(category);
         categoryList(category);
         document.removeEventListener('click', clickByBook); // удаляем созданные слуштаели событий по книгам
@@ -104,7 +95,6 @@ const clickSeeMore = function(event) {
 // Клик по кнопке "All Categories"
     const clickByAllCategory = async function(event) {
         if (event.target.classList.contains('all_categories') || event.target.classList.contains('link')) {
-            // console.log("Click");
             refs.titleElement.innerHTML = 'Best Sellers <span>Books</span>'; 
             refs.categoryListElem.classList.add('hidden');                
             refs.topListElem.classList.remove('hidden');
@@ -144,4 +134,16 @@ function titleCategory(category) {
     const spanElement = document.createElement('span');
     spanElement.textContent = ' ' + lastWord;
     refs.titleElement.appendChild(spanElement);
+    isNoBooksToastShown = false;
+}
+
+
+function scrollHandler() {
+    const allCategoriesButton = document.querySelector('.all_categories');
+    const buttonRect = allCategoriesButton.getBoundingClientRect();
+    const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+    if (buttonRect.top < windowHeight && !isNoBooksToastShown && refs.topListElem.classList.contains('hidden')) {
+        showNoBooksToast();
+        isNoBooksToastShown = true;
+    }
 }
