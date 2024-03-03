@@ -1,7 +1,17 @@
-/* .hidden {
+.hidden {
     display: none;
-    opacity: 0;
-} */
+    pointer-events: none;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
 
 .top_list-book_cover_wrapper {
     cursor: pointer;
@@ -28,6 +38,13 @@
     user-select: none;
     opacity: 0;
 }
+
+.top_list-book_cover_wrapper:hover {
+    transform: scale(1.05);
+    transition: transform 0.4s ease;
+}
+
+
 
 
 
@@ -56,8 +73,9 @@
 
 /* ul */
 .top_list {
-    /* display: grid; */
+    /* display: flex; */
     width: 335px;
+    margin-bottom: 40px;
 }
 
 /* li */
@@ -164,6 +182,12 @@
         grid-template-columns: repeat(auto-fit, minmax(335px, 1fr));
         grid-row-gap: 40px;
         width: 335px;
+        margin-bottom: 40px;
+    }
+
+    .category_list li:last-child {
+        grid-column: 1 / -1;
+        text-align: center;
     }
 
     /* li */    
@@ -172,6 +196,29 @@
     }
 
 
+    .all_categories {
+        margin-top: 8px;
+        border: 2px solid #4f2ee8;
+        border-radius: 40px;
+        width: 224px;
+        height: 46px;
+        font-family: "DM Sans", sans-serif;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 1.28571;
+        letter-spacing: -0.01em;
+        text-transform: uppercase;
+        color: #111;
+        background: transparent;
+    }
+
+    .all_categories:hover,
+    .all_categories:focus {
+        transform: scale(1.05);
+        color: #FFFFFF;
+        background-color: #4f2ee8;
+        transition: all  0.3s ease-out;
+    }
 
 
 
