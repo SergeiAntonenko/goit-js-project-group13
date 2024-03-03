@@ -1,4 +1,4 @@
-import children from '../img/support-ukr/save-the-children.png';
+import children from 'src/img/support-ukr/save-the-children.png';
 import children2x from './img/support-ukr/save-the-children@2x.png';
 import hope from './img/support-ukr/project-hope.png';
 import hope2x from './img/support-ukr/project-hope@2x.png';
