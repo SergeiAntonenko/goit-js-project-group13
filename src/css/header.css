@@ -16,10 +16,12 @@
   background-color: #fff;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
   cursor: pointer;
+  margin-right: 14px;
+  margin-left: auto;
 }
 
 .toggle::before {
-  content: "";
+  content: '';
   position: absolute;
   height: 18px;
   width: 18px;
@@ -36,8 +38,11 @@
   left: calc(100% - 19px);
 }
 
-
 /* ---------------------------------------------------------- */
+
+/* .header {
+
+} */
 
 .container-header {
   border: 2px solid black;
@@ -45,6 +50,7 @@
   padding: 18px 20px;
   max-width: 375px;
   background-color: #fff;
+  margin-bottom: 40px;
 }
 
 .header-logo {
@@ -70,10 +76,56 @@
   align-items: center;
 }
 
-.dark-theme .container-header {
+.dark .container-header {
   border: 2px solid white;
   border-radius: 0 0 8px 8px;
+  background-color: black;
 }
 
-@media only screen and (max-width: 767px) {
+.hidden {
+  display: none;
+}
+
+.header-btn {
+    min-width: 184px;
+    height: 48px;
+    text-align: left;
+    color: #fff;
+    cursor: pointer;
+    background-color: #4f2ee8;
+    border: 1.5px solid #111;
+    border-radius: 18px;
+    padding-left: 14px;
+    padding-top: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    transition: background .25s cubic-bezier(.17,.67,.91,1.61), box-shadow .25s cubic-bezier(.17,.67,.91,1.61);
+    position: relative;
+    display: none;
+  }
+
+.sign-up-svg {
+  color: #EAC645;
+}
+
+@media screen and (min-width: 768px) {
+  .container-header {
+    max-width: 768px;
+    padding: 22px 32px;
+  }
+
+  .header-btn {
+    display: block;
+  }
+
+  .header-menu {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .container-header {
+    max-width: 1440px;
+    padding: 22px 24px;
+  }
 }
