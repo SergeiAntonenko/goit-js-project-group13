@@ -74,10 +74,10 @@ const renderSupportList = items => {
               href="${url}"
             >
               <img
-                src="./img/support-ukr/save-the-children.png"
+                src="${img}"
                 alt="${title}"
                 class="supporters_img"
-                srcset="./img/support-ukr/save-the-children.png 1x, ./img/support-ukr/save-the-children@2x.png 2x"
+                srcset="${img} 1x, ${img2} 2x"
                 loading="lazy"
               />
             </a>
