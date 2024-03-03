@@ -65,13 +65,12 @@ const renderSupportList = items => {
       const { title, url, img, img2 } = item;
       const number = (index + 1).toString().padStart(2, '0');
       return `
-          <li class="support-list-item swiper-slide">
+          <li class="support-list-item">
           <span class="supporters-number">${number}</span>
             <a
               target="_blank"
               rel="noopener noreferrer nofollow"
               aria-label="company icon"
-              class="support-link"
               href="${url}"
             >
               <img
@@ -89,113 +88,40 @@ const renderSupportList = items => {
     .join('');
   supportList.innerHTML = `${listItems}`;
 };
-
 renderSupportList(fundArray);
 
-////////////////////////////////////////////////////////////////////
+function scrollToTop(element, duration) {
+  const scrollStep = -element.scrollTop / (duration / 15);
+  const scrollInterval = setInterval(function () {
+    if (element.scrollTop != 0) {
+      element.scrollBy(0, scrollStep);
+    } else {
+      clearInterval(scrollInterval);
+    }
+  }, 15);
+}
 
-// function scrollToTop(element, duration) {
-//   const startingY = element.scrollTop;
-//   const startTime = performance.now();
+function scrollSupporters() {
+  const supportersList = document.querySelector('.swiper');
+  const duration = 500;
 
-//   function scrollStep(timestamp) {
-//     const timeElapsed = timestamp - startTime;
-//     const scrollY = easeInOutQuad(timeElapsed, startingY, 0, duration);
-//     element.scrollTop = scrollY;
+  const isEndOfList =
+    supportersList.scrollTop + supportersList.clientHeight >=
+    supportersList.scrollHeight;
 
-//     if (timeElapsed < duration) {
-//       requestAnimationFrame(scrollStep);
-//     }
-//   }
+  if (isEndOfList) {
+    scrollToTop(supportersList, duration);
+    const icon = document.querySelector('.supporters-btn-icon');
+    icon.style.transform = 'rotate(180deg)';
+  } else {
+    supportersList.scrollBy({
+      top: 300,
+      behavior: 'smooth',
+    });
+    const icon = document.querySelector('.supporters-btn-icon');
+    icon.style.transform = 'rotate(0deg)';
+  }
+}
 
-//   function easeInOutQuad(t, b, c, d) {
-//     t /= d / 2;
-//     if (t < 1) return (c / 2) * t * t + b;
-//     t--;
-//     return (-c / 2) * (t * (t - 2) - 1) + b;
-//   }
-
-//   requestAnimationFrame(scrollStep);
-// }
-
-/////////////////////////////////////////////////////////////////
-
-// function scrollSupporters() {
-//   const supportersList = document.querySelector('.swiper-wrapper'); // Corrected selector
-//   const duration = 500; // Визначте тривалість прокрутки (в мілісекундах)
-
-//   // Визначаємо, чи досягнуто кінець списку
-//   const isEndOfList =
-//     supportersList.scrollTop + supportersList.clientHeight >=
-//     supportersList.scrollHeight;
-
-//   // Якщо кінець списку досягнутий, прокрутити до початку з плавною анімацією
-//   if (isEndOfList) {
-//     scrollToTop(supportersList, duration);
-//     const icon = document.querySelector('.supporters-btn-icon');
-//     icon.style.transform = 'rotate(180deg)';
-//   } else {
-//     // Інакше продовжити прокручування вниз
-//     supportersList.scrollBy({
-//       top: 300, // Визначте крок прокрутки
-//       behavior: 'smooth', // Встановіть плавну анімацію
-//     });
-//     const icon = document.querySelector('.supporters-btn-icon');
-//     icon.style.transform = 'rotate(0deg)';
-//   }
-// }
-
-// const scrollBtn = document.querySelector('.supporters-btn');
-// scrollBtn.addEventListener('click', scrollSupporters);
-
-///////////////////////////////////////////////////////////////////////////////////////////
-
-// btnSwiperEl.addEventListener('click', () => {
-//   const supportListHeight = supportList.clientHeight;
-//   supportList.scrollTo({
-//     top: supportList.scrollTop + supportListHeight,
-//     behavior: 'smooth',
-//   });
-// });
-
-// const swiper = new Swiper('.swiper', {
-//   direction: 'vertical',
-//   spaceBetween: 19,
-//   slidesPerView: 'auto',
-//   rewind: true,
-//   allowTouchMove: false,
-//   navigation: {
-//     nextEl: '.swiper-button-next',
-//   },
-
-//   plugins: {
-//     scrollContainer: true,
-//   },
-// });
-
-// swiper.update();
-
-// btnSwiperEl.addEventListener('click', () => {
-//   swiper.slideNext();
-// });
-
-// Отримуємо посилання на елементи DOM
-
-// const swiperWrapper = document.querySelector('.swiper-wrapper');
-// const supportersBtn = document.querySelector('.supporters-btn');
-
-// fundArray.forEach(fund => {
-//   const listItem = document.createElement('li');
-//   listItem.innerHTML = `
-//         <a href="${fund.url}" target="_blank">
-//             <img src="${fund.img}" srcset="${fund.img2} 2x" alt="${fund.title}">
-//             <span>${fund.title}</span>
-//         </a>
-//     `;
-//   swiperWrapper.appendChild(listItem);
-// });
-
-// supportersBtn.addEventListener('click', () => {
-
-//   swiperWrapper.scrollTop += swiperWrapper.firstElementChild.offsetHeight;
-// });
+const scrollBtn = document.querySelector('.supporters-btn');
+scrollBtn.addEventListener('click', scrollSupporters);

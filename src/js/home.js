@@ -16,6 +16,18 @@ document.addEventListener('DOMContentLoaded', function() {
     document.addEventListener('click', clickByAllCategory);
 });
 
+// document.addEventListener('click', function(event) {
+//     if (event.target.classList.contains('link')) {
+//         // Дублировать действия слушателя событий для link
+//         clickByAllCategory();
+//     } else if (event.target.classList.contains('gallery-link')) {
+//         // Дублировать действия слушателя событий для gallery-link
+//         clickSeeMore();
+//     }
+// });
+
+
+
 // Ждем загрузки страницы и создаём список лучших книг
 document.addEventListener("DOMContentLoaded", async function() {
     refs.topListElem.innerHTML = '';
@@ -68,6 +80,16 @@ const clickSeeMore = function(event) {
         refs.topListElem.classList.add('hidden');
         refs.categoryListElem.classList.remove('hidden');
         const category = event.target.dataset.category;
+        console.log(category);
+        titleCategory(category);
+        categoryList(category);
+        document.removeEventListener('click', clickByBook); // удаляем созданные слуштаели событий по книгам
+        document.addEventListener('click', clickByBook); // создаем новые только для тех которые только что отрендерели
+    }
+    if (event.target.classList.contains('gallery-link')) {
+        refs.topListElem.classList.add('hidden');
+        refs.categoryListElem.classList.remove('hidden');
+        const category = event.target.textContent.trim();
         titleCategory(category);
         categoryList(category);
         document.removeEventListener('click', clickByBook); // удаляем созданные слуштаели событий по книгам
@@ -75,14 +97,15 @@ const clickSeeMore = function(event) {
     }
 };
 
-// Клика по кнопке All Categories
-const clickByAllCategory = async function(event) {
-    if (event.target.classList.contains('all_categories')) {
-        refs.titleElement.innerHTML = 'Best Sellers <span>Books</span>'; 
-        refs.categoryListElem.classList.add('hidden');                
-        refs.topListElem.classList.remove('hidden');
-    }
-};
+// Клик по кнопке "All Categories"
+    const clickByAllCategory = async function(event) {
+        if (event.target.classList.contains('all_categories') || event.target.classList.contains('link')) {
+            console.log("Click");
+            refs.titleElement.innerHTML = 'Best Sellers <span>Books</span>'; 
+            refs.categoryListElem.classList.add('hidden');                
+            refs.topListElem.classList.remove('hidden');
+        }
+    };
 
 
 // Асинхронная функция которая получает список книг по категории и отрисовывает его
