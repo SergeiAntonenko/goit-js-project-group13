@@ -13,7 +13,7 @@ let opts = {
   rotate: 0,
   animation: 'spinner-line-fade-quick',
   direction: 1,
-  color: '#4F2EE8',
+  color: '#11111',
   fadeColor: 'transparent',
   top: '50%',
   left: '50%',
