@@ -84,4 +84,4 @@ import m from"https://cdn.jsdelivr.net/npm/axios@1.3.5/+esm";import{i as H}from"
             
           </li>
               `}).join("");X.innerHTML=`${e}`};tt(V);function et(t,e){const r=-t.scrollTop/(e/15),s=setInterval(function(){t.scrollTop!=0?t.scrollBy(0,r):clearInterval(s)},15)}function ot(){const t=document.querySelector(".swiper"),e=500;if(t.scrollTop+t.clientHeight>=t.scrollHeight){et(t,e);const s=document.querySelector(".supporters-btn-icon");s.style.transform="rotate(180deg)"}else{t.scrollBy({top:300,behavior:"smooth"});const s=document.querySelector(".supporters-btn-icon");s.style.transform="rotate(0deg)"}}const st=document.querySelector(".supporters-btn");st.addEventListener("click",ot);
-//# sourceMappingURL=main-a52b01c9.js.map
+//# sourceMappingURL=main-7fbba424.js.map
