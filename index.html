@@ -13,12 +13,12 @@
     <title>Book Store</title>
     
     <script type="module" crossorigin src="/goit-js-project-group13/assets/vendor-ad859c2f.js"></script>
-    <script type="module" crossorigin src="/goit-js-project-group13/assets/main-a522ae34.js"></script>
-    <link rel="stylesheet" href="/goit-js-project-group13/assets/main-f1484392.css">
+    <script type="module" crossorigin src="/goit-js-project-group13/assets/main-6e5b50e0.js"></script>
     <link rel="stylesheet" href="/goit-js-project-group13/assets/vendor-e5212ee8.css">
+    <link rel="stylesheet" href="/goit-js-project-group13/assets/main-6e2e1575.css">
   </head>
   <body>
-    <div class="container-header">
+    <div class="container-header container">
     <nav class="header-nav">
         <!-- Логотип -->
         <a class="header-logo" href="#">
@@ -26,23 +26,31 @@
                 <use href="/goit-js-project-group13/assets/logo-b210d69a.svg#logo"></use>
             </svg>
         </a>
-
+        
         <!-- Перемикач теми -->
         <div class="toggle"></div>
 
         <!-- Навігація для планшетного вигляду -->
-        <!-- <nav class="desktop-nav">
+        <nav class="desktop-nav hidden">
         <ul>
             <li><a href="#">Home</a></li>
             <li><a href="#">Shopping List</a></li>
-        </ul> -->
+        </ul>
+
+    </nav>
 
         <button class="header-menu" id="menu">
             <svg class="header-menu-svg" width="28" height="28">
                 <use href="/goit-js-project-group13/assets/menu-e808646a.svg#menu"></use>
             </svg>
         </button>
-    </nav>
+
+        <a class="header-btn hidden" href="#sign-up">Sign Up
+            <!-- <svg class="sign-up-svg" width="18" height="18">
+                <use href="./img/header/arrow-right.svg#arrow-right"></use>
+            </svg> -->
+        </a>
+
 </div>
 
     <div class="main-container container">
