@@ -80,10 +80,16 @@
   align-items: center;
   margin: 0 auto;
   padding: 0;
-  transition: transform 0.5s ease-in-out;
+  transition: all 0.3s ease;
   display: flex;
   transform: rotateX(0);
   margin-bottom: 12px;
+}
+
+.supporters-btn:hover {
+  box-shadow: 1px 1px 18px 10px rgba(96, 76, 184, 0.4);
+  width: 36px;
+  min-height: 36px;
 }
 
 .supporters-btn-icon {
@@ -104,6 +110,11 @@
   .supporters-btn {
     width: 38px;
     min-height: 38px;
+  }
+
+  .supporters-btn:hover {
+    width: 42px;
+    min-height: 42px;
   }
 }
 
