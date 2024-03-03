@@ -1,4 +1,4 @@
-import children from './img/support-ukr/save-the-children';
+import children from './img/support-ukr/save-the-children.png';
 import children2x from './img/support-ukr/save-the-children@2x.png';
 import hope from './img/support-ukr/project-hope.png';
 import hope2x from './img/support-ukr/project-hope@2x.png';
@@ -81,7 +81,7 @@ const btnSwiperEl = document.querySelector('.swiper-button-next');
 const renderSupportList = items => {
   const listItems = items
     .map((item, index) => {
-      const { title, url, img, img2 } = item;
+      const { title, url } = item;
       const number = (index + 1).toString().padStart(2, '0');
       return `
           <li class="support-list-item">
@@ -93,10 +93,10 @@ const renderSupportList = items => {
               href="${url}"
             >
               <img
-                src="${img}"
+                src="${item.img}"
                 alt="${title}"
                 class="supporters_img"
-                srcset="${img} 1x, ${img2} 2x"
+                srcset="${item.img} 1x, ${item.img2} 2x"
                 loading="lazy"
               />
             </a>
