@@ -43,7 +43,10 @@ document.addEventListener('DOMContentLoaded', function () {
 //
 function getCurrentPage() {
   if (
-    currentPage === 'https://sergeiantonenko.github.io/goit-js-project-group13/'
+    currentPage ===
+      'https://sergeiantonenko.github.io/goit-js-project-group13/' ||
+    currentPage ===
+      'https://sergeiantonenko.github.io/goit-js-project-group13/#'
   ) {
     shoppingListElement.classList.remove('active-shopping-list');
     homeElement.classList.add('active-home');
