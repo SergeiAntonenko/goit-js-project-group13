@@ -10,7 +10,7 @@
   justify-content: space-between;
   overflow: auto;
   opacity: 10;
-  visibility: hidden;
+  display: none;
   pointer-events: auto;
   background: radial-gradient(
       189.32% 190.93% at 59.76% -23.42%,
