@@ -14,7 +14,7 @@ homePageElem.addEventListener('click', function() {
     this.classList.add('mob-menu-link');
 });
 
-shoppingListElement.addEventListener('click', function() {
+shoppingListElem.addEventListener('click', function() {
     homeElement.classList.remove('mob-menu-link');
     shoppingListElement.classList.remove('mob-menu-list-link');
     
