@@ -122,5 +122,6 @@
   .supporters {
     width: 356px;
     padding-bottom: 14px;
+    flex-shrink: 0;
   }
 }
