@@ -7,6 +7,7 @@ const refs = {
   emptyList: document.querySelector('.shopping-list-empty'),
   pagination: document.querySelector('.tui-pagination'),
 };
+const perPage = window.innerWidth >= 768 ? 3 : 4;
 
 createShoppingList();
 
@@ -25,7 +26,7 @@ async function createShoppingList() {
     const booksArray = await getBookByIds(bookIds);
 
     if (booksArray && booksArray.length !== 0) {
-      const chunkedArray = chunkArray(booksArray, 4);
+      const chunkedArray = chunkArray(booksArray, perPage);
       const currentPage = pagination.getCurrentPage();
       renderBooks(chunkedArray[currentPage - 1]);
       removeHidden(refs.pagination);
@@ -153,7 +154,7 @@ const container = document.getElementById('pagination');
 
 const options = {
   totalItems: getBooksStorage().length,
-  itemsPerPage: 4,
+  itemsPerPage: perPage,
   visiblePages: 2,
   page: 1,
   centerAlign: true,
