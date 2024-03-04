@@ -95,7 +95,6 @@ right: 0;
 .header {
   border: 2px solid black;
   border-radius: 0 0 8px 8px;
-  padding: 18px 20px;
   max-width: 100%;
   background-color: #fff;
   margin-bottom: 40px;
@@ -130,14 +129,11 @@ right: 0;
 
 .header.dark {
   background-color: #111111;
+  border-color: #fff;
 }
 
 .dark .header-logo-svg {
   stroke: #fff;
-}
-
-.header-menu-svg {
-  fill: #fff;
 }
 
 .header-nav {
@@ -245,8 +241,8 @@ right: 0;
     max-width: none;
   }
 
-  .header-btn {
-    display: block;
+  .header {
+    padding: 5px 0;
   }
 
   .header-menu {
@@ -264,10 +260,10 @@ right: 0;
     min-width: 184px;
     height: 48px;
     text-align: left;
-    color: #fff;
+    color: #4f2ee8;
     cursor: pointer;
-    background-color: #4f2ee8;
-    border: 1.5px solid #111;
+    background-color: #fff;
+    border: 1.5px solid #4f2ee8;
     border-radius: 18px;
     padding-left: 14px;
     font-size: 14px;
@@ -275,6 +271,27 @@ right: 0;
     transition: background 0.25s cubic-bezier(0.17, 0.67, 0.91, 1.61),
       box-shadow 0.25s cubic-bezier(0.17, 0.67, 0.91, 1.61);
     position: relative;
+  }
+
+  .header-btn.dark {
+    background-color: #4f2ee8;
+    border-color: #fff;
+  }
+
+  .header-btn:hover,
+  .header-btn:focus {
+    transform: scale(1.05);
+    color: #ffffff;
+    background-color: #4f2ee8;
+    transition: all 0.3s ease-out;
+  }
+
+  .header-btn.dark:hover,
+  .header-btn.dark:focus {
+    transform: scale(1.05);
+    color: #4f2ee8;
+    background-color: #ffffff;
+    transition: all 0.3s ease-out;
   }
 
   .toggle {
