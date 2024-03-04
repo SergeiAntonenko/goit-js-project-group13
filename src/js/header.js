@@ -1,4 +1,4 @@
-const path = window.location.pathname;
+const path = window.location.href;
 const page = path.split('/').pop();
 console.log(page);
 
