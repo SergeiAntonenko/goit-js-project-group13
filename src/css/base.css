@@ -5,40 +5,12 @@ body {
   letter-spacing: -0.04em;
   color: #111;
   background-color: #f6f6f6;
-  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out,
+    border-color 0.3s ease-in-out;
 }
 
 body.dark {
   background-color: #202024;
-
-  .all-categories-link {
-    color: rgb(234, 198, 69);
-    text-transform: uppercase;
-    font-weight: 700;
-    font-style: normal;
-  }
-
-  .gallery-link:focus {
-    color: rgb(234, 198, 69);
-    text-transform: uppercase;
-    font-weight: 700;
-    font-style: normal;
-  }
-
-  .link:focus {
-    color: rgb(234, 198, 69);
-    text-transform: uppercase;
-    font-weight: 700;
-    font-style: normal;
-  }
-
-  .gallery-item :hover {
-    color: rgb(234, 198, 69);
-  }
-
-  #scrollToTopBtn:hover {
-    background-color: rgb(234, 198, 69);
-  }
 }
 
 .visually-hidden {
