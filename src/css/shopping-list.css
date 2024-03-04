@@ -194,6 +194,10 @@
   mix-blend-mode: luminosity;
 }
 
+.saved-item-refer-ibooks-logo:hover {
+  mix-blend-mode: normal;
+}
+
 .dark .saved-item-refer-amazon-logo {
   filter: brightness(0) invert(1);
 }
