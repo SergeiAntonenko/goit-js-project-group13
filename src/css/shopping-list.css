@@ -6,11 +6,9 @@
 .shopping-list-wrapper {
   display: flex;
   flex-direction: column;
-  padding: 0 24px;
   margin: 0 auto;
   height: 100vh;
   width: 100%;
-  padding: 0 20px;
 }
 .shopping-list-title {
   font-weight: 700;
@@ -202,9 +200,6 @@
 
 /* =====================Tablet===================== */
 @media screen and (min-width: 768px) {
-  .shopping-list-wrapper {
-    padding: 0 36px;
-  }
   .shopping-list-title {
     font-size: 48px;
     line-height: 1.08;
@@ -239,6 +234,9 @@
 @media screen and (min-width: 1280px) {
   #shopping-list .supporters {
     display: flex;
+  }
+  .shopping-list-wrapper {
+    padding: 0 36px;
   }
 }
 
