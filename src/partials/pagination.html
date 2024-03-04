@@ -5,13 +5,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping List</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        .pagination button {
+            width: 44px;
+            height: 44px;
+        }
+    </style>
+
+    <script src="./pagination.js"></script>
+
 </head>
 
 <body>
-    <div id="shopping-list"></div>
-    <div class="pagination"></div>
-    <script src="pagination.js"></script>
+
+    <h1>Shopping List</h1>
+    <ul class="shopping-list">
+        <li class="shopping-list-item">Item 1</li>
+        <li class="shopping-list-item">Item 2</li>
+        <li class="shopping-list-item">Item 3</li>
+        <li class="shopping-list-item">Item 4</li>
+        <li class="shopping-list-item">Item 5</li>
+        <li class="shopping-list-item">Item 6</li>
+    </ul>
+    <div class="pagination">
+        <button class="pagination-prev">Prev</button>
+        <button class="pagination-next">Next</button>
+    </div>
+
 </body>
 
 </html>
