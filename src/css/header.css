@@ -129,6 +129,16 @@ right: 0;
   stroke: #fff;
 }
 
+.header-menu-close {
+  display: none;
+  background-color: #fff;
+  border: none;
+}
+
+.header-menu-close-svg {
+  stroke: #111;
+}
+
 .header-logo-svg {
   width: 100%;
   height: auto;

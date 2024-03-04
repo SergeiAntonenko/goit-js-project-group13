@@ -1,4 +1,5 @@
-const currentPage = window.location.href;
+const page = window.location.href;
+const currentPage = page.split('/').pop();
 
 const homeElement = document.querySelector('.menu-home');
 const shoppingListElement = document.querySelector('.menu-shopping-list');
@@ -54,12 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 //
 function getCurrentPage() {
-  if (
-    currentPage ===
-      'https://sergeiantonenko.github.io/goit-js-project-group13/' ||
-    currentPage ===
-      'https://sergeiantonenko.github.io/goit-js-project-group13/#'
-  ) {
+  if (currentPage === 'index.html' || currentPage === 'index.html#') {
     shoppingListElement.classList.remove('active-shopping-list');
     homeElement.classList.add('active-home');
   } else {
