@@ -1,18 +1,18 @@
-import{d as p}from"./assets/support-ukr-7a4f977d.js";import"https://cdn.jsdelivr.net/npm/axios@1.3.5/+esm";const n={bookList:document.querySelector(".shopping-list-saved"),emptyList:document.querySelector(".shopping-list-empty")};c();function d(){const e=localStorage.getItem("shoppingIdList");return JSON.parse(e)}async function c(){const e=d();if(!e||e.length===0)h(n.emptyList);else{const s=await p(e);s&&s.length!==0&&(f(s),document.querySelectorAll(".saved-item-delete-btn").forEach(o=>o.addEventListener("click",k)))}}function u(e){return console.log(e),e.map(({_id:s,book_image:o,title:i,list_name:a,description:m,author:v,buy_links:g})=>{const l=g.reduce((r,t)=>(console.log(t.name==="Amazon"),t.name==="Amazon"&&(r.amazon=t.url),t.name==="Apple Books"&&(r.apple=t.url),r),{});return`<li class="saved-item">
+import{d as f}from"./assets/support-ukr-7a4f977d.js";import{P as b}from"./assets/vendor-372b0e6c.js";import"https://cdn.jsdelivr.net/npm/axios@1.3.5/+esm";const a={bookList:document.querySelector(".shopping-list-saved"),emptyList:document.querySelector(".shopping-list-empty"),pagination:document.querySelector(".tui-pagination")},g=window.innerWidth>=768?3:4;m();function l(){const e=localStorage.getItem("shoppingIdList");return JSON.parse(e)}async function m(){const e=l();if(!e||e.length===0)p(a.emptyList),L(a.pagination);else{const t=await f(e);if(t&&t.length!==0){const i=P(t,g),s=n.getCurrentPage();y(i[s-1]),p(a.pagination),document.querySelectorAll(".saved-item-delete-btn").forEach(o=>o.addEventListener("click",I))}}}function k(e){return e.map(({_id:t,book_image:i,title:s,list_name:o,description:u,author:v,buy_links:h})=>{const d=h.reduce((c,r)=>(r.name==="Amazon"&&(c.amazon=r.url),r.name==="Apple Books"&&(c.apple=r.url),c),{});return`<li class="saved-item">
       <div class="saved-item-cover">
         <img
           class="saved-item-cover-img"
-          src="${o}"
-          alt="${i}"
+          src="${i}"
+          alt="${s}"
         />
       </div>
       <div class="saved-item-discription">
         <div class="saved-item-discription-top">
           <div class="saved-item-title-wrap">
-            <h2 class="saved-item-title">${i}</h2>
-            <p class="saved-item-genre">${a}</p>
+            <h2 class="saved-item-title">${s}</h2>
+            <p class="saved-item-genre">${o}</p>
           </div>
-          <button class="saved-item-delete-btn" data-id=${s}>
+          <button class="saved-item-delete-btn" data-id=${t}>
             <img
               class="delete-btn-img"
               src="../img/shopping list/trash-03.svg"
@@ -21,14 +21,14 @@ import{d as p}from"./assets/support-ukr-7a4f977d.js";import"https://cdn.jsdelivr
           </button>
         </div>
         <p class="saved-item-short">
-          ${m}
+          ${u}
         </p>
         <div class="saved-item-wrap-bottom">
           <p class="saved-item-author">${v}</p>
           <ul class="saved-item-refer-list">
             <li class="saved-item-refer-item">
               <a
-                href="${l.amazon}"
+                href="${d.amazon}"
                 class="saved-item-refer-item-link"
                 target="_blank"
               >
@@ -43,7 +43,7 @@ import{d as p}from"./assets/support-ukr-7a4f977d.js";import"https://cdn.jsdelivr
             </li>
             <li class="saved-item-refer-item">
               <a
-                href="${l.apple}"
+                href="${d.apple}"
                 class="saved-item-refer-item-link"
                 target="_blank"
               >
@@ -59,5 +59,5 @@ import{d as p}from"./assets/support-ukr-7a4f977d.js";import"https://cdn.jsdelivr
           </ul>
         </div>
       </div>
-    </li>`}).join("")}function f(e){const s=u(e);n.bookList.insertAdjacentHTML("beforeend",s)}function h(e){e.classList.remove("is-hidden")}function k(e){const s=e.currentTarget.dataset.id,i=d().filter(a=>s!==a);localStorage.setItem("shoppingIdList",JSON.stringify(i)),n.bookList.innerHTML="",c()}
+    </li>`}).join("")}function y(e){const t=k(e);a.bookList.insertAdjacentHTML("beforeend",t)}function L(e){e.classList.add("is-hidden")}function p(e){e.classList.remove("is-hidden")}function I(e){const t=e.currentTarget.dataset.id,s=l().filter(o=>t!==o);localStorage.setItem("shoppingIdList",JSON.stringify(s)),a.bookList.innerHTML="",n.setTotalItems(l().length),n.movePageTo(n.getCurrentPage())}const B=document.getElementById("pagination"),A={totalItems:l().length,itemsPerPage:g,visiblePages:2,page:1,centerAlign:!0,firstItemClassName:"tui-first-child",lastItemClassName:"tui-last-child",template:{page:'<a href="#" class="tui-page-btn">{{page}}</a>',currentPage:'<strong class="tui-page-btn tui-is-selected">{{page}}</strong>',moveButton:'<a href="#" class="tui-page-btn tui-{{type}}"><span class="tui-ico-{{type}}">{{type}}</span></a>',disabledMoveButton:'<span class="tui-page-btn tui-is-disabled tui-{{type}}"><span class="tui-ico-{{type}}">{{type}}</span></span>',moreButton:'<a href="#" class="tui-page-btn tui-{{type}}-is-ellip"><span class="tui-ico-ellip">...</span></a>'}},n=new b(B,A);n.on("afterMove",({page:e})=>{a.bookList.innerHTML="",m()});function P(e,t){let i=[];for(let s=0;s<e.length;s+=t)i.push(e.slice(s,s+t));return i}
 //# sourceMappingURL=commonHelpers2.js.map
