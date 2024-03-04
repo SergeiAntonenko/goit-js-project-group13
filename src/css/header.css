@@ -39,10 +39,7 @@
 }
 
 .menu-ul {
-  display: flex;
-  justify-content: center;
-  gap: 24px;
-  margin-top: 4px;
+  display: none;
 }
 
 /* .menu-li-home {
@@ -271,8 +268,15 @@ right: 0;
     position: relative;
   }
 
-  .toggle {
+.toggle {
   margin-right: 24px;
+}
+
+.menu-ul {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 4px;
 }
 }
 
@@ -284,5 +288,9 @@ right: 0;
 
   .header-logo {
   margin-right: 76px;
+}
+
+.menu-ul {
+  gap: 36px;
 }
 }
