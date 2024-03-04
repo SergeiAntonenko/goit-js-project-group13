@@ -1,3 +1,3 @@
-import './js/header';
-import './js/shopping-page';
-import './js/support-ukr';
+import './js/header.js';
+import './js/shopping-page.js';
+import './js/support-ukr.js';
