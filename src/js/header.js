@@ -43,7 +43,6 @@ document.addEventListener('DOMContentLoaded', function () {
       toggle.style.background =
         'linear-gradient(180deg, #4f2ee8 0%, #686868 100%)';
       toggle.style.boxShadow = 'inset 1px 1px 2px 0 rgba(0, 0, 0, 0.1)';
-      localStorage.setItem('mode', 'dark');
       saveTheme('dark');
     } else {
       header.classList.remove('dark');
