@@ -1,0 +1,66 @@
+<div class="container">
+    <nav class="header-nav">
+        <!-- Логотип -->
+        <a class="header-logo" href="https://sergeiantonenko.github.io/goit-js-project-group13/">
+            <svg class="header-logo-svg" width="109" height="28">
+                <use href="./img/header/logo-icon.svg#logo-icon"></use>
+            </svg>
+            Bookshelf
+        </a>
+
+        <!-- Навігація для планшетного вигляду -->
+        <nav class="desktop-nav">
+        <ul class="menu-ul">
+            <li class="menu-li-home">
+                <a href="https://sergeiantonenko.github.io/goit-js-project-group13/" class="menu-home">Home</a>
+            </li>
+            <li class="menu-li-shop">
+                <a href="https://sergeiantonenko.github.io/goit-js-project-group13/shopping-list.html" class="menu-shopping-list">
+                    Shopping List
+                    <svg class="icon-shop" width="20" height="20">
+                        <use href="./img/header/shop-bag.svg#shop-bag"></use>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+        </nav>
+
+        <!-- Перемикач теми -->
+        <div class="toggle"></div>
+
+        <button class="header-menu" id="menu">
+            <svg class="header-menu-svg" width="28" height="28">
+                <use href="./img/header/menu.svg#menu"></use>
+            </svg>
+        </button>
+
+        <button class="header-btn" href="#sign-up">Sign up
+            <img class="btn-arrow" src="./img/header/arrow.png" alt="button">
+        </button>
+</div>
+
+<div class="sign-up" id="sign-up" hidden>
+    <div class="form-box">
+        <form>
+            <div class="input-group">
+                <div class="input-field">
+                    <input class="input-sing-up" type="text" placeholder="Name">
+                </div>
+
+                <div class="input-field">
+                    <input class="input-sing-up" type="email" placeholder="Email">
+                    <svg class="form-email">
+                        <use href="./img/header/mail.svg#mail"></use>
+                    </svg>
+                </div>
+
+                <div class="input-field">
+                    <svg class="form-password">
+                        <use href="./img/header/password.svg#password"></use>
+                    </svg>
+                    <input class="input-sing-up" type="password" placeholder="Password">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

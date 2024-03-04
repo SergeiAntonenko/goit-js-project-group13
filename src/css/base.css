@@ -1,12 +1,16 @@
 body {
   font-family: 'DM Sans', sans-serif;
-  font-size: 16px;
-  line-height: 1.25;
-  color: #fff;
-  background-color: #121212;
-  scroll-behavior: smooth;
-  position: relative;
-  overflow-x: hidden;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.04em;
+  color: #111;
+  background-color: #f6f6f6;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out,
+    border-color 0.3s ease-in-out;
+}
+
+body.dark {
+  background-color: #202024;
 }
 
 .visually-hidden {
@@ -26,6 +30,11 @@ body {
   overflow: hidden;
 }
 
+.main-container {
+  display: flex;
+  flex-direction: column;
+}
+
 .container {
   width: 100%;
   margin: 0 auto;
@@ -43,17 +52,24 @@ body {
     width: 768px;
     padding: 0 32px;
   }
-}
 
-@media screen and (min-width: 1280px) {
-  .container {
-    width: 1280px;
-    padding: 0 24px;
+  .aside {
+    display: flex;
   }
 }
 
 @media screen and (min-width: 1440px) {
   .container {
     width: 1440px;
+    padding: 0 24px;
+  }
+
+  .main-container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .aside {
+    display: block;
   }
 }

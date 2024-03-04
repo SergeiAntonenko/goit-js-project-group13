@@ -5,7 +5,17 @@
   |============================
 */
 @import url('./reset.css');
+@import url('./modern-normalize.min.css');
 @import url('./base.css');
+@import url('./main.css'); /** временно т.к.  не знаю как main.html включить */
+@import url('./header.css');
+@import url('./sidebar-categories.css');
+@import url('./sidebar-support.css');
+@import url('./shopping-list.css');
+@import url('./modal.css');
+@import url('./scroll-up.css');
+@import url('./spinner.css');
+@import url('./mob-menu.css');
 
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;

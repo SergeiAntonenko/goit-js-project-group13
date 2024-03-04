@@ -1,0 +1,258 @@
+/* =====================Mobile===================== */
+#shopping-list .supporters {
+  display: none;
+}
+
+.shopping-list-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  height: 100vh;
+  width: 100%;
+}
+.shopping-list-title {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1.19;
+  letter-spacing: -0.04em;
+  color: #111;
+  padding: 0 0 40px 0;
+}
+.shopping-list-title span {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1.19;
+  letter-spacing: -0.04em;
+  color: #4f2ee8;
+}
+
+.shopping-list-empty {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  width: 265px;
+  max-height: 100vh;
+  gap: 14px;
+  padding: 40px 0;
+}
+.shopping-list-empty-message {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.6);
+}
+.shopping-list-empty-img {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.shopping-list-saved {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 100%;
+  gap: 20px;
+}
+
+.saved-item {
+  display: flex;
+  flex-direction: row;
+  border: 2px solid rgba(79, 46, 232, 0.4);
+  border-radius: 16px;
+  width: 100%;
+  height: 170px;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+}
+
+.saved-item-cover {
+  border-radius: 8px;
+  min-width: 100px;
+  height: 142px;
+  overflow: hidden;
+}
+.saved-item-cover-img {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 100%;
+}
+
+.saved-item-discription {
+  min-width: 50%;
+  width: 100%;
+  height: 142px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.saved-item-discription-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.saved-item-title-wrap {
+  width: 80%;
+  margin-bottom: 5px;
+}
+
+.saved-item-title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  margin-bottom: 5px;
+  color: #111;
+}
+
+.saved-item-genre {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.03em;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  color: #202024;
+}
+
+.saved-item-delete-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background-color: #4f2ee8;
+  border: none;
+  border-radius: 100%;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.saved-item-delete-btn:hover,
+.saved-item-delete-btn:focus {
+  opacity: 0.7;
+}
+
+.delete-btn-img {
+  width: 90%;
+}
+
+.saved-item-short {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  max-height: 3.87em;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.04em;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.saved-item-wrap-bottom {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.saved-item-author {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: -0.04em;
+  color: #202024;
+}
+
+.saved-item-refer-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
+
+.saved-item-refer-amazon-logo {
+  width: 32px;
+  height: 11px;
+  mix-blend-mode: luminosity;
+}
+
+.saved-item-refer-amazon-logo:hover {
+  mix-blend-mode: normal;
+}
+
+.saved-item-refer-ibooks-logo {
+  width: 16px;
+  height: 16px;
+  mix-blend-mode: luminosity;
+}
+
+.saved-item-refer-ibooks-logo:hover {
+  mix-blend-mode: normal;
+}
+
+.dark .saved-item-refer-amazon-logo {
+  filter: brightness(0) invert(1);
+}
+
+.dark .saved-item-refer-amazon-logo:hover {
+  filter: drop-shadow(0px 3px 3px rgba(255, 255, 255, 0.35));
+}
+
+/* =====================Tablet===================== */
+@media screen and (min-width: 768px) {
+  .shopping-list-title {
+    font-size: 48px;
+    line-height: 1.08;
+  }
+  .shopping-list-title span {
+    font-size: 48px;
+    line-height: 1.08;
+  }
+
+  .shopping-list-empty {
+    width: 349px;
+  }
+  .shopping-list-empty-message {
+    font-size: 18px;
+    line-height: 1.33;
+  }
+  .saved-item-delete-btn {
+    width: 34px;
+    height: 34px;
+  }
+
+  .saved-item-refer-amazon-logo {
+    width: 48px;
+    height: 15px;
+  }
+  .saved-item-refer-ibooks-logo {
+    width: 28px;
+    height: 27px;
+  }
+}
+/* =====================Desktop===================== */
+@media screen and (min-width: 1440px) {
+  #shopping-list .supporters {
+    display: flex;
+  }
+  .shopping-list-wrapper {
+    padding: 0 36px;
+  }
+}
+
+.is-hidden {
+  display: none;
+}

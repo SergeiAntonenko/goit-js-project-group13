@@ -1,0 +1,127 @@
+.supporters {
+  box-sizing: border-box;
+  width: 335px;
+  height: 410px;
+  margin-bottom: 40px;
+  background: radial-gradient(
+    183.6% 183.01% at 59.76% -23.42%,
+    #4f2ee8 18.03%,
+    #fff 100%
+  );
+  border-radius: 16px;
+  flex-direction: column;
+  padding: 24px 40px 20px;
+  display: flex;
+}
+.support_title {
+  gap: 12px;
+  margin-bottom: 20px;
+  margin-right: auto;
+  display: flex;
+}
+
+.support_heading {
+  letter-spacing: -0.04em;
+  color: #fff;
+  font-family: DM Sans;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 32px;
+  margin: 0;
+}
+
+.support_icon {
+  fill: #fff;
+}
+
+.support-list-item {
+  margin-bottom: 20px;
+}
+
+.swiper {
+  z-index: 1;
+  padding: 0;
+  list-style: none;
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+.supporters_img {
+  height: 35px;
+  filter: brightness(0) invert();
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.supporters_img:hover {
+  filter: none;
+}
+
+.supporters-number {
+  letter-spacing: -0.04em;
+  color: #fff;
+  margin-right: 16px;
+  font-family: DM Sans;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  display: inline-block;
+}
+.supporters-btn {
+  cursor: pointer;
+  width: 32px;
+  min-height: 32px;
+  background-color: #fff;
+  border: none;
+  border-radius: 50px;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0;
+  transition: all 0.3s ease;
+  display: flex;
+  transform: rotateX(0);
+  margin-bottom: 12px;
+}
+
+.supporters-btn:hover {
+  box-shadow: 1px 1px 18px 10px rgba(96, 76, 184, 0.4);
+  width: 36px;
+  min-height: 36px;
+}
+
+.supporters-btn-icon {
+  fill: #4f2ee8;
+  transform: rotate(180deg);
+}
+
+@media screen and (min-width: 768px) {
+  .supporters {
+    height: 472px;
+    padding-bottom: 14px;
+  }
+
+  .swiper {
+    padding: 12px;
+  }
+
+  .supporters-btn {
+    width: 38px;
+    min-height: 38px;
+  }
+
+  .supporters-btn:hover {
+    width: 42px;
+    min-height: 42px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .supporters {
+    width: 356px;
+    padding-bottom: 14px;
+    flex-shrink: 0;
+  }
+}
