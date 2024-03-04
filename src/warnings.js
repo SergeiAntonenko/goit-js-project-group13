@@ -5,14 +5,16 @@ export function showNoBooksToast() {
   iziToast.error({
     title: 'Warning',
     message: 'There are no more books in this category',
-    position: 'topCenter',
+    position: 'topRight',
+    backgroundColor: '#eac645',
   });
 }
 
-export function showNotOnSaleToast() {
+export function showNotInLibraryToast() {
   iziToast.error({
     title: 'Warning',
-    message: 'This book is no longer on sale',
-    position: 'topCenter',
+    message: 'There are no more books in this library',
+    position: 'topRight',
+    backgroundColor: '#eac645',
   });
 }
