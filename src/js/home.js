@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Ждем загрузки страницы и создаём список лучших книг
 document.addEventListener('DOMContentLoaded', async function () {
-  spinnerPlay(refs.titleElement);
+  spinnerPlay(refs.topListElem);
   refs.topListElem.innerHTML = '';
   const topListData = getTopList();
   const topList = await topListData;
