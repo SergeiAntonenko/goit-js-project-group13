@@ -3,6 +3,8 @@ import 'tui-pagination/dist/tui-pagination.css';
 import { getBookByIds } from './booksAPI';
 import deleteBtnImg from '../img/shopping-list/trash-03.svg';
 import { spinnerPlay, spinnerStop } from './spinner';
+import amazon from '../img/modal/modal-icons.svg#icon-amazon-logo';
+import ibooks from '../img/modal/modal-icons.svg#icon-ibooks-logo';
 
 const refs = {
   bookList: document.querySelector('.shopping-list-saved'),
@@ -103,7 +105,7 @@ function shoppingListMarkup(books) {
                   width="62"
                   height="19"
                 >
-                  <use href="../img/modal/modal-icons.svg#icon-amazon-logo"></use>
+                  <use href=${amazon}></use>
                 </svg>
               </a>
             </li>
@@ -118,7 +120,7 @@ function shoppingListMarkup(books) {
                   width="16"
                   height="16"
                 >
-                  <use href="../img/modal/modal-icons.svg#icon-ibooks-logo"></use>
+                  <use href=${ibooks}></use>
                 </svg>
               </a>
             </li>
