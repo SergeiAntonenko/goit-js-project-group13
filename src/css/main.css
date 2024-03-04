@@ -225,6 +225,13 @@
         transition: all  0.3s ease-out;
     }
 
+    .spinner-container {
+        position: absolute;
+        top: 25%;
+        left: 50%;
+
+      }
+
 
 
 /* =====================  TABLET VERSION ====================== */
@@ -347,6 +354,12 @@
     .category_list-card {
 
     }
+
+    .spinner-container {
+        position: absolute;
+        top: 79%;
+        left: 50%;
+      }
 
 
 }
@@ -476,6 +489,11 @@
 
     }
 
+    .spinner-container {
+        position: absolute;
+        top: 50%;
+        left: 62%;
+      }
 
 
 }
