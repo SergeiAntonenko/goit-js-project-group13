@@ -1,6 +1,7 @@
 import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
 import { getBookByIds } from './booksAPI';
+import deleteBtnImg from '../img/shopping-list/trash-03.svg';
 
 const refs = {
   bookList: document.querySelector('.shopping-list-saved'),
@@ -77,7 +78,7 @@ function shoppingListMarkup(books) {
           <button class="saved-item-delete-btn" data-id=${_id}>
             <img
               class="delete-btn-img"
-              src="./img/shopping-list/trash-03.svg"
+              src= ${deleteBtnImg}
               alt="delete button"
             />
           </button>
