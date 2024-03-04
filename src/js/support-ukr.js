@@ -76,7 +76,6 @@ const fundArray = [
 ];
 
 const supportList = document.querySelector('.swiper-wrapper');
-const btnSwiperEl = document.querySelector('.swiper-button-next');
 
 const renderSupportList = items => {
   const listItems = items
@@ -111,13 +110,13 @@ renderSupportList(fundArray);
 
 function scrollToTop(element, duration) {
   const scrollStep = -element.scrollTop / (duration / 15);
-  const scrollInterval = setInterval(function () {
-    if (element.scrollTop != 0) {
+  function animateScroll() {
+    if (element.scrollTop !== 0) {
       element.scrollBy(0, scrollStep);
-    } else {
-      clearInterval(scrollInterval);
+      requestAnimationFrame(animateScroll);
     }
-  }, 15);
+  }
+  animateScroll();
 }
 
 function scrollSupporters() {
