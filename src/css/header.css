@@ -121,6 +121,12 @@ right: 0;
   border: none;
   background-color: white;
   padding: 0;
+  height: 28px;
+}
+
+.header-menu-svg.dark {
+  fill: #fff;
+  stroke: #fff;
 }
 
 .header-logo-svg {
@@ -146,11 +152,11 @@ right: 0;
 .dark .container-header {
   border: 2px solid white;
   border-radius: 0 0 8px 8px;
-  background-color: black;
+  background-color: #111111;
 }
 
 .dark .header-menu {
-  background-color: black;
+  background-color: #111111;
 }
 
 .hidden {
