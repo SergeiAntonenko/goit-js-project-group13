@@ -28,21 +28,23 @@ document.addEventListener("DOMContentLoaded", async function() {
     refs.topListElem.innerHTML = '';
     const topListData = getTopList();
     const topList = await topListData;
+    let html = '';
     topList.forEach(elem => {
-        renderTopList(elem)
+        html += renderTopList(elem);
     });
+    refs.topListElem.innerHTML = html; // исправил то что Юля писала. Теперь отрисовывается за 1 запрос 
     spinnerStop();
 });
 
+// Собираем HTML в кучу и возвращаем его
 function renderTopList(elem) {
-    const html = `
+    return `
         <li class="top_list-container">
             <h2 class="top_list-category_name">${elem.list_name}</h2>
             <ul class="top_list-cards">${renderBooks(elem.books)}</ul>
             <button class="top_list-see_more" data-category="${elem.list_name}">See More</button>
         </li>
     `;
-    refs.topListElem.innerHTML += html;
 }
 
 function renderBooks(books) {
