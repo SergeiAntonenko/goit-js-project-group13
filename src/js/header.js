@@ -1,6 +1,4 @@
-const path = window.location.href;
-const page = path.split('/').pop();
-console.log(page);
+const currentPage = window.location.href;
 
 const homeElement = document.querySelector('.menu-home');
 const shoppingListElement = document.querySelector('.menu-shopping-list');
@@ -44,7 +42,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
 //
 function getCurrentPage() {
-  if (page === 'index.html') {
+  if (
+    currentPage === 'https://sergeiantonenko.github.io/goit-js-project-group13/'
+  ) {
     shoppingListElement.classList.remove('active-shopping-list');
     homeElement.classList.add('active-home');
   } else {
