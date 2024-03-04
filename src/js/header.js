@@ -9,8 +9,10 @@ document.addEventListener('DOMContentLoaded', function () {
   const body = document.querySelector('body');
   const toggle = document.querySelector('.toggle');
   const getMode = localStorage.getItem('mode');
+  const header = document.querySelector('.header');
 
   if (getMode && getMode === 'dark') {
+    header.classList.add('dark');
     body.classList.add('dark');
     toggle.classList.add('active');
     toggle.style.background =
@@ -27,11 +29,13 @@ document.addEventListener('DOMContentLoaded', function () {
     toggle.classList.toggle('active');
 
     if (body.classList.contains('dark')) {
+      header.classList.add('dark');
       toggle.style.background =
         'linear-gradient(180deg, #4f2ee8 0%, #686868 100%)';
       toggle.style.boxShadow = 'inset 1px 1px 2px 0 rgba(0, 0, 0, 0.1)';
       localStorage.setItem('mode', 'dark');
     } else {
+      header.classList.remove('dark');
       toggle.style.background =
         'linear-gradient(180deg, #4f2ee8 0%, #dcdcdc 100%)';
       toggle.style.boxShadow = 'inset 1px 1px 2px 0 rgba(0, 0, 0, 0.1)';

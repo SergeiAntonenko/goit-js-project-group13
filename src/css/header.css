@@ -128,8 +128,16 @@ right: 0;
   height: auto;
 }
 
+.header.dark {
+  background-color: #111111;
+}
+
 .dark .header-logo-svg {
   stroke: #fff;
+}
+
+.header-menu-svg {
+  fill: #fff;
 }
 
 .header-nav {
