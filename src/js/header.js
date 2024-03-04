@@ -1,7 +1,6 @@
 const page = window.location.href;
 const currentPage = page.split('/').pop();
-console.log(currentPage);
-console.log(page);
+
 import { loadTheme, saveTheme } from './local-storage';
 
 const homeElement = document.querySelector('.menu-home');

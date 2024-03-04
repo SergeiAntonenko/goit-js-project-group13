@@ -122,6 +122,11 @@ right: 0;
   background-color: white;
   padding: 0;
   height: 28px;
+  transition: all 0.3s ease-in-out;
+}
+
+.header-menu.disabled {
+  display: none;
 }
 
 .header-menu-svg.dark {
@@ -130,9 +135,15 @@ right: 0;
 }
 
 .header-menu-close {
-  display: none;
+  height: 22px;
+  padding: 0 6px 0 0;
   background-color: #fff;
   border: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.header-menu-close.disabled {
+  display: none;
 }
 
 .header-menu-close-svg {
@@ -263,6 +274,10 @@ right: 0;
   }
 
   .header-menu {
+    display: none;
+  }
+
+  .header-menu-close {
     display: none;
   }
 
