@@ -1,7 +1,6 @@
 import { getBookById } from './booksAPI';
 import iconsPath from '../img/modal/modal-icons.svg';
-
-const SHOPPING_LIST_IDS_KEY = 'shoppingIdList';
+import { switchBookInList, isBookInList } from './local-storage';
 
 const bodyRef = document.querySelector('body');
 const modalContainer = document.querySelector('#modalBookContainer');
@@ -10,7 +9,6 @@ let modalBookBackground;
 let modalCloseBtn;
 let shoppingListBtn;
 let isBookInShopList;
-let shopListIds;
 let bookData;
 let currentId;
 
@@ -22,9 +20,8 @@ document.addEventListener('keyup', e => {
 
 export async function onOpenModal(id) {
   currentId = id;
-  shopListIds = JSON.parse(localStorage.getItem(SHOPPING_LIST_IDS_KEY)) || [];
   bookData = await getBookById(currentId);
-  isBookInShopList = shopListIds.includes(currentId);
+  isBookInShopList = isBookInList(currentId);
   const modalMarkup = getModalMarkup(bookData);
   modalContainer.insertAdjacentHTML('afterbegin', modalMarkup);
 
@@ -46,15 +43,10 @@ function onModalCloseBtn() {
 
 function onShoppingListBtn() {
   shoppingListBtn.removeEventListener('click', onShoppingListBtn);
-  if (isBookInShopList) {
-    shopListIds = shopListIds.filter(id => id !== currentId);
-  } else {
-    shopListIds.push(currentId);
-  }
 
-  localStorage.setItem(SHOPPING_LIST_IDS_KEY, JSON.stringify(shopListIds));
+  switchBookInList(currentId);
+  isBookInShopList = isBookInList(currentId);
 
-  isBookInShopList = !isBookInShopList;
   const bookActionMarkup = getBookActionMarkup();
   bookActionContainer.innerHTML = bookActionMarkup;
   initShoppingListBtn();

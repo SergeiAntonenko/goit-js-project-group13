@@ -1,5 +1,6 @@
 const page = window.location.href;
 const currentPage = page.split('/').pop();
+import { loadTheme, saveTheme } from './local-storage';
 
 const homeElement = document.querySelector('.menu-home');
 const shoppingListElement = document.querySelector('.menu-shopping-list');
@@ -10,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const body = document.querySelector('body');
   const mobMenuBtn = document.querySelector('.header-menu-svg');
   const toggle = document.querySelector('.toggle');
-  const getMode = localStorage.getItem('mode');
+  const getMode = loadTheme();
   const header = document.querySelector('.header');
   const headerBtn = document.querySelector('.header-btn');
 
@@ -41,6 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
         'linear-gradient(180deg, #4f2ee8 0%, #686868 100%)';
       toggle.style.boxShadow = 'inset 1px 1px 2px 0 rgba(0, 0, 0, 0.1)';
       localStorage.setItem('mode', 'dark');
+      saveTheme('dark');
     } else {
       header.classList.remove('dark');
       headerBtn.classList.remove('dark');
@@ -48,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
       toggle.style.background =
         'linear-gradient(180deg, #4f2ee8 0%, #dcdcdc 100%)';
       toggle.style.boxShadow = 'inset 1px 1px 2px 0 rgba(0, 0, 0, 0.1)';
-      localStorage.setItem('mode', 'light');
+      saveTheme('light');
     }
   });
 });
