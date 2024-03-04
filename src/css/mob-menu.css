@@ -99,8 +99,8 @@
   height: auto;
   z-index: 2;
 }
-@media screen and (max-width: 768px) {
-  .mobile-menu {
-    display: block;
+@media screen and (min-width: 768px) {
+  .mobile {
+    display: none;
   }
 }
