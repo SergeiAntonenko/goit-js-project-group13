@@ -47,3 +47,5 @@ shoppingListElement.addEventListener('click', function() {
     this.classList.add('active-shopping-list');
 });
 
+// 
+
