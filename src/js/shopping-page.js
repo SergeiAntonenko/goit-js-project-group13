@@ -3,6 +3,7 @@ import 'tui-pagination/dist/tui-pagination.css';
 import { getBookByIds } from './booksAPI';
 import deleteBtnImg from '../img/shopping-list/trash-03.svg';
 import { spinnerPlay, spinnerStop } from './spinner';
+import { getBooksInList, removeBookFromList } from './local-storage';
 import amazon from '../img/modal/modal-icons.svg#icon-amazon-logo';
 import ibooks from '../img/modal/modal-icons.svg#icon-ibooks-logo';
 
@@ -15,14 +16,8 @@ const perPage = window.innerWidth >= 768 ? 3 : 4;
 
 createShoppingList();
 
-function getBooksStorage() {
-  const savedBooks = localStorage.getItem('shoppingIdList');
-  const bookIdArray = JSON.parse(savedBooks);
-  return bookIdArray;
-}
-
 async function createShoppingList() {
-  const bookIds = getBooksStorage();
+  const bookIds = getBooksInList();
   spinnerPlay(refs.bookList);
   if (!bookIds || bookIds.length === 0) {
     removeHidden(refs.emptyList);
@@ -148,18 +143,16 @@ function removeHidden(el) {
 
 function removeBookFromStorage(e) {
   const id = e.currentTarget.dataset.id;
-  const bookIds = getBooksStorage();
-  const filtredBooks = bookIds.filter(bookId => id !== bookId);
-  localStorage.setItem('shoppingIdList', JSON.stringify(filtredBooks));
+  removeBookFromList(id);
   refs.bookList.innerHTML = '';
-  pagination.setTotalItems(getBooksStorage().length);
+  pagination.setTotalItems(getBooksInList().length);
   pagination.movePageTo(pagination.getCurrentPage());
 }
 
 const container = document.getElementById('pagination');
 
 const options = {
-  totalItems: getBooksStorage().length,
+  totalItems: getBooksInList().length,
   itemsPerPage: perPage,
   visiblePages: 2,
   page: 1,
