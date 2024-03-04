@@ -5,12 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shopping list</title>
     
-    <script type="module" crossorigin src="/goit-js-project-group13/assets/vendor-e3c01538.js"></script>
-    <script type="module" crossorigin src="/goit-js-project-group13/assets/main-8012087a.js"></script>
-    <link rel="stylesheet" href="/goit-js-project-group13/assets/vendor-e5212ee8.css">
-    <link rel="stylesheet" href="/goit-js-project-group13/assets/main-bab70bf7.css">
+    <script type="module" crossorigin src="/goit-js-project-group13/commonHelpers2.js"></script>
+    <link rel="modulepreload" crossorigin href="/goit-js-project-group13/assets/support-ukr-7a4f977d.js">
+    <link rel="stylesheet" href="/goit-js-project-group13/assets/support-ukr-534df0b5.css">
   </head>
-  <body>
+  <body id="shopping-list">
     <div class="container-header container">
     <nav class="header-nav">
         <!-- Логотип -->
@@ -79,13 +78,7 @@
 </div>
 
     <div class="main-container">
-      <div class="aside">
-  <ul class="all-categories">
-  <li class="gallery-item">
-    <a class="link all-categories-link" href="#">All categories </a>
-  </li>
-</ul>
- <div class="supporters">
+      <div class="supporters">
   <div class="support_title">
     <h2 class="support_heading">Support Ukraine</h2>
     <svg class="support_icon" width="20" height="32">
@@ -283,22 +276,20 @@
   </button>
 </div>
 
-</div>
-
       <div class="shopping-list-wrapper">
   <h1 class="shopping-list-title">Shopping <span>List</span></h1>
   <ul class="shopping-list-saved"></ul>
-  <div class="shopping-list-empty">
+  <div class="shopping-list-empty is-hidden">
     <p class="shopping-list-empty-message">
       This page is empty, add some books and proceed to order.
     </p>
     <img
       class="shopping-list-empty-img"
-      src="../img/shopping list/shopping-list-empty.png"
+      src="/goit-js-project-group13/assets/shopping-list-empty-967c20ad.png"
       alt="pile of books"
     />
   </div>
-  <div class="pagination is-hidden"></div>
+  <!-- <div class="pagination"></div> -->
 </div>
 
     </div>
