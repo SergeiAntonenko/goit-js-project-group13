@@ -10,6 +10,7 @@
   justify-content: space-between;
   overflow: auto;
   opacity: 10;
+  display: none;
   pointer-events: auto;
   background: radial-gradient(
       189.32% 190.93% at 59.76% -23.42%,
@@ -20,7 +21,6 @@
   border: 1px solid #000;
 
   transition: width 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  display: none;
 }
 
 .mobile-menu {
@@ -85,7 +85,6 @@
 }
 
 .mob-books-img {
-  position: fixed;
   margin-bottom: 0;
   margin-right: 0;
   width: 450px;
