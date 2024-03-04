@@ -1,5 +1,6 @@
 const path = window.location.pathname;
 const page = path.split('/').pop();
+console.log(page);
 
 const homeElement = document.querySelector('.menu-home');
 const shoppingListElement = document.querySelector('.menu-shopping-list');
