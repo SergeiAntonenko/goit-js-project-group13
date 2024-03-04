@@ -60,7 +60,7 @@ import{g as N,a as O,b as P,c as R}from"./assets/support-ukr-0ff2343e.js";import
             <h3 class="top_list-book_title">${i.title}</h3>
             <p class="top_list-book_author">${i.author}</p>
         </li>
-        `;n.categoryListElem.innerHTML+=d});const s='<li><button class="all_categories">All Categories</button></li>';n.categoryListElem.innerHTML+=s,A()}function B(t){const e=t.split(" "),s=e.pop();n.titleElement.textContent=e.join(" ");const i=document.createElement("span");i.textContent=" "+s,n.titleElement.appendChild(i),b=!1}function tt(){const o=document.querySelector(".all_categories").getBoundingClientRect(),e=window.innerHeight||document.documentElement.clientHeight;o.top<e&&!b&&n.topListElem.classList.contains("hidden")&&(G(),b=!0)}const ot=document.querySelector(".all-categories");function et(t){return t.map(e=>`
+        `;n.categoryListElem.innerHTML+=d});const s='<li><button class="all_categories">All Categories</button></li>';n.categoryListElem.innerHTML+=s,A()}function B(t){const e=t.split(" "),s=e.pop();n.titleElement.textContent=e.join(" ");const i=document.createElement("span");i.textContent=" "+s,n.titleElement.appendChild(i),b=!1}function tt(){const t=document.querySelector(".all_categories");if(t){const o=t.getBoundingClientRect(),e=window.innerHeight||document.documentElement.clientHeight;o.top<e&&!b&&n.topListElem.classList.contains("hidden")&&(G(),b=!0)}}const ot=document.querySelector(".all-categories");function et(t){return t.map(e=>`
             <li class="gallery-item">
             <a class="gallery-link" href=#>${e.list_name}
             </a>
