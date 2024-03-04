@@ -1,9 +1,7 @@
-import { getTopList } from './booksAPI.js';
-import { getBooksByCategory } from './booksAPI.js';
+import { getTopList, getBooksByCategory } from './booksAPI.js';
 import { onOpenModal } from './modal.js';
-import { spinnerPlay } from './spinner.js';
-import { spinnerStop } from './spinner.js';
-import { showNoBooksToast } from './warnings.js';
+import { spinnerPlay, spinnerStop } from './spinner.js';
+import { showNoBooksToast, showNotInLibraryToast } from './warnings.js';
 
 const refs = {
   topListElem: document.querySelector('#topList'),
@@ -185,3 +183,17 @@ function smoothScrollToElement() {
         }, 1100);
     }
 }
+
+
+// варнинг когда достингли конца категорий
+function isPageScrolledToBottom() {
+    return window.innerHeight + window.scrollY >= document.body.offsetHeight;
+}
+window.addEventListener('scroll', function() {
+    if (isPageScrolledToBottom()) {
+        const title = refs.titleElement.textContent.trim();
+        if (title === "Best Sellers Books") {
+            showNotInLibraryToast();
+        }
+    }
+});
