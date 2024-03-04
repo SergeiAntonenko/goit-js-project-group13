@@ -77,7 +77,7 @@ function shoppingListMarkup(books) {
           <button class="saved-item-delete-btn" data-id=${_id}>
             <img
               class="delete-btn-img"
-              src="./img/shopping list/trash-03.svg"
+              src="./img/shopping-list/trash-03.svg"
               alt="delete button"
             />
           </button>
