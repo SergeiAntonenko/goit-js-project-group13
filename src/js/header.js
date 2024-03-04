@@ -27,3 +27,23 @@ toggle.addEventListener("click", () => {
 });
 
 toggle.addEventListener("click", () => toggle.classList.toggle("active"));
+
+//
+
+const homeElement = document.querySelector('.menu-home');
+const shoppingListElement = document.querySelector('.menu-shopping-list');
+
+homeElement.addEventListener('click', function() {
+    homeElement.classList.remove('active-home');
+    shoppingListElement.classList.remove('active-shopping-list');
+    
+    this.classList.add('active-home');
+});
+
+shoppingListElement.addEventListener('click', function() {
+    homeElement.classList.remove('active-home');
+    shoppingListElement.classList.remove('active-shopping-list');
+    
+    this.classList.add('active-shopping-list');
+});
+
