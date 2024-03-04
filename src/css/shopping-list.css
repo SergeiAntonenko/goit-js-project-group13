@@ -188,6 +188,11 @@
   height: 11px;
   mix-blend-mode: luminosity;
 }
+
+.saved-item-refer-amazon-logo:hover {
+  mix-blend-mode: normal;
+}
+
 .saved-item-refer-ibooks-logo {
   width: 16px;
   height: 16px;
