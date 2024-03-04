@@ -110,8 +110,9 @@ async function categoryList(category) {
     refs.categoryListElem.innerHTML = '';
     const categoryDataPromise = getBooksByCategory(category);
     const categoryData = await categoryDataPromise;
+    let html = '';
     categoryData.forEach(book => {
-        const html = `
+        html += `
         <li class="category_list-card">
             <div class="top_list-book_cover_wrapper" data-bookid="${book._id}" tabindex="0">
                 <img class="top_list-book_cover" src="${book.book_image}" alt="${book.title}">
@@ -121,10 +122,9 @@ async function categoryList(category) {
             <p class="top_list-book_author">${book.author}</p>
         </li>
         `;
-        refs.categoryListElem.innerHTML += html;
     });
-    const btnAllCategoriesHTML = `<li><button class="all_categories">All Categories</button></li>`;
-    refs.categoryListElem.innerHTML += btnAllCategoriesHTML;
+    html += `<li><button class="all_categories">All Categories</button></li>`;
+    refs.categoryListElem.innerHTML = html;
     spinnerStop();
 };
 
