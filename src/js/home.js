@@ -142,10 +142,13 @@ function titleCategory(category) {
 
 function scrollHandler() {
     const allCategoriesButton = document.querySelector('.all_categories');
-    const buttonRect = allCategoriesButton.getBoundingClientRect();
-    const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-    if (buttonRect.top < windowHeight && !isNoBooksToastShown && refs.topListElem.classList.contains('hidden')) {
-        showNoBooksToast();
-        isNoBooksToastShown = true;
+    if (allCategoriesButton) {
+        const buttonRect = allCategoriesButton.getBoundingClientRect();
+        const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+        if (buttonRect.top < windowHeight && !isNoBooksToastShown && refs.topListElem.classList.contains('hidden')) {
+            showNoBooksToast();
+            isNoBooksToastShown = true;
+        }
     }
 }
+
