@@ -2,6 +2,7 @@ import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
 import { getBookByIds } from './booksAPI';
 import deleteBtnImg from '../img/shopping-list/trash-03.svg';
+import { spinnerPlay, spinnerStop } from './spinner';
 
 const refs = {
   bookList: document.querySelector('.shopping-list-saved'),
@@ -20,6 +21,7 @@ function getBooksStorage() {
 
 async function createShoppingList() {
   const bookIds = getBooksStorage();
+  spinnerPlay(refs.bookList);
   if (!bookIds || bookIds.length === 0) {
     removeHidden(refs.emptyList);
     setHidden(refs.pagination);
@@ -37,6 +39,7 @@ async function createShoppingList() {
         .forEach(btn => btn.addEventListener('click', removeBookFromStorage));
     }
   }
+  spinnerStop();
 }
 
 function shoppingListMarkup(books) {
