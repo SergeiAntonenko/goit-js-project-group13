@@ -101,6 +101,7 @@ right: 0;
   box-sizing: border-box;
   transition: all 0.3s;
   position: relative;
+  z-index: 2;
 }
 
 .header-logo {
