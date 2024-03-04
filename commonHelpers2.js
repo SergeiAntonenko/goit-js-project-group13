@@ -15,7 +15,7 @@ import{d as f}from"./assets/support-ukr-7a4f977d.js";import{P as b}from"./assets
           <button class="saved-item-delete-btn" data-id=${t}>
             <img
               class="delete-btn-img"
-              src="../img/shopping list/trash-03.svg"
+              src="./img/shopping list/trash-03.svg"
               alt="delete button"
             />
           </button>
