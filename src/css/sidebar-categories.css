@@ -24,11 +24,63 @@
   width: 335px;
   height: 228px;
   padding-top: 0;
-  overflow-y: scroll;
+  overflow-y: auto;
   margin: 0;
   background: inherit;
   margin-bottom: 40px;
 }
+
+/* ================================= scrollbar ======================== */
+.all-categories::-webkit-scrollbar {
+  width: 8px;
+}
+.all-categories::-webkit-scrollbar-track {
+  background: inherit;
+}
+.all-categories::-webkit-scrollbar-thumb {
+  border-radius: 12px;
+  background: rgb(224, 224, 224);
+  cursor: pointer;
+}
+
+/* ========================== dark theme ============================== */
+.dark .all-categories::-webkit-scrollbar-thumb {
+  border-radius: 12px;
+
+  background: rgb(79, 46, 232, 0.4);
+  cursor: pointer;
+}
+
+.dark .all-categories-link {
+  color: rgb(234, 198, 69);
+  text-transform: uppercase;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.dark .gallery-link:focus {
+  color: rgb(234, 198, 69);
+  text-transform: uppercase;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.dark .link:focus {
+  color: rgb(234, 198, 69);
+  text-transform: uppercase;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.dark .gallery-item :hover {
+  color: rgb(234, 198, 69);
+}
+
+.dark #scrollToTopBtn:hover {
+  background-color: rgb(234, 198, 69);
+}
+
+/* =========================================================================== */
 
 .gallery-item :hover {
   color: rgb(79, 46, 232);

@@ -1,15 +1,30 @@
-<div class="mobile">
-  <div class="mobile-menu">
-    <ul class="mob-menu-list">
-      <li><a class="mob-menu-link" href="#">Home</a></li>
-      <li>
-        <a class="mob-menu-list-link" href="#"
-          >Shopping List
-          <svg class="list-svg">
-            <use href="./img/lock.svg#icon-lock"></use>
-          </svg>
-        </a>
-      </li>
-    </ul>
+<div class="container-header container">
+  <div class="mobile" id="menu">
+    <div class="mobile-menu">
+      <ul class="mob-menu-list">
+        <li><a class="mob-menu-link" href="#">Home</a></li>
+        <li>
+          <a class="mob-menu-list-link" href="#"
+            >Shopping List
+            <svg class="list-svg" width="20" height="20">
+              <use href="./img/mob-menu/symbol.svg#icon-Lock"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="image">
+      <img
+        class="mob-books-img"
+        srcset="
+          ./img/mob-menu/books_1x.webp  1x,
+          ./img//mob-menu/books_1x.webp 2x
+        "
+        src="./img/mob-menu/books_1x.webp"
+        alt="books"
+        loading="lazy"
+        width="450"
+      />
+    </div>
   </div>
 </div>

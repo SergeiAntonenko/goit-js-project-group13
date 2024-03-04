@@ -6,12 +6,19 @@ const SHOPPING_LIST_IDS_KEY = 'shoppingIdList';
 const bodyRef = document.querySelector('body');
 const modalContainer = document.querySelector('#modalBookContainer');
 let bookActionContainer;
+let modalBookBackground;
 let modalCloseBtn;
 let shoppingListBtn;
 let isBookInShopList;
 let shopListIds;
 let bookData;
 let currentId;
+
+document.addEventListener('keyup', e => {
+  if (e.code === 'Escape') {
+    onModalCloseBtn();
+  }
+});
 
 export async function onOpenModal(id) {
   currentId = id;
@@ -24,6 +31,7 @@ export async function onOpenModal(id) {
   bookActionContainer = document.querySelector('#bookActionContainer');
   initModalCloseBtn();
   initShoppingListBtn();
+  initBackgroundClick();
 
   bodyRef.classList.add('overflow-hidden');
 }
@@ -31,6 +39,7 @@ export async function onOpenModal(id) {
 function onModalCloseBtn() {
   modalCloseBtn.removeEventListener('click', onModalCloseBtn);
   shoppingListBtn.removeEventListener('click', onShoppingListBtn);
+  modalBookBackground.removeEventListener('click', onBackgroundClick);
   modalContainer.innerHTML = '';
   bodyRef.classList.remove('overflow-hidden');
 }
@@ -61,7 +70,7 @@ function getModalMarkup(data) {
     'https://www.apple.com/apple-books/';
 
   return `
-    <div class="book-background" id="modalBookContainer">
+    <div class="book-background" id="modalBookBackground">
       <div class="modal-container">
         <button class="modal-close" id="modalClose">
           <svg class="modal-close-icon" width="12" height="12">
@@ -121,4 +130,15 @@ function initModalCloseBtn() {
 function initShoppingListBtn() {
   shoppingListBtn = document.querySelector('#shoppingListBtn');
   shoppingListBtn.addEventListener('click', onShoppingListBtn);
+}
+
+function initBackgroundClick() {
+  modalBookBackground = document.querySelector('#modalBookBackground');
+  modalBookBackground.addEventListener('click', onBackgroundClick);
+}
+
+function onBackgroundClick(e) {
+  if (e.target === e.currentTarget) {
+    onModalCloseBtn();
+  }
 }

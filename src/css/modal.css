@@ -4,6 +4,7 @@
 
 .overflow-hidden {
   overflow: hidden;
+  padding-right: 17px;
 }
 
 .book-background {
@@ -56,7 +57,7 @@
 }
 
 .dark .modal-close-icon {
-  stroke: #FFFFFF;
+  stroke: white;
 }
 
 .modal-close-icon:hover {
