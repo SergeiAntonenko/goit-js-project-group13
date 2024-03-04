@@ -104,6 +104,7 @@ const clickSeeMore = function(event) {
 
 // Асинхронная функция которая получает список книг по категории и отрисовывает его
 async function categoryList(category) {
+    spinnerPlay();
     refs.categoryListElem.innerHTML = '';
     const categoryDataPromise = getBooksByCategory(category);
     const categoryData = await categoryDataPromise;
@@ -122,6 +123,7 @@ async function categoryList(category) {
     });
     const btnAllCategoriesHTML = `<li><button class="all_categories">All Categories</button></li>`;
     refs.categoryListElem.innerHTML += btnAllCategoriesHTML;
+    spinnerStop();
 };
 
 
