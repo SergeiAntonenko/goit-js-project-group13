@@ -94,6 +94,7 @@ const clickSeeMore = function (event) {
     categoryList(category);
     document.removeEventListener('click', clickByBook); // удаляем созданные слуштаели событий по книгам
     document.addEventListener('click', clickByBook); // создаем новые только для тех которые только что отрендерели
+    smoothScrollToElement();
   }
   if (event.target.classList.contains('gallery-link')) {
     refs.topListElem.classList.add('hidden');
@@ -101,8 +102,10 @@ const clickSeeMore = function (event) {
     const category = event.target.textContent.trim();
     titleCategory(category);
     categoryList(category);
+    smoothScrollToElement();
     document.removeEventListener('click', clickByBook); // удаляем созданные слуштаели событий по книгам
     document.addEventListener('click', clickByBook); // создаем новые только для тех которые только что отрендерели
+    smoothScrollToElement();
   }
 };
 
@@ -115,6 +118,7 @@ const clickByAllCategory = async function (event) {
     refs.titleElement.innerHTML = 'Best Sellers <span>Books</span>';
     refs.categoryListElem.classList.add('hidden');
     refs.topListElem.classList.remove('hidden');
+    smoothScrollToElement();
   }
 };
 
@@ -169,4 +173,15 @@ function scrollHandler() {
       isNoBooksToastShown = true;
     }
   }
+}
+
+function smoothScrollToElement() {
+    const windowWidth = window.innerWidth || document.documentElement.clientWidth;
+    const element = refs.titleElement;
+    if (windowWidth < 1440) {
+        setTimeout(function() {
+            const scrollOffset = element.getBoundingClientRect().top - 60;
+            window.scrollTo({ top: scrollOffset, behavior: "smooth" });
+        }, 1100);
+    }
 }

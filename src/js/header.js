@@ -9,6 +9,7 @@ getCurrentPage();
 
 document.addEventListener('DOMContentLoaded', function () {
   const body = document.querySelector('body');
+  const mobMenuBtn = document.querySelector('.header-menu-svg');
   const toggle = document.querySelector('.toggle');
   const getMode = loadTheme();
   const header = document.querySelector('.header');
@@ -17,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
   if (getMode && getMode === 'dark') {
     header.classList.add('dark');
     headerBtn.classList.add('dark');
+    mobMenuBtn.classList.add('dark');
     body.classList.add('dark');
     toggle.classList.add('active');
     toggle.style.background =
@@ -35,6 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (body.classList.contains('dark')) {
       header.classList.add('dark');
       headerBtn.classList.add('dark');
+      mobMenuBtn.classList.add('dark');
       toggle.style.background =
         'linear-gradient(180deg, #4f2ee8 0%, #686868 100%)';
       toggle.style.boxShadow = 'inset 1px 1px 2px 0 rgba(0, 0, 0, 0.1)';
@@ -43,6 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
       header.classList.remove('dark');
       headerBtn.classList.remove('dark');
+      mobMenuBtn.classList.remove('dark');
       toggle.style.background =
         'linear-gradient(180deg, #4f2ee8 0%, #dcdcdc 100%)';
       toggle.style.boxShadow = 'inset 1px 1px 2px 0 rgba(0, 0, 0, 0.1)';

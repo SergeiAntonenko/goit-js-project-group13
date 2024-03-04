@@ -5,7 +5,6 @@
   left: 0;
   width: 100%;
   height: 100%;
-  display: flex;
   flex-direction: column;
   justify-content: space-between;
   overflow: auto;
@@ -59,7 +58,7 @@
   color: #fff;
 }
 
-.mob-menu-link,
+.mob-menu-link:hover,
 .mob-menu-link:focus {
   border-radius: 36px;
   padding: 8px 16px;
@@ -100,8 +99,8 @@
   height: auto;
   z-index: 2;
 }
-@media screen and (max-width: 768px) {
-  .mobile-menu {
-    display: block;
+@media screen and (min-width: 768px) {
+  .mobile.is-open {
+    display: none;
   }
 }
