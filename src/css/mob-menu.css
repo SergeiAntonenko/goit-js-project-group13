@@ -10,7 +10,7 @@
   justify-content: space-between;
   overflow: auto;
   opacity: 10;
-  /* visibility: hidden; */
+  visibility: hidden;
   pointer-events: auto;
   background: radial-gradient(
       189.32% 190.93% at 59.76% -23.42%,
@@ -24,8 +24,8 @@
 }
 
 .mobile-menu {
-  /* flex-shrink: 0;
-  list-style: none; */
+  flex-shrink: 0;
+  list-style: none;
   padding: 0;
   margin: 0;
 }
