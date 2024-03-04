@@ -18,4 +18,4 @@ import B from"https://cdn.jsdelivr.net/npm/axios@1.3.5/+esm";(function(){const A
             
           </li>
               `}).join("");O.innerHTML=`${A}`};P(U);function m(M,A){const e=-M.scrollTop/(A/15),b=setInterval(function(){M.scrollTop!=0?M.scrollBy(0,e):clearInterval(b)},15)}function x(){const M=document.querySelector(".swiper"),A=500;if(M.scrollTop+M.clientHeight>=M.scrollHeight){m(M,A);const b=document.querySelector(".supporters-btn-icon");b.style.transform="rotate(180deg)"}else{M.scrollBy({top:300,behavior:"smooth"});const b=document.querySelector(".supporters-btn-icon");b.style.transform="rotate(0deg)"}}const N=document.querySelector(".supporters-btn");N.addEventListener("click",x);export{V as a,K as b,k as c,T as d,p as g};
-//# sourceMappingURL=support-ukr-2d6901f7.js.map
+//# sourceMappingURL=support-ukr-0ff2343e.js.map
