@@ -88,15 +88,23 @@
 /* ---------------------------------------------------------- */
 
 /* .header {
+  position: absolute;
+top: 0;
+left: 0;
+right: 0;
+
 } */
 
 .container-header {
   border: 2px solid black;
   border-radius: 0 0 8px 8px;
   padding: 18px 20px;
-  max-width: 375px;
+  max-width: 100%;
   background-color: #fff;
   margin-bottom: 40px;
+  box-sizing: border-box;
+  transition: all 0.3s;
+  position: relative;
 }
 
 .header-logo {
@@ -217,10 +225,18 @@
   transform: scale(1);
 } */
 
+@media screen and (min-width: 375px) {
+  .container-header {
+    width: 100%;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .container-header {
     max-width: 768px;
     padding: 22px 32px;
+    width: 100%;
+    max-width: none;
   }
 
   .header-btn {
@@ -250,7 +266,8 @@
     padding-left: 14px;
     font-size: 14px;
     font-weight: 500;
-    transition: background 0.25s cubic-bezier(0.17, 0.67, 0.91, 1.61), box-shadow 0.25s cubic-bezier(0.17, 0.67, 0.91, 1.61);
+    transition: background 0.25s cubic-bezier(0.17, 0.67, 0.91, 1.61),
+      box-shadow 0.25s cubic-bezier(0.17, 0.67, 0.91, 1.61);
     position: relative;
   }
 }
