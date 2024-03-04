@@ -1,9 +1,11 @@
-import { getBookById, getBookByIds } from './booksAPI';
+import Pagination from 'tui-pagination';
+import 'tui-pagination/dist/tui-pagination.css';
+import { getBookByIds } from './booksAPI';
 
 const refs = {
   bookList: document.querySelector('.shopping-list-saved'),
   emptyList: document.querySelector('.shopping-list-empty'),
-  //   deleteBtns: document.querySelectorAll('.saved-item-delete-btn'),
+  pagination: document.querySelector('.tui-pagination'),
 };
 
 createShoppingList();
@@ -18,11 +20,15 @@ async function createShoppingList() {
   const bookIds = getBooksStorage();
   if (!bookIds || bookIds.length === 0) {
     removeHidden(refs.emptyList);
+    setHidden(refs.pagination);
   } else {
     const booksArray = await getBookByIds(bookIds);
 
     if (booksArray && booksArray.length !== 0) {
-      renderBooks(booksArray);
+      const chunkedArray = chunkArray(booksArray, 4);
+      const currentPage = pagination.getCurrentPage();
+      renderBooks(chunkedArray[currentPage - 1]);
+      removeHidden(refs.pagination);
 
       document
         .querySelectorAll('.saved-item-delete-btn')
@@ -32,7 +38,6 @@ async function createShoppingList() {
 }
 
 function shoppingListMarkup(books) {
-  console.log(books);
   return books
     .map(
       ({
@@ -45,7 +50,6 @@ function shoppingListMarkup(books) {
         buy_links,
       }) => {
         const shopHrefs = buy_links.reduce((acc, item) => {
-          console.log(item.name === 'Amazon');
           if (item.name === 'Amazon') {
             acc.amazon = item.url;
           }
@@ -141,5 +145,50 @@ function removeBookFromStorage(e) {
   const filtredBooks = bookIds.filter(bookId => id !== bookId);
   localStorage.setItem('shoppingIdList', JSON.stringify(filtredBooks));
   refs.bookList.innerHTML = '';
+  pagination.setTotalItems(getBooksStorage().length);
+  pagination.movePageTo(pagination.getCurrentPage());
+}
+
+const container = document.getElementById('pagination');
+
+const options = {
+  totalItems: getBooksStorage().length,
+  itemsPerPage: 4,
+  visiblePages: 2,
+  page: 1,
+  centerAlign: true,
+  firstItemClassName: 'tui-first-child',
+  lastItemClassName: 'tui-last-child',
+  template: {
+    page: '<a href="#" class="tui-page-btn">{{page}}</a>',
+    currentPage:
+      '<strong class="tui-page-btn tui-is-selected">{{page}}</strong>',
+    moveButton:
+      '<a href="#" class="tui-page-btn tui-{{type}}">' +
+      '<span class="tui-ico-{{type}}">{{type}}</span>' +
+      '</a>',
+    disabledMoveButton:
+      '<span class="tui-page-btn tui-is-disabled tui-{{type}}">' +
+      '<span class="tui-ico-{{type}}">{{type}}</span>' +
+      '</span>',
+    moreButton:
+      '<a href="#" class="tui-page-btn tui-{{type}}-is-ellip">' +
+      '<span class="tui-ico-ellip">...</span>' +
+      '</a>',
+  },
+};
+
+const pagination = new Pagination(container, options);
+
+pagination.on('afterMove', ({ page }) => {
+  refs.bookList.innerHTML = '';
   createShoppingList();
+});
+
+function chunkArray(arr, chunkSize) {
+  let chunkedArray = [];
+  for (let i = 0; i < arr.length; i += chunkSize) {
+    chunkedArray.push(arr.slice(i, i + chunkSize));
+  }
+  return chunkedArray;
 }
