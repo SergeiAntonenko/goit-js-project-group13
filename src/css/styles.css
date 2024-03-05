@@ -16,6 +16,7 @@
 @import url('./scroll-up.css');
 @import url('./spinner.css');
 @import url('./mob-menu.css');
+@import url('./pagination.css');
 
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;

@@ -2,12 +2,14 @@
 #shopping-list .supporters {
   display: none;
 }
+#shopping-list {
+  height: 100vh;
+}
 
 .shopping-list-wrapper {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  height: 100vh;
   width: 100%;
 }
 .shopping-list-title {

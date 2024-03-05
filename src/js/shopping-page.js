@@ -6,6 +6,7 @@ import { spinnerPlay, spinnerStop } from './spinner';
 import { getBooksInList, removeBookFromList } from './local-storage';
 import amazon from '../img/modal/modal-icons.svg#icon-amazon-logo';
 import ibooks from '../img/modal/modal-icons.svg#icon-ibooks-logo';
+import svgIcon from '../img/shopping-list/icons-shop.svg';
 
 const refs = {
   bookList: document.querySelector('.shopping-list-saved'),
@@ -13,11 +14,12 @@ const refs = {
   pagination: document.querySelector('.tui-pagination'),
 };
 const perPage = window.innerWidth >= 768 ? 3 : 4;
-
+const visiblePages = window.innerWidth >= 768 ? 3 : 2;
 createShoppingList();
 
 async function createShoppingList() {
   const bookIds = getBooksInList();
+  setHidden(refs.pagination);
   spinnerPlay(refs.bookList);
   if (!bookIds || bookIds.length === 0) {
     removeHidden(refs.emptyList);
@@ -154,7 +156,7 @@ const container = document.getElementById('pagination');
 const options = {
   totalItems: getBooksInList().length,
   itemsPerPage: perPage,
-  visiblePages: 2,
+  visiblePages: visiblePages,
   page: 1,
   centerAlign: true,
   firstItemClassName: 'tui-first-child',
@@ -165,11 +167,19 @@ const options = {
       '<strong class="tui-page-btn tui-is-selected">{{page}}</strong>',
     moveButton:
       '<a href="#" class="tui-page-btn tui-{{type}}">' +
-      '<span class="tui-ico-{{type}}">{{type}}</span>' +
+      '<span class="tui-ico-{{type}}">' +
+      `<svg >
+                    <use href = "${svgIcon}#icon-pagination-{{type}}"></use>
+                </svg>` +
+      '</span>' +
       '</a>',
     disabledMoveButton:
       '<span class="tui-page-btn tui-is-disabled tui-{{type}}">' +
-      '<span class="tui-ico-{{type}}">{{type}}</span>' +
+      '<span class="tui-ico-{{type}}">' +
+      `<svg >
+                    <use href = "${svgIcon}#icon-pagination-{{type}}"></use>
+                </svg>` +
+      '</span>' +
       '</span>',
     moreButton:
       '<a href="#" class="tui-page-btn tui-{{type}}-is-ellip">' +
