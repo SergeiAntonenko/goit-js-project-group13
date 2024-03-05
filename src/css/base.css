@@ -7,6 +7,7 @@ body {
   background-color: #f6f6f6;
   transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out,
     border-color 0.3s ease-in-out;
+  min-height: 100vh;
 }
 
 body.dark {

@@ -137,7 +137,7 @@ right: 0;
 .header-menu-close {
   height: 22px;
   padding: 0 6px 0 0;
-  background-color: #fff;
+  background-color: inherit;
   border: none;
   transition: all 0.3s ease-in-out;
 }
@@ -158,6 +158,10 @@ right: 0;
 .header.dark {
   background-color: #111111;
   border-color: #fff;
+}
+
+.header.dark .header-menu-close-svg {
+  stroke: #fff;
 }
 
 .dark .header-logo-svg {

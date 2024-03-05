@@ -57,11 +57,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
 //
 function getCurrentPage() {
-  if (currentPage === 'index.html' || currentPage === 'index.html#') {
-    shoppingListElement.classList.remove('active-shopping-list');
-    homeElement.classList.add('active-home');
-  } else {
+  if (currentPage === 'shopping-list.html') {
     homeElement.classList.remove('active-home');
     shoppingListElement.classList.add('active-shopping-list');
+  } else {
+    shoppingListElement.classList.remove('active-shopping-list');
+    homeElement.classList.add('active-home');
   }
 }
