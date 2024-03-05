@@ -178,22 +178,27 @@ function smoothScrollToElement() {
     const element = refs.titleElement;
     if (windowWidth < 1440) {
         setTimeout(function() {
-            const scrollOffset = element.getBoundingClientRect().top - 60;
+            const scrollOffset = element.getBoundingClientRect().top - 60;тт
             window.scrollTo({ top: scrollOffset, behavior: "smooth" });
         }, 1100);
     }
 }
 
 
+let scrollTimeout;
+
 // варнинг когда достингли конца категорий
 function isPageScrolledToBottom() {
     return window.innerHeight + window.scrollY >= document.body.offsetHeight;
 }
 window.addEventListener('scroll', function() {
-    if (isPageScrolledToBottom()) {
-        const title = refs.titleElement.textContent.trim();
-        if (title === "Best Sellers Books") {
-            showNotInLibraryToast();
-        }
-    }
+  if (isPageScrolledToBottom()) {
+      clearTimeout(scrollTimeout); 
+      scrollTimeout = setTimeout(function() {
+          const title = refs.titleElement.textContent.trim();
+          if (title === "Best Sellers Books") {
+              showNotInLibraryToast();
+          }
+      }, 500);
+  }
 });
