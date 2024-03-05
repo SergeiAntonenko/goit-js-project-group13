@@ -3,7 +3,8 @@
   display: none;
 }
 #shopping-list {
-  height: 100vh;
+  min-height:100vh;
+  height: 100%;
 }
 
 .shopping-list-wrapper {
