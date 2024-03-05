@@ -95,7 +95,7 @@
 .mob-books-img {
   margin-bottom: 0;
   margin-right: 0;
-  width: 450px;
+  width: 100%;
   height: auto;
   z-index: 2;
 }
