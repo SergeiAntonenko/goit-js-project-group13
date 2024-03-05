@@ -178,7 +178,7 @@ function smoothScrollToElement() {
     const element = refs.titleElement;
     if (windowWidth < 1440) {
         setTimeout(function() {
-            const scrollOffset = element.getBoundingClientRect().top - 60;тт
+            const scrollOffset = element.getBoundingClientRect().top - 60;
             window.scrollTo({ top: scrollOffset, behavior: "smooth" });
         }, 1100);
     }
