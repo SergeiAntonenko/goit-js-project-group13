@@ -3,6 +3,11 @@
   display: none;
 }
 
+#shopping-list {
+  min-height: 100vh;
+  height: 100%;
+}
+
 .shopping-list-wrapper {
   display: flex;
   flex-direction: column;

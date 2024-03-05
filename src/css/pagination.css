@@ -1,6 +1,7 @@
 .tui-pagination {
   margin-top: 20px !important;
   margin-bottom: 20px !important;
+  height: unset !important;
 }
 .tui-pagination .tui-page-btn,
 .tui-pagination .tui-page-btn.tui-first,
@@ -50,9 +51,6 @@
 .tui-pagination .tui-page-btn.tui-last {
   background-color: #eac645 !important;
   color: #111 !important;
-}
-
-.tui-page-btn.tui-next-is-ellip.tui-last-child {
 }
 
 .tui-pagination .tui-page-btn.tui-first svg,
@@ -163,9 +161,6 @@ body.dark .tui-page-btn.tui-is-selected {
   .tui-pagination .tui-page-btn.tui-last {
     background-color: #eac645 !important;
     color: #111 !important;
-  }
-
-  .tui-page-btn.tui-next-is-ellip.tui-last-child {
   }
 
   .tui-pagination .tui-page-btn.tui-first svg,
