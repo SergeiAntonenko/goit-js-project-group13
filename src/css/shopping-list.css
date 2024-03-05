@@ -14,6 +14,7 @@
   margin: 0 auto;
   width: 100%;
 }
+
 .shopping-list-title {
   font-weight: 700;
   font-size: 32px;
@@ -22,6 +23,7 @@
   color: #111;
   padding: 0 0 40px 0;
 }
+
 .shopping-list-title span {
   font-weight: 700;
   font-size: 32px;
@@ -40,6 +42,7 @@
   gap: 14px;
   padding: 40px 0;
 }
+
 .shopping-list-empty-message {
   font-weight: 400;
   font-size: 14px;
@@ -48,6 +51,7 @@
   text-align: center;
   color: rgba(0, 0, 0, 0.6);
 }
+
 .shopping-list-empty-img {
   width: 100%;
   margin: 0 auto;
@@ -59,6 +63,8 @@
   margin: 0 auto;
   width: 100%;
   gap: 20px;
+  position: relative;
+  min-height: 50px;
 }
 
 .saved-item {
@@ -79,6 +85,7 @@
   height: 142px;
   overflow: hidden;
 }
+
 .saved-item-cover-img {
   object-fit: cover;
   object-position: center;
@@ -94,6 +101,7 @@
   flex-direction: column;
   justify-content: space-between;
 }
+
 .saved-item-discription-top {
   display: flex;
   justify-content: space-between;
@@ -221,6 +229,7 @@
     font-size: 48px;
     line-height: 1.08;
   }
+
   .shopping-list-title span {
     font-size: 48px;
     line-height: 1.08;
@@ -229,10 +238,12 @@
   .shopping-list-empty {
     width: 349px;
   }
+
   .shopping-list-empty-message {
     font-size: 18px;
     line-height: 1.33;
   }
+
   .saved-item-delete-btn {
     width: 34px;
     height: 34px;
@@ -242,16 +253,19 @@
     width: 48px;
     height: 15px;
   }
+
   .saved-item-refer-ibooks-logo {
     width: 28px;
     height: 27px;
   }
 }
+
 /* =====================Desktop===================== */
 @media screen and (min-width: 1440px) {
   #shopping-list .supporters {
     display: flex;
   }
+
   .shopping-list-wrapper {
     padding: 0 36px;
   }
