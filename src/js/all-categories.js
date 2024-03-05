@@ -26,6 +26,7 @@ getCategoryList()
   .then(markup => {
     viewLightBox(markup);
     click();
+    toggle();
   })
   .catch(error =>
     iziToast.error({
@@ -45,6 +46,21 @@ function click() {
   gallery.forEach(item => {
     item.addEventListener('click', () => {
       link.classList.remove('all-categories-link');
+    });
+  });
+}
+
+// Функція, яка вмикатиме кнопку на наступній позиції
+function toggle() {
+  const buttons = document.querySelectorAll('.gallery-link');
+  let currentIndex = 0;
+
+  // Додаємо слухача подій для кожної кнопки
+  buttons.forEach((button, index) => {
+    button.addEventListener('click', () => {
+      buttons[currentIndex].classList.remove('active');
+      currentIndex = index;
+      buttons[currentIndex].classList.add('active');
     });
   });
 }
