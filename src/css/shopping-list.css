@@ -2,9 +2,6 @@
 #shopping-list .supporters {
   display: none;
 }
-#shopping-list {
-  height: 100vh;
-}
 
 .shopping-list-wrapper {
   display: flex;
