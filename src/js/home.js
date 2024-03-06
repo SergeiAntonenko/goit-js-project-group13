@@ -7,11 +7,12 @@ const refs = {
   topListElem: document.querySelector('#topList'),
   categoryListElem: document.querySelector('#categoryList'),
   titleElement: document.querySelector('.top_list-title'),
+  allCategoriesElement: document.querySelector('.all-categories'),
 };
+
 
 let isNoBooksToastShown = false;
 
-// Добавляем слушатели событий на Книжки и "See Mor" при загрузке страницы
 document.addEventListener('DOMContentLoaded', function () {
   document.addEventListener('click', clickSeeMore);
   document.addEventListener('click', clickByBook);
@@ -19,7 +20,6 @@ document.addEventListener('DOMContentLoaded', function () {
   window.addEventListener('scroll', scrollHandler); // скрол
 });
 
-// Ждем загрузки страницы и создаём список лучших книг
 document.addEventListener('DOMContentLoaded', async function () {
   spinnerPlay(refs.titleElement);
   refs.topListElem.innerHTML = '';
@@ -29,11 +29,11 @@ document.addEventListener('DOMContentLoaded', async function () {
   topList.forEach(elem => {
     html += renderTopList(elem);
   });
-  refs.topListElem.innerHTML = html; // исправил то что Юля писала. Теперь отрисовывается за 1 запрос
+  refs.topListElem.innerHTML = html;
   spinnerStop();
 });
 
-// Собираем HTML в кучу и возвращаем его
+
 function renderTopList(elem) {
   return `
         <li class="top_list-container">
@@ -47,7 +47,7 @@ function renderTopList(elem) {
 }
 
 function renderBooks(books) {
-  let i = 1; // порядковый номер от 1 до 5 для скрытия ненужных книг в мобильных стилях
+  let i = 1;
   const bookHtml = books
     .map(
       book => `
@@ -70,7 +70,6 @@ function renderBooks(books) {
   return bookHtml;
 }
 
-// Клика по Книге
 const clickByBook = function (event) {
   if (
     event.target.parentElement?.classList.contains(
@@ -82,7 +81,6 @@ const clickByBook = function (event) {
   }
 };
 
-// Клик по кнопке "See More"
 const clickSeeMore = function (event) {
   if (event.target.classList.contains('top_list-see_more')) {
     refs.topListElem.classList.add('hidden');
@@ -90,9 +88,10 @@ const clickSeeMore = function (event) {
     const category = event.target.dataset.category;
     titleCategory(category);
     categoryList(category);
-    document.removeEventListener('click', clickByBook); // удаляем созданные слуштаели событий по книгам
-    document.addEventListener('click', clickByBook); // создаем новые только для тех которые только что отрендерели
+    document.removeEventListener('click', clickByBook);
+    document.addEventListener('click', clickByBook);
     smoothScrollToElement();
+    allCategoriesClassActive(category);
   }
   if (event.target.classList.contains('gallery-link')) {
     refs.topListElem.classList.add('hidden');
@@ -100,19 +99,23 @@ const clickSeeMore = function (event) {
     const category = event.target.textContent.trim();
     titleCategory(category);
     categoryList(category);
+    smoothScrollToElement(category);
+    document.removeEventListener('click', clickByBook);
+    document.addEventListener('click', clickByBook);
     smoothScrollToElement();
-    document.removeEventListener('click', clickByBook); // удаляем созданные слуштаели событий по книгам
-    document.addEventListener('click', clickByBook); // создаем новые только для тех которые только что отрендерели
-    smoothScrollToElement();
+    allCategoriesClassActive(category);
   }
 };
 
-// Клик по кнопке "All Categories"
 const clickByAllCategory = async function (event) {
-  if (
-    event.target.classList.contains('all_categories') ||
-    event.target.classList.contains('link')
-  ) {
+  if (event.target.classList.contains('all_categories')) {
+    refs.titleElement.innerHTML = 'Best Sellers <span>Books</span>';
+    refs.categoryListElem.classList.add('hidden');
+    refs.topListElem.classList.remove('hidden');
+    smoothScrollToElement();
+    allCategoriesClassActive('All categories');
+  }
+  if (event.target.classList.contains('link')) {
     refs.titleElement.innerHTML = 'Best Sellers <span>Books</span>';
     refs.categoryListElem.classList.add('hidden');
     refs.topListElem.classList.remove('hidden');
@@ -120,7 +123,6 @@ const clickByAllCategory = async function (event) {
   }
 };
 
-// Асинхронная функция которая получает список книг по категории и отрисовывает его
 async function categoryList(category) {
   spinnerPlay(refs.titleElement);
   refs.categoryListElem.innerHTML = '';
@@ -144,7 +146,6 @@ async function categoryList(category) {
   spinnerStop();
 }
 
-// функция меняет название категории вверху
 function titleCategory(category) {
   const textContent = category;
   const words = textContent.split(' ');
@@ -187,7 +188,6 @@ function smoothScrollToElement() {
 
 let scrollTimeout;
 
-// варнинг когда достингли конца категорий
 function isPageScrolledToBottom() {
     return window.innerHeight + window.scrollY >= document.body.offsetHeight;
 }
@@ -202,3 +202,16 @@ window.addEventListener('scroll', function() {
       }, 500);
   }
 });
+
+
+function allCategoriesClassActive(category) {
+  refs.allCategoriesElement.querySelectorAll('.gallery-link').forEach(link => {
+    if (category === link.textContent.trim()) {
+      link.classList.add('active');
+
+    } else {
+      link.classList.remove('active');
+    }
+  });
+};
+
