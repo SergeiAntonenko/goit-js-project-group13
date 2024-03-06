@@ -42,6 +42,10 @@ body.dark {
   padding: 0 20px;
 }
 
+.aside {
+  padding-bottom: 40px;
+}
+
 @media screen and (min-width: 375px) {
   .container {
     width: 375px;
@@ -56,6 +60,7 @@ body.dark {
 
   .aside {
     display: flex;
+    padding-bottom: 100px;
   }
 }
 
@@ -72,5 +77,6 @@ body.dark {
 
   .aside {
     display: block;
+    padding-bottom: 0;
   }
 }
