@@ -21,75 +21,77 @@
   <body>
     <header class="header">
       <div class="container">
-    <nav class="header-nav">
-        <!-- Логотип -->
-        <a class="header-logo" href="./index.html">
-            <svg class="header-logo-svg" width="109" height="28">
-                <use href="/goit-js-project-group13/assets/logo-icon-7e6bc326.svg#logo-icon"></use>
+  <nav class="header-nav">
+    <!-- Логотип -->
+    <a class="header-logo" href="./index.html">
+      <svg class="header-logo-svg" width="109" height="28">
+        <use href="/goit-js-project-group13/assets/logo-icon-7e6bc326.svg#logo-icon"></use>
+      </svg>
+      Bookshelf
+    </a>
+
+    <!-- Навігація для планшетного вигляду -->
+    <nav class="desktop-nav">
+      <ul class="menu-ul">
+        <li class="menu-li-home">
+          <a href="./index.html" class="menu-home active-home">Home</a>
+        </li>
+        <li class="menu-li-shop">
+          <a href="./shopping-list.html" class="menu-shopping-list">
+            Shopping List
+            <svg class="icon-shop" width="20" height="20">
+              <use href="/goit-js-project-group13/assets/shop-bag-04db4fb1.svg#shop-bag"></use>
             </svg>
-            Bookshelf
-        </a>
+          </a>
+        </li>
+      </ul>
+    </nav>
 
-        <!-- Навігація для планшетного вигляду -->
-        <nav class="desktop-nav">
-        <ul class="menu-ul">
-            <li class="menu-li-home">
-                <a href="./index.html" class="menu-home active-home">Home</a>
-            </li>
-            <li class="menu-li-shop">
-                <a href="./shopping-list.html" class="menu-shopping-list">
-                    Shopping List
-                    <svg class="icon-shop" width="20" height="20">
-                        <use href="/goit-js-project-group13/assets/shop-bag-04db4fb1.svg#shop-bag"></use>
-                    </svg>
-                </a>
-            </li>
-        </ul>
-        </nav>
+    <!-- Перемикач теми -->
+    <div class="toggle"></div>
 
-        <!-- Перемикач теми -->
-        <div class="toggle"></div>
+    <button class="header-menu" id="menu">
+      <svg class="header-menu-svg" width="28" height="28">
+        <use href="/goit-js-project-group13/assets/menu-c38d1d95.svg#menu"></use>
+      </svg>
+    </button>
+    <button class="header-menu-close disabled" id="menu-close">
+      <svg class="header-menu-close-svg" width="22" height="22">
+        <use href="/goit-js-project-group13/assets/modal-icons-6da17b7d.svg#icon-close"></use>
+      </svg>
+    </button>
 
-        <button class="header-menu" id="menu">
-            <svg class="header-menu-svg" width="28" height="28">
-                <use href="/goit-js-project-group13/assets/menu-c38d1d95.svg#menu"></use>
-            </svg>
-        </button>
-        <button class="header-menu-close disabled" id="menu-close">
-            <svg class="header-menu-close-svg" width="22" height="22">
-                <use href="/goit-js-project-group13/assets/modal-icons-6da17b7d.svg#icon-close"></use>
-            </svg>
-        </button>
-
-        <button class="header-btn" href="#sign-up">Sign up
-            <img class="btn-arrow" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAMCAYAAABr5z2BAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACmSURBVHgBnZK9DcIwEIXvmZA6DaJlhLSINkGMAxPgTIBYByG54adkDBApYADIYbfIyV3yNS6s98l3fkQCd7ea1efiVV+X29i9kQSj8TdjfzKzjUlACp6nMiewIyADYCfzQ9VL0CVRC9okeFyKtSHsaAANmY24RIl+I7gyR8qO/Qj+V6rp4mj1S4yE1S9oC6sEoYlJ+rnFwoFEEoQmNsDbV3H/Hw78AGZGVQgBvXGRAAAAAElFTkSuQmCC" alt="button">
-        </button>
+    <button class="header-btn" href="#sign-up">
+      Sign up
+      <img class="btn-arrow" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAMCAYAAABr5z2BAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACmSURBVHgBnZK9DcIwEIXvmZA6DaJlhLSINkGMAxPgTIBYByG54adkDBApYADIYbfIyV3yNS6s98l3fkQCd7ea1efiVV+X29i9kQSj8TdjfzKzjUlACp6nMiewIyADYCfzQ9VL0CVRC9okeFyKtSHsaAANmY24RIl+I7gyR8qO/Qj+V6rp4mj1S4yE1S9oC6sEoYlJ+rnFwoFEEoQmNsDbV3H/Hw78AGZGVQgBvXGRAAAAAElFTkSuQmCC" alt="button" />
+    </button>
+  </nav>
 </div>
 
 <div class="sign-up" id="sign-up" hidden>
-    <div class="form-box">
-        <form>
-            <div class="input-group">
-                <div class="input-field">
-                    <input class="input-sing-up" type="text" placeholder="Name">
-                </div>
+  <div class="form-box">
+    <form>
+      <div class="input-group">
+        <div class="input-field">
+          <input class="input-sing-up" type="text" placeholder="Name" />
+        </div>
 
-                <div class="input-field">
-                    <input class="input-sing-up" type="email" placeholder="Email">
-                    <svg class="form-email">
-                        <use href="/goit-js-project-group13/assets/mail-047b4bb7.svg#mail"></use>
-                    </svg>
-                </div>
+        <div class="input-field">
+          <input class="input-sing-up" type="email" placeholder="Email" />
+          <svg class="form-email">
+            <use href="/goit-js-project-group13/assets/mail-047b4bb7.svg#mail"></use>
+          </svg>
+        </div>
 
-                <div class="input-field">
-                    <svg class="form-password">
-                        <use href="/goit-js-project-group13/assets/password-904b98b2.svg#password"></use>
-                    </svg>
-                    <input class="input-sing-up" type="password" placeholder="Password">
-                </div>
-            </div>
-        </form>
-    </div>
+        <div class="input-field">
+          <svg class="form-password">
+            <use href="/goit-js-project-group13/assets/password-904b98b2.svg#password"></use>
+          </svg>
+          <input class="input-sing-up" type="password" placeholder="Password" />
+        </div>
+      </div>
+    </form>
+  </div>
 </div>
 
     </header>
