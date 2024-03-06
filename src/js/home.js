@@ -185,15 +185,20 @@ function smoothScrollToElement() {
 }
 
 
+let scrollTimeout;
+
 // варнинг когда достингли конца категорий
 function isPageScrolledToBottom() {
     return window.innerHeight + window.scrollY >= document.body.offsetHeight;
 }
 window.addEventListener('scroll', function() {
-    if (isPageScrolledToBottom()) {
-        const title = refs.titleElement.textContent.trim();
-        if (title === "Best Sellers Books") {
-            showNotInLibraryToast();
-        }
-    }
+  if (isPageScrolledToBottom()) {
+      clearTimeout(scrollTimeout); 
+      scrollTimeout = setTimeout(function() {
+          const title = refs.titleElement.textContent.trim();
+          if (title === "Best Sellers Books") {
+              showNotInLibraryToast();
+          }
+      }, 500);
+  }
 });
