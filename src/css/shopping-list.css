@@ -20,7 +20,7 @@
   line-height: 1.19;
   letter-spacing: -0.04em;
   color: #111;
-  padding: 0 0 40px 0;
+  margin-bottom: 40px;
 }
 .shopping-list-title span {
   font-weight: 700;
