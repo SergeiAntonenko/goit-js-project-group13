@@ -13,7 +13,18 @@ export async function getCategoryList() {
   const url = `${BASE_URL}${END_POINTS[0]}`;
   try {
     const res = await axios.get(url);
-    return res.data;
+    const sortedData = res.data.sort((a, b) => {
+      const nameA = a.list_name.toUpperCase();
+      const nameB = b.list_name.toUpperCase();
+      if (nameA < nameB) {
+        return -1;
+      }
+      if (nameA > nameB) {
+        return 1;
+      }
+      return 0;
+    });
+    return sortedData;
   } catch (error) {
     console.error('Error fetching category list: ', error);
     throw error;
