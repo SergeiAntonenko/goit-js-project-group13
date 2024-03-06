@@ -202,10 +202,12 @@ window.addEventListener('scroll', function () {
 
 function allCategoriesClassActive(category) {
   const allCategories = document.querySelector('.link');
+  const sidebar = document.querySelector('.sidebar');
   refs.allCategoriesElement.querySelectorAll('.gallery-link').forEach(link => {
     if (category === link.textContent.trim()) {
       link.classList.add('active');
       allCategories.classList.remove('all-categories-link');
+      sidebar.scrollTop = link.offsetTop - sidebar.offsetTop;
     } else {
       link.classList.remove('active');
     }
