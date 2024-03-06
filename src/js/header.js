@@ -55,7 +55,6 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-//
 function getCurrentPage() {
   if (currentPage === 'shopping-list.html') {
     homeElement.classList.remove('active-home');
