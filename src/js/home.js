@@ -10,7 +10,6 @@ const refs = {
   allCategoriesElement: document.querySelector('.all-categories'),
 };
 
-
 let isNoBooksToastShown = false;
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -32,7 +31,6 @@ document.addEventListener('DOMContentLoaded', async function () {
   refs.topListElem.innerHTML = html;
   spinnerStop();
 });
-
 
 function renderTopList(elem) {
   return `
@@ -175,43 +173,43 @@ function scrollHandler() {
 }
 
 function smoothScrollToElement() {
-    const windowWidth = window.innerWidth || document.documentElement.clientWidth;
-    const element = refs.titleElement;
-    if (windowWidth < 1440) {
-        setTimeout(function() {
-            const scrollOffset = element.getBoundingClientRect().top - 60;
-            window.scrollTo({ top: scrollOffset, behavior: "smooth" });
-        }, 1100);
-    }
+  const windowWidth = window.innerWidth || document.documentElement.clientWidth;
+  const element = refs.titleElement;
+  if (windowWidth < 1440) {
+    setTimeout(function () {
+      const scrollOffset = element.getBoundingClientRect().top - 60;
+      window.scrollTo({ top: scrollOffset, behavior: 'smooth' });
+    }, 1100);
+  }
 }
-
 
 let scrollTimeout;
 
 function isPageScrolledToBottom() {
-    return window.innerHeight + window.scrollY >= document.body.offsetHeight;
+  return window.innerHeight + window.scrollY >= document.body.offsetHeight;
 }
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function () {
   if (isPageScrolledToBottom()) {
-      clearTimeout(scrollTimeout); 
-      scrollTimeout = setTimeout(function() {
-          const title = refs.titleElement.textContent.trim();
-          if (title === "Best Sellers Books") {
-              showNotInLibraryToast();
-          }
-      }, 500);
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(function () {
+      const title = refs.titleElement.textContent.trim();
+      if (title === 'Best Sellers Books') {
+        showNotInLibraryToast();
+      }
+    }, 500);
   }
 });
 
-
 function allCategoriesClassActive(category) {
+  const allCategories = document.querySelector('.link');
+  const sidebar = document.querySelector('.sidebar');
   refs.allCategoriesElement.querySelectorAll('.gallery-link').forEach(link => {
     if (category === link.textContent.trim()) {
       link.classList.add('active');
-
+      allCategories.classList.remove('all-categories-link');
+      sidebar.scrollTop = link.offsetTop - sidebar.offsetTop;
     } else {
       link.classList.remove('active');
     }
   });
-};
-
+}
