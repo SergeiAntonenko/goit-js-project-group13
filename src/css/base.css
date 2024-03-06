@@ -43,7 +43,7 @@ body.dark {
 }
 
 .aside {
-  margin-bottom: 40px;
+  padding-bottom: 40px;
 }
 
 @media screen and (min-width: 375px) {
@@ -60,7 +60,7 @@ body.dark {
 
   .aside {
     display: flex;
-    margin-bottom: 100px;
+    padding-bottom: 100px;
   }
 }
 
@@ -77,6 +77,6 @@ body.dark {
 
   .aside {
     display: block;
-    margin-bottom: 0;
+    padding-bottom: 0;
   }
 }
