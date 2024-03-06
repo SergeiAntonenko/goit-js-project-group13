@@ -7,7 +7,7 @@
   height: 100%;
   flex-direction: column;
   justify-content: space-between;
-  overflow: auto;
+  overflow: none;
   opacity: 10;
   display: none;
   pointer-events: auto;

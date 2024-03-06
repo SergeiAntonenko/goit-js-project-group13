@@ -252,6 +252,10 @@ right: 0;
   transform: translateY(-50%);
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 /* .sign-up.sign-up-hidden {
   opacity: 1;
   pointer-events: auto;
@@ -266,6 +270,10 @@ right: 0;
 }
 
 @media screen and (min-width: 768px) {
+  .no-scroll {
+    overflow: auto;
+  }
+
   .container-header {
     max-width: 768px;
     padding: 22px 32px;
