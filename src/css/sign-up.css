@@ -144,6 +144,14 @@
   outline: 2px solid #f3f3f3;
 }
 
+.form-box.dark .email-input {
+  background-image: url('../img/header/mail-white.svg');
+}
+
+.form-box.dark .password-input {
+  background-image: url('../img/header/password-white.svg');
+}
+
 .form-box.dark .form-signup-btn {
   background-color: #f6f6f6;
   color: #202024;
