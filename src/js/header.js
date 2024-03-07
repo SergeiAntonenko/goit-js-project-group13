@@ -15,12 +15,14 @@ document.addEventListener('DOMContentLoaded', function () {
   const getMode = loadTheme();
   const header = document.querySelector('.header');
   const headerBtn = document.querySelector('.header-btn');
+  const signUpForm = document.querySelector('.form-box');
 
   if (getMode && getMode === 'dark') {
     header.classList.add('dark');
     headerBtn.classList.add('dark');
     mobMenuBtn.classList.add('dark');
     body.classList.add('dark');
+    signUpForm.classList.add('dark');
     toggle.classList.add('active');
     toggle.style.background =
       'linear-gradient(180deg, #4f2ee8 0%, #686868 100%)';
@@ -39,6 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
       header.classList.add('dark');
       headerBtn.classList.add('dark');
       mobMenuBtn.classList.add('dark');
+      signUpForm.classList.add('dark');
       toggle.style.background =
         'linear-gradient(180deg, #4f2ee8 0%, #686868 100%)';
       toggle.style.boxShadow = 'inset 1px 1px 2px 0 rgba(0, 0, 0, 0.1)';
@@ -47,6 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
       header.classList.remove('dark');
       headerBtn.classList.remove('dark');
       mobMenuBtn.classList.remove('dark');
+      signUpForm.classList.remove('dark');
       toggle.style.background =
         'linear-gradient(180deg, #4f2ee8 0%, #dcdcdc 100%)';
       toggle.style.boxShadow = 'inset 1px 1px 2px 0 rgba(0, 0, 0, 0.1)';

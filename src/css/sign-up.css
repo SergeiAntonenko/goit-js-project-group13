@@ -1,0 +1,222 @@
+.sign-up {
+  display: none;
+  width: 100%;
+  height: 100vh;
+  background-color: #4f2ee8;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+.form-box {
+  letter-spacing: -0.01em;
+  background-color: #f6f6f6;
+  border: 2px solid #111;
+  border-radius: 18px;
+  max-width: 335px;
+  height: 384px;
+  padding: 40px 20px;
+  font-size: 16px;
+  line-height: 1.12;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.form-signup-close {
+  height: 20px;
+  width: 20px;
+  padding: 0;
+  background-color: inherit;
+  border: none;
+  position: absolute;
+  top: 14px;
+  right: 14px;
+}
+
+.form-signup-close:hover .form-signup-close-svg {
+  stroke: #4f2ee8;
+}
+
+.form-signup-close-svg {
+  width: 10px;
+  height: 10px;
+  stroke: #111;
+  transition: stroke 0.2s ease-in-out;
+}
+
+.input-sing-up {
+  border: 2px solid #111;
+  border-radius: 40px;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  margin-bottom: 24px;
+  padding: 0 32px 0 24px;
+  display: flex;
+  background-color: inherit;
+}
+
+.input-sing-up:hover,
+.input-sing-up:focus {
+  outline: 1px solid #4f2ee8;
+}
+
+.email-input {
+  background-image: url('./img/header/mail.svg');
+  background-position: right 12px top 13px;
+  background-size: 20px;
+  background-repeat: no-repeat;
+}
+
+.password-input {
+  background-image: url('./img/header/password.svg');
+  background-position: right 12px top 13px;
+  background-size: 20px;
+  background-repeat: no-repeat;
+}
+
+.form-signup-btn {
+  width: 100%;
+  text-transform: uppercase;
+  border-radius: 40px;
+  border: none;
+  padding: 16px 0px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 112%;
+  letter-spacing: -0.01em;
+  background-color: #111111;
+  color: #f3f3f3;
+  margin-bottom: 20px;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.form-signup-btn:hover,
+.form-signup-btn:focus {
+  background-color: #4f2ee8;
+}
+
+.signup-links {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.signup-link {
+  text-transform: uppercase;
+  color: rgba(17, 17, 17, 0.5);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.01em;
+  transition: color 0.2s ease-in-out;
+}
+
+.signup-link:hover,
+.signup-link:focus {
+  color: #4f2ee8;
+  text-decoration: underline;
+}
+
+.signup-is-active {
+  display: block;
+}
+
+.form-box.dark {
+  background-color: #202024;
+  color: #f6f6f6;
+}
+
+.form-box.dark .input-sing-up {
+  color: #f6f6f6;
+  border: 2px solid #f6f6f6;
+}
+
+.form-box.dark .input-sing-up::placeholder {
+  color: #f6f6f6;
+}
+
+.form-box.dark .input-sing-up:hover,
+.input-sing-up:focus {
+  outline: 2px solid #f3f3f3;
+}
+
+.form-box.dark .form-signup-btn {
+  background-color: #f6f6f6;
+  color: #202024;
+}
+
+.form-box.dark .form-signup-btn:hover,
+.form-signup-btn:focus {
+  background-color: #4f2ee8;
+}
+
+.form-box.dark .signup-link {
+  color: rgba(246, 246, 246, 0.5);
+}
+
+.form-box.dark .signup-link:hover,
+.signup-link:focus {
+  color: #4f2ee8;
+  text-decoration: underline;
+}
+
+.form-box.dark .form-signup-close:hover .form-signup-close-svg {
+  stroke: #4f2ee8;
+}
+
+.form-box.dark .form-signup-close-svg {
+  stroke: #f6f6f6;
+  transition: stroke 0.2s ease-in-out;
+}
+
+@media screen and (min-width: 768px) {
+  .form-box {
+    max-width: 579px;
+    height: 516px;
+    padding: 80px 40px 40px;
+  }
+
+  .form-signup-close {
+    width: 28px;
+    height: 28px;
+    top: 24px;
+    right: 24px;
+  }
+
+  .form-signup-close-svg {
+    width: 14px;
+    height: 14px;
+    stroke: #111;
+  }
+
+  .input-sing-up {
+    height: 64px;
+    margin-bottom: 28px;
+    font-size: 18px;
+    line-height: 133%;
+    padding: 0 38px 0 24px;
+  }
+
+  .password-input {
+    margin-bottom: 40px;
+  }
+
+  .email-input {
+    background-position: right 12px top 18px;
+    background-size: 24px;
+  }
+
+  .password-input {
+    background-position: right 12px top 18px;
+    background-size: 24px;
+  }
+
+  .form-signup-btn {
+    height: 64px;
+    font-size: 18px;
+  }
+}

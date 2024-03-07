@@ -17,6 +17,7 @@
 @import url('./spinner.css');
 @import url('./mob-menu.css');
 @import url('./pagination.css');
+@import url('./sign-up.css');
 
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
