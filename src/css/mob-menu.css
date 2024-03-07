@@ -69,7 +69,8 @@
   outline: none;
 }
 
-.mob-menu-link.active {
+.mob-menu-link.active,
+.mob-menu-list-link.active {
   border-radius: 36px;
   padding: 8px 16px;
   background: #eac645;
