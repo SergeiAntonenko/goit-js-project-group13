@@ -1,1 +1,66 @@
-<div id="modalBookContainer"></div>
+<div id="modalBookContainer" class="visually-hidden modal-book-container">
+  <div class="book-background" id="modalBookBackground">
+    <div class="modal-container">
+      <button class="modal-close" id="modalClose">
+        <svg class="modal-close-icon" width="12" height="12">
+          <use href="./img/modal/modal-icons.svg#icon-close"></use>
+        </svg>
+      </button>
+      <div class="book-box">
+        <img
+          src="./img/modal/book-cover.jpg"
+          alt="book cover template"
+          class="book-cover"
+          id="bookCover"
+        />
+        <div class="book-description-box">
+          <h2 class="book-title" id="bookTitle">Book title</h2>
+          <div class="book-author" id="bookAuthor">Book author</div>
+          <p class="book-description" id="bookDescription">Book description</p>
+          <ul class="book-shop-list">
+            <li class="book-shop-item">
+              <a
+                href="https://www.amazon.com/"
+                class="book-shop-link"
+                id="amazonLink"
+                target="_blank"
+              >
+                <svg class="book-shop-logo amazon-logo" width="62" height="19">
+                  <use
+                    href="./img/modal/modal-icons.svg#icon-amazon-logo"
+                  ></use>
+                </svg>
+              </a>
+            </li>
+            <li class="book-shop-item">
+              <a
+                href="https://www.apple.com/apple-books/"
+                class="book-shop-link"
+                id="iBookLink"
+                target="_blank"
+              >
+                <svg class="book-shop-logo ibooks-logo" width="32" height="32">
+                  <use
+                    href="./img/modal/modal-icons.svg#icon-ibooks-logo"
+                  ></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="book-action">
+        <button class="book-action-btn" id="shoppingListBtn">
+          Add to shopping list
+        </button>
+        <p
+          class="book-congratulations visually-hidden"
+          id="bookCongratulations"
+        >
+          Сongratulations! You have added the book to the shopping list. To
+          delete, press the button "Remove from the shopping list".
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
