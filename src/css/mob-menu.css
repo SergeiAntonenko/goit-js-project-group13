@@ -7,7 +7,6 @@
   height: 100%;
   flex-direction: column;
   justify-content: space-between;
-  overflow: none;
   opacity: 10;
   display: none;
   pointer-events: auto;
@@ -28,10 +27,8 @@
 }
 
 .mobile-menu {
-  flex-shrink: 0;
-  list-style: none;
-  padding: 0;
-  margin: 0;
+  display: flex;
+  justify-content: center;
 }
 
 .mob-menu-list {
@@ -41,12 +38,13 @@
   align-content: center;
   align-items: center;
   list-style: none;
-  margin-top: 40%;
   gap: 16px;
   text-align: left;
   padding-inline-start: 0;
   text-transform: uppercase;
   cursor: pointer;
+  position: absolute;
+  top: 247px;
 }
 
 .mobile-menu a {
@@ -69,6 +67,13 @@
   border: none;
   text-decoration: none;
   outline: none;
+}
+
+.mob-menu-link.active {
+  border-radius: 36px;
+  padding: 8px 16px;
+  background: #eac645;
+  color: #111;
 }
 
 .mob-menu-list-link {

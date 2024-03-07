@@ -101,7 +101,7 @@ right: 0;
   box-sizing: border-box;
   transition: all 0.3s;
   position: relative;
-  z-index: 2;
+  z-index: 10;
 }
 
 .header-logo {
@@ -190,6 +190,49 @@ right: 0;
 
 .header-btn {
   display: none;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 184px;
+  height: 48px;
+  text-align: left;
+  color: #4f2ee8;
+  cursor: pointer;
+  background-color: #fff;
+  border: 1.5px solid #4f2ee8;
+  border-radius: 18px;
+  padding-left: 14px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.25s cubic-bezier(0.17, 0.67, 0.91, 1.61),
+    box-shadow 0.25s cubic-bezier(0.17, 0.67, 0.91, 1.61);
+}
+
+.header-btn.dark {
+  background-color: #4f2ee8;
+  border-color: #fff;
+}
+
+.header-btn:hover,
+.header-btn:focus {
+  transform: scale(1.05);
+  color: #ffffff;
+  background-color: #4f2ee8;
+  transition: all 0.3s ease-out;
+}
+
+.header-btn.dark:hover,
+.header-btn.dark:focus {
+  transform: scale(1.05);
+  color: #4f2ee8;
+  background-color: #ffffff;
+  transition: all 0.3s ease-out;
+}
+
+.signup-is-active {
+  display: flex;
+  position: absolute;
+  top: 104px;
+  left: 20px;
 }
 
 .btn-arrow {
@@ -299,43 +342,11 @@ right: 0;
 
   .header-btn {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    min-width: 184px;
-    height: 48px;
-    text-align: left;
-    color: #4f2ee8;
-    cursor: pointer;
-    background-color: #fff;
-    border: 1.5px solid #4f2ee8;
-    border-radius: 18px;
-    padding-left: 14px;
-    font-size: 14px;
-    font-weight: 500;
-    transition: background 0.25s cubic-bezier(0.17, 0.67, 0.91, 1.61),
-      box-shadow 0.25s cubic-bezier(0.17, 0.67, 0.91, 1.61);
     position: relative;
   }
 
-  .header-btn.dark {
-    background-color: #4f2ee8;
-    border-color: #fff;
-  }
-
-  .header-btn:hover,
-  .header-btn:focus {
-    transform: scale(1.05);
-    color: #ffffff;
-    background-color: #4f2ee8;
-    transition: all 0.3s ease-out;
-  }
-
-  .header-btn.dark:hover,
-  .header-btn.dark:focus {
-    transform: scale(1.05);
-    color: #4f2ee8;
-    background-color: #ffffff;
-    transition: all 0.3s ease-out;
+  .signup-is-active {
+    position: static;
   }
 
   .toggle {
