@@ -65,14 +65,14 @@
 }
 
 .email-input {
-  background-image: url('./img/header/mail.svg');
+  background-image: url('../img/header/mail.svg');
   background-position: right 12px top 13px;
   background-size: 20px;
   background-repeat: no-repeat;
 }
 
 .password-input {
-  background-image: url('./img/header/password.svg');
+  background-image: url('../img/header/password.svg');
   background-position: right 12px top 13px;
   background-size: 20px;
   background-repeat: no-repeat;
@@ -171,6 +171,10 @@
 .form-box.dark .form-signup-close-svg {
   stroke: #f6f6f6;
   transition: stroke 0.2s ease-in-out;
+}
+
+.no-scroll-signup {
+  overflow: hidden;
 }
 
 @media screen and (min-width: 768px) {
