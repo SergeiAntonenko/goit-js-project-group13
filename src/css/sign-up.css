@@ -61,7 +61,7 @@
 
 .input-sing-up:hover,
 .input-sing-up:focus {
-  outline: 1px solid #4f2ee8;
+  outline: 2px solid #111;
 }
 
 .email-input {
@@ -140,7 +140,7 @@
 }
 
 .form-box.dark .input-sing-up:hover,
-.input-sing-up:focus {
+.form-box.dark .input-sing-up:focus {
   outline: 2px solid #f3f3f3;
 }
 
